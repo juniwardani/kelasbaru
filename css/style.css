@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f8f8f8; /* Warna latar belakang yang lembut */
+}
+
+header, footer {
+    background-color: #6b0f0f; /* Warna merah maroon */
+    color: #ffffff; /* Warna teks putih untuk kontras */
+    padding: 1rem; /* Padding untuk header dan footer */
+    text-align: center; /* Rata tengah teks */
+}
+
+.table-container {
+    overflow-x: auto; /* Membuat tabel dapat digulir secara horizontal */
+    margin-top: 20px;
+    background-color: white; /* Set latar belakang menjadi putih */
+    padding: 20px; /* Tambahkan padding untuk jarak dengan tabel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan tabel untuk efek 3D */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white; /* Set latar belakang tabel menjadi putih */
+}
+
+th, td {
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem; /* Padding lebih kecil untuk kompak */
+    text-align: left;
+    font-size: 0.875rem; /* Ukuran font lebih kecil */
+}
+
+th {
+    background-color: #6b0f0f; /* Warna header tabel menjadi merah maroon */
+    color: #ffffff; /* Warna teks putih untuk kontras */
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f1f1; /* Warna latar belakang baris genap untuk meningkatkan keterbacaan */
+}
+
+tr:hover {
+    background-color: #e2e8f0; /* Efek hover pada baris */
+}
+
+select {
+    border-radius: 0.375rem; /* Rounded corners */
+    border: 1px solid #e2e8f0; /* Border untuk dropdown */
+    padding: 0.5rem; /* Padding untuk dropdown */
+    margin-top: 0.5rem; /* Margin untuk spasi atas */
+}
+
+button {
+    border-radius: 0.375rem; /* Rounded corners */
+    background-color: #3b82f6; /* Warna tombol biru */
+    color: white; /* Warna teks tombol */
+    font-weight: bold; /* Berat font untuk tombol */
+    padding: 0.5rem 1rem; /* Padding tombol */
+}
+
+button:hover {
+    background-color: #2563eb; /* Warna tombol saat hover */
+}
+
+.logo {
+    width: 50px; /* Atur ukuran logo sesuai kebutuhan */
+    height: auto; /* Jaga agar proporsional */
+}

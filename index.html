@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumah Tahfidz Saijaan - Beranda</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #f8f8f8; /* Warna latar belakang yang lembut */
+        }
+        header, footer {
+            background-color: #6b0f0f; /* Warna merah maroon */
+            color: #ffffff; /* Warna teks putih untuk kontras */
+            padding: 1rem; /* Padding untuk header dan footer */
+            text-align: center; /* Rata tengah teks */
+        }
+        footer {
+            background-color: #6b0f0f; /* Warna merah maroon untuk footer */
+        }
+        a {
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #e2e8f0; /* Warna saat hover pada tautan */
+        }
+        .card {
+            background-color: #f7b2b2; /* Warna latar belakang kartu (warna merah muda) */
+            padding: 1.5rem; /* Padding untuk kartu */
+            border-radius: 0.375rem; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek 3D */
+            transition: box-shadow 0.3s; /* Efek transisi bayangan */
+            text-align: center; /* Rata tengah teks dalam kartu */
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lebih gelap saat hover */
+        }
+        .logo {
+            width: 50px; /* Atur ukuran logo sesuai kebutuhan */
+            height: auto; /* Jaga agar proporsional */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header>
+        <div class="container mx-auto px-4 py-6 flex items-center">
+            <img src="img/logo.jpg" alt="Logo Rumah Tahfidz Saijaan" class="logo w-12 h-auto mr-1 max-w-xs" />
+            <h1 class="text-2xl md:text-3xl font-bold flex-grow text-center md:text-left">Rumah Tahfidz Saijaan</h1>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="index.html" class="font-semibold hover:underline">Beranda</a>
+                <a href="awal.html" class="font-semibold hover:underline">Pembimbing Awal</a>
+                <a href="baru.html" class="font-semibold hover:underline">Pembimbing Baru</a>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <nav class="flex flex-col items-center space-y-2 mt-4">
+                <a href="index.html" class="hover:underline">Beranda</a>
+                <a href="awal.html" class="font-semibold hover:underline">Pembimbing Awal</a>
+                <a href="baru.html" class="hover:underline">Pembimbing Baru</a>
+            </nav>
+        </div>
+    </header>
+     
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-semibold mb-6">Selamat Datang di Rumah Tahfidz Saijaan</h2>
+        <p class="mb-4">Silakan pilih halaman yang ingin Anda kunjungi:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a href="awal.html" class="card">
+                <h3 class="text-xl font-semibold mb-2">Daftar Santri Pembimbing Awal</h3>
+                <p>Lihat distribusi santri berdasarkan pembimbing awal mereka.</p>
+            </a>
+            <a href="baru.html" class="card">
+                <h3 class="text-xl font-semibold mb-2">Daftar Santri Pembimbing Baru</h3>
+                <p>Lihat distribusi santri berdasarkan pembimbing baru mereka.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-red-800 text-white mt-8">
+        <div class="container mx-auto px-4 py-6">
+            <p>&copy; 2024 Rumah Tahfidz Saijaan. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fungsi untuk mengubah tampilan menu pada perangkat mobile
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden'); // Menyembunyikan atau menampilkan menu
+        }
+    </script>
+</body>
+</html>
