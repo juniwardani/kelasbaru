@@ -458,6 +458,12 @@ const data = [
         "STATUS": "JILID VI"
     },
     {
+        "NAMA": "MUHAMMAD RASYID FAUZI",
+        "PEMBIMBING AWAL": "USTADZ TAHMID",
+        "PEMBIMBING BARU": "USTADZAH SANAH",
+        "STATUS": "JILID VI"
+    },
+    {
         "NAMA": "NABILA AFIQOH",
         "PEMBIMBING AWAL": "USTADZ TAHMID",
         "PEMBIMBING BARU": "USTADZ THOHIR",
