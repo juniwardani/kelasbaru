@@ -105,7 +105,7 @@ const data = [
         "STATUS": "JILID IV"
     },
     {
-        "NAMA": "ACHMAD SIDIQ ASSAM",
+        "NAMA": "ACHMAD SIDIQ ASSAMI",
         "PEMBIMBING AWAL": "JUNI WARDANI",
         "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
         "STATUS": "JILID V"
@@ -709,6 +709,12 @@ const data = [
     },
     {
         "NAMA": "M. MAHASIN NOVAL",
+        "PEMBIMBING AWAL": "USTADZAH ASTRID",
+        "PEMBIMBING BARU": "USTADZAH DINDA",
+        "STATUS": "JILID II"
+    },
+    {
+        "NAMA": "AHMAD SYAUQI HABIBI",
         "PEMBIMBING AWAL": "USTADZAH ASTRID",
         "PEMBIMBING BARU": "USTADZAH DINDA",
         "STATUS": "JILID II"
@@ -1541,9 +1547,9 @@ const data = [
     }
 ];
 
+//hamburger menu
 // Fungsi untuk mengubah tampilan menu pada perangkat mobile
-    document.getElementById('menu-toggle').onclick = function() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenu.classList.toggle('hidden'); // Menyembunyikan atau menampilkan menu
-    }
-
+document.getElementById('menu-toggle').onclick = function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden'); // Menyembunyikan atau menampilkan menu
+}
