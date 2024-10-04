@@ -27,7 +27,7 @@ const data = [
         "STATUS": "JILID QURAN"
     },
     {
-        "NAMA": "MUHAMMAD FAHMI RAMADHAN",
+        "NAMA": "ELFAHMI AMMAR MILHAQ",
         "PEMBIMBING AWAL": "JUNI WARDANI",
         "PEMBIMBING BARU": "USTADZ SYARIF",
         "STATUS": "JILID QURAN"
