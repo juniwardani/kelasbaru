@@ -1541,3 +1541,10 @@ const data = [
     }
 ];
 
+//hamburger menu disemua
+// Fungsi untuk mengubah tampilan menu pada perangkat mobile
+    document.getElementById('menu-toggle').onclick = function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden'); // Menyembunyikan atau menampilkan menu
+    }
+
