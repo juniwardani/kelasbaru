@@ -710,7 +710,7 @@ const data = [
     {
         "NAMA": "WIRDA NUR HASANAH",
         "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH EVI",
+        "PEMBIMBING BARU": "USTADZ THOHIR",
         "STATUS": "JILID I"
     },
     {
