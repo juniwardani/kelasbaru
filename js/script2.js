@@ -1456,7 +1456,7 @@ const data = [
     {
         "NAMA": "NAZIA ARSYIFA",
         "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ BAHAUDIN",
+        "PEMBIMBING BARU": "USTADZ NISA",
         "STATUS": "JILID VI"
     },
     {
