@@ -654,7 +654,7 @@ const data = [
     {
         "NAMA": "AHMAD NAZAMUDDIN",
         "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+        "PEMBIMBING BARU": "USTADZ TAHMID",
         "STATUS": "JILID V"
     },
     {
@@ -988,7 +988,7 @@ const data = [
     {
         "NAMA": "BILQIS KHAIRUNNISA",
         "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
+        "PEMBIMBING BARU": "JUNI WARDANI",
         "STATUS": "JILID III"
     },
     {
@@ -1268,7 +1268,7 @@ const data = [
     {
         "NAMA": "HAVA HARAIDAN SAFIRA",
         "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
+        "PEMBIMBING BARU": "USTADZAH DIAH",
         "STATUS": "JILID IV"
     },
     {
