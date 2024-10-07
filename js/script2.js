@@ -255,7 +255,7 @@ const data = [
     {
         "NAMA": "MUHAMMAD KHAFID ALKHALIF",
         "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+        "PEMBIMBING BARU": "USTADZAH NISA",
         "STATUS": "JILID V"
     },
     {
@@ -1052,7 +1052,7 @@ const data = [
     {
         "NAMA": "M.HAFIZH FATURRAHMAN",
         "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
+        "PEMBIMBING BARU": "USTADZAH EVI",
         "STATUS": "JILID II"
     },
     {
@@ -1069,12 +1069,6 @@ const data = [
     },
     {
         "NAMA": "MUHAMMAD RAYHAN",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "ALIFA AZKA DINA",
         "PEMBIMBING AWAL": "USTADZAH DIAH",
         "PEMBIMBING BARU": "JUNI WARDANI",
         "STATUS": "JILID III"
@@ -1130,7 +1124,7 @@ const data = [
     {
         "NAMA": "MUHAMMAD NAUFAL FAEYZA",
         "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
+        "PEMBIMBING BARU": "USTADZ JUNI",
         "STATUS": "JILID III"
     },
     {
@@ -1314,7 +1308,7 @@ const data = [
     {
         "NAMA": "REYNA AURELIA",
         "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH EVI",
+        "PEMBIMBING BARU": "USTADZAH DIAH",
         "STATUS": "JILID II"
     },
     {
@@ -1592,7 +1586,7 @@ const data = [
     {
         "NAMA": "NAZIA ARSYIFA",
         "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ NISA",
+        "PEMBIMBING BARU": "USTADZAH NISA",
         "STATUS": "JILID VI"
     },
     {
