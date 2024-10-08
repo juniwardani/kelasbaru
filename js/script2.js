@@ -2,1692 +2,1851 @@
 
 // Data yang diberikan dalam format JSON
 const data = [
-    {
-        "NAMA": "AZKA RAYYAN AGFA",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-
-    {
-        "NAMA": "M. ALFALIH",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "FAUZAN",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "M. KHALID AZKA",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "MUHAMMAL NATHAN",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "RAISYA",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "M. RADEYA AL FARAS",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "AISYAH HUMAIRA",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "KIRANA ALIFA HIBATLLAH",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "ALIFA MAULIDA",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "NUR SAFANIYAH",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "M. BILLY FIRDAUS",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "RAQILA NUR FARZAN",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "M.FATIH RISKI B",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    }, 
-{
-        "NAMA": "NIZAM SYARIF",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    }, 
-{
-        "NAMA": "M. ZIKRI BAZILA",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    }, 
-{
-        "NAMA": "M. NENO HERDIANA",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    }, 
-{
-        "NAMA": "M. AFKAR PRATAMA",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    }, 
-{
-        "NAMA": "RANNY",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    }, 
-{
-        "NAMA": "HANIA SYAKIRA",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    }, 
-{
-        "NAMA": "SALSABILA MUHTADIN",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    }, 
-{
-        "NAMA": "PUTRI FENI",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    }, 
-{
-        "NAMA": "SITI ZAFINA WP",
-        "PEMBIMBING AWAL": "SANTRI BARU",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    }, 
-
-
-    
-    {
-        "NAMA": "ANDI RIZKI DAFA RAMADHAN",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ BAHAUDIN",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "SYAQILA SALSABILA SETIAWAN",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "ANDI AISYAH AYUDIA INARA",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "ELFAHMI AMMAR MILHAQ",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "ARIANSYAH",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "SITI MAYSAROH",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "AKHMAD VIQRI SAPUTRA",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ SOFYAN",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "MUHAMMAD TUBAGUS INDRA",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ HAIDIR",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "MUHAMMAD FARIS RAMADHAN",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "MUHAMMAD FAJAR ALFANDI",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "GUSTI ALI M AR RAYYAN",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "SYAILLA NUR RAMADHANI",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "ALLYSA HASYA AFIQAH",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "LINGGA DANISH AMINUDIN PURWANTO",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "ZAKIA ANIQ MUFLIHAH",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "MUHAMMAD LUTFAN ABID",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "ACHMAD SIDIQ ASSAMI",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "ANDRA HARIYADI",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "MUHAMMAD KHAFID ALKHALIF",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "ANANDITHA ASSYABIYA ISLAMI",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "MUHAMMAD LUTH NAUSHADAZKA",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "MUHAMMAD AMIN KUTBI",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "M. ROYYAN KHIAR ABQORY",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "MUHAMMAD ZAUFAN ALL BAKRIE",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "M.AZKA APRILIO ADINATA PRASETYA",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "DHAFITHA ZAYDA ALWI",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD ROYYANDI",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "SITI ALYA HUMAIRO",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD AKBAR SAFARUDIN",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "GERRAD NAUVALAZKA",
-        "PEMBIMBING AWAL": "JUNI WARDANI",
-        "PEMBIMBING BARU": "USTADZ BAHAUDIN",
-        "STATUS": "JILID VI"
-    },
-
-    {
-        "NAMA": "PUTRI NUR ASSIFA.",
-        "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "AMIRA SYIFA AZ ZAHRA",
-        "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "MUHAMMAD ZIKRIE.  ",
-        "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "JAUDAH.",
-        "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
-        "PEMBIMBING BARU": "USTADZ BAHAUDIN",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "KHAIRA LUBNA ALTHAFUNNISA",
-        "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD FIKRI.  ",
-        "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD DZAKI AFFANDI.",
-        "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "NADINE MIKAYLA SANDRIA.  ",
-        "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "INDRA MAULANA",
-        "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
-        "PEMBIMBING BARU": "USTADZ BAHAUDIN",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD AL FATIH.  ",
-        "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-
-
-    {
-        "NAMA": "FAIZ HAZMI ANWARI",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "AHMAD AZRIL RAZZAN RAHMATULLAH",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "AZKIA FILZIA PUTRI",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "MAULIDA FEBRIANI PUTRI",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "BARKATUL AULYA",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "AHMAD GALIH PRIHANDOWO",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "NUR ATHIFAH",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "ALIFA FATHIYYA HAMZAH",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "DHAFIN ARYA ROSADI",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "NUR 'AINA",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "NUR ALIYA TABINA",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "M. DAFFA ARYA GHOSSAN",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "RAIHAN FERDIAN",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "AGHNINA CARIESYA SIBARANI",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "RUWAIDA FATIMAH RAHMADANI",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "AZIZAH NUR APRILIANI",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "HIDAYATUL AZKIA",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "ZAFRAN YAPIQ",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "JIHAN MAULIDA AZKIA",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "ZIKRA AMALIA",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ BAHAUDIN",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "KA'AB AHMAD BUSTANI NUR",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "DARIN ADELLIA AZ-ZAHRA",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZ BAHAUDIN",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "FAQIH GHANI KHAIRI",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "GUSTI ALIFIA KIRANA",
-        "PEMBIMBING AWAL": "USTADZ SYARIF",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-
-
-    {
-        "NAMA": "M. DAFFA NURRAMDANI",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "GHAAZIYA LUBNAYYA",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "MUHAMMAD MUHAJIR ANSHORY",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ HUSSAINI",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "RAIHAN NURFAIZ",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ HUSSAINI",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "M. NOR RAHMAN",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ BAHAUDIN",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "M.HUSEIN ALFANI",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ SOFYAN",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "SAID FAUZAN ROSIDI",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ SOFYAN",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "SELVIA KHAIRUN ASPIA",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID QURAN"
-    },
-    {
-        "NAMA": "SAN ALI AHMAD",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "ALYA IMANI",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD RASYID FAUZI",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "NABILA AFIQOH",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "ZULFA HUMAIRA",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD FAHMI RAMADHAN",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD RAFKA FAIZAR",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "⁠FATIH YASIR MUBAROK",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "FATIMAH AL KHAIROH",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "NUR EFMA WAHIDHA",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "FALYA ALIFA INDRAYANA",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "KAYLA NURIYA RAHMAN",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD AFDILLAH",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "AISYAH AFIFA A.",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "INDRA LESMANA",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "SIRHAN FIKRI ROSIDI",
-        "PEMBIMBING AWAL": "USTADZ TAHMID",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-
-
-    {
-        "NAMA": "MUHAMMAD ROHIID AL ANIS",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "⁠MUHAMMAD ABISAR",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "⁠IQBAL MURISKI",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "KAYLA ATIIQAH SARI",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "MUHAMMAD HUD AR RAYYAN",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "KYLA AZZAHRA RIVA'I",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "⁠AISYAH RAIHANAH",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "M. ZAINI ALFAT",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "KHALISA PUTRI",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "WIRDA HALIMATUS SA'DIAH",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "M. IQRAM SYARIF",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "SYAFIRA ALFATHUNNISA",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "ALTHAF BASYA MISYARAJA",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "MUHAMMAD IRSYAN GAZALI",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "NADHIFA AYU FAIQAH",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "NADA NURANI ALIANSYAH",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "AISYAH AQILAH",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "ALIFA AZ-ZAHRA",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "AHMAD NAZAMUDDIN",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "ALESHA KAYLA NADHIFA",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "AHMAD ZAIEN WAFA",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "AYSHA RAMADANI",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD RAIHAN HAFIZH",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "ALFARIZKY MELAN PRATAMA",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "ZAINAL ILMI",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD HAIKAL BAGUS",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "FAJRIANSYAH",
-        "PEMBIMBING AWAL": "USTADZAH SANAH",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-
-
-    {
-        "NAMA": "WIRDA NUR HASANAH",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "NUR AISYAH HUMAIRA",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "M. MAHASIN NOVAL",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "AHMAD SYAUQI HABIBI",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "MUHAMMAD MIRZA ALIANDRA",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "M. KAHFI ARRAHMAN",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "MAULANA MALIK IBRAHIM",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "MUHAMMAD ADELIO BRAMASTA",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "FAQIH NAZRIL KHALIF",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "ABDU RAHDIKA NAHRY",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "AHMAD AL FATIH NUR ADABI",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "MUHAMMAD UMAR ZAFLAN",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "SYAHILA AZMI",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "NUR RAZIBVIA HANDAYANI",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "M. RASYID RAIHAN",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "KHAIRUL SAPUTRA",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "M. SULTHAN MALIK",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "ARUNA GHAISAN",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "GT. DAFA",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "QONITA HANIFA ALMAHIRA",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "ALSYAH NUR ALMIRA",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "M. ZAYD RYS ALGHIFARI",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "ALIFAH RAHMANTI PUTRI",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "M. AL FATIH",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "IZZFAHIM ANAQI",
-        "PEMBIMBING AWAL": "USTADZAH ASTRID",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID III"
-    },
-
-
-    {
-        "NAMA": "GUSTI KHALID RAHMAN SADI'",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "KUMALA AFIFA NAHDA RAFANDA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "NUR AULIA SAFITRI",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "RIZKY NUR AQILLA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "AYSHA NABILA PRANTAU",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "NAYSILLA NUR MAYDINI",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "ALMIRA ZHAPIRA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "KHUMAIRA PUTRI ASY'ARI      ",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "ALISHA NAILA MIZA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "M.HAFIZH FATURRAHMAN",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "RAYA NOVITASARI",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "AKIFAH NAYLA NURHIJRAH",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "MUHAMMAD RAYHAN",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "SARAH AZMIRA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "MUHAMMAD AZKA RANENDRA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "FATIA AULIA ANNISA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "NATANIA AISYAH NUHA ZAHIRA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "AMALIA PUTRI",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "SITI FADILLAH",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "FAUZA NUR RIZKY",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "BILQIS KHAIRUNNISA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "MUHAMMAD NAUFAL FAEYZA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "MUHAMMAD ALZHAFRAN FARDILA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "MUHAMMAD ALFAT KHAIRY",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "ABDILLAH ALGHIFARI IBERAHIM",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "M. AQSAN MUSYAFA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "MUTIA NUR AZZAHRA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "MUHAMMAD AZHAR ALRISAM",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "MUHAMMAD AIDIL SYAFE'I",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "RAESHA YUMNA ADZKIA",
-        "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-
-
-    {
-        "NAMA": "M. ZAKY RAMADHAN",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "FATHIN AULIA",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "M. LUTHFI SAPUTRA",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "ALIFIA NAVISHA",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "SYARIFAH SHIDQIYA",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "M. ARKHAN R.",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "ALI RAYYAN RIZKY",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "AFFABIAN MUSYAFA AHMAD",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "AFIQAH NAILA",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "M. ARFAN",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "M. RIFDHIL ARHAMY",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "NUR MIFTAHUL JANNAH",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "M. MAHDI YUSUF",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "M. ABYAN ARJUNA PASURA",
-        "PEMBIMBING AWAL": "USTADZAH DINDA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-
-
-    {
-        "NAMA": "ABDULLAH ARAFAT ATTA",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "RISKA NUR BAINAH",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "MUHAMMAD ALFA RIZQI  ",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "⁠ARKAAN HARITH HAFI",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "ZAINA ALIFAH",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID I"
-    },
-    {
-        "NAMA": "MUHAMMAD ALTHAF HAFIZY",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "FAHRIL RIZKY PRATAMA",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "REYNA AURELIA",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "MUHAMMAD ADEB AL GAZALI",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "NAFISA SHARIN NASYWA",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "HAFIZAH NUR AULIA",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "MUHAMMAD ARKHA AL FAIRUZT",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "MUHAMMAD ARIF FADIL",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "⁠MUHAMMAD TSAQIB HERSYA",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "TRIYANA SAFITRI",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "RINDANG RIZKI ANANDA",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "M. ALI ZABER",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "⁠RENDRA MAHARDIKA",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "RAISA DINAR",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "AYANA MUKHBITA MARYAM",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "RAYYA STARLA ADZKADINA",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "MUHAMMAD SAKHA AT THAHIR RAMADHAN",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "HAVA HARAIDAN SAFIRA",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "AHMAD ZAINI DAHLAN",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "RUSNI ADAM",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "RAIHANA AINUN MARDIAH",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "M.HAUFANHAZZA ABQORY",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "M. AZKA PUTRA",
-        "PEMBIMBING AWAL": "USTADZAH EVI",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-
-
-    {
-        "NAMA": "FEBRIYANI",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "M. ALMAN. B",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "MUHAMMAD ARSHAD AL FATIH ASTADIWANGSA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "RAFFA MULYATAMA SARAGIH",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "ANDI ARSYILA HUMAIRA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "ALMAIRA NURFAUZIAH",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "RULITA AZZAHRA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II"
-    },
-    {
-        "NAMA": "RAISYA NUR AQIFA NAYLA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "NAILA AZKADINA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "NUR AMELIA NAZIHA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "FAYZA ANNISA FITRIA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ SYARIF",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "AHMAD RAFFASYA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "NUR AFIFAH",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "M. FADILLAH RAMLAN",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "MUHAMMAD YUSUF",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID III"
-    },
-    {
-        "NAMA": "KIOSI ALTAF",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "ZHAFIRA RASYIFA SALWA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "SASKIA ANASTASYA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "MUHAMMAD ZAIDAN RAHMAN",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "PUTRI NABILA AZZAHRA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "FAUZIAH",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "SITI AISYAH",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "MUHAMMAD YUSUF RACHMAN",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "HAFIDZAH AZZAHRA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "AHMAD AL FARIZQI",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "NAZIA ARSYIFA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "ELSA RAIDA RAHMAWATI",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "⁠KEYRA ANDITA BALQIS",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "ARSY PUTRA FIRMANSYAH",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "NADHIRA IMADINA ADIBA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-    {
-        "NAMA": "AISHA ARSYIFA",
-        "PEMBIMBING AWAL": "USTADZAH NISA",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID VI"
-    },
-
-
-    {
-        "NAMA": "MUHAMMAD AL FATIH RAMADHAN",
-        "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "ADELIA ZAHRATUSSHOFA",
-        "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "M. REZA EFANSYAH",
-        "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "MUHAMMAD HABIBIE",
-        "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
-        "PEMBIMBING BARU": "USTADZAH SANAH",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "ANISA AZAHRA",
-        "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
-        "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV"
-    },
-    {
-        "NAMA": "ALMEERA NURUL RASYADA",
-        "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
-        "PEMBIMBING BARU": "USTADZAH NISA",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "AHMAD KEMAL REIS LIZUIRABIH",
-        "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "M.AZKA RIDLONI.                  ",
-        "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
-        "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "AKHMAD HABIBIE",
-        "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "MUHAMMAD NABIL ASY ARI",
-        "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    },
-    {
-        "NAMA": "HAFI AHMAD SUBAKTI",
-        "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
-        "PEMBIMBING BARU": "USTADZ TAHMID",
-        "STATUS": "JILID V"
-    }
-];
+  {
+    "NAMA": "AZKA RAYYAN AGFA",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "258"
+  },
+  {
+    "NAMA": "M. ALFALIH",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "FAUZAN",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "M. KHALID AZKA",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "MUHAMMAL NATHAN",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "RAISYA",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "M. RADEYA AL FARAS",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "AISYAH HUMAIRA",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I",
+    "NOINFAQ": "114"
+  },
+  {
+    "NAMA": "KIRANA ALIFA HIBATLLAH",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "ALIFA MAULIDA",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "NUR SAFANIYAH",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "M. BILLY FIRDAUS",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "RAQILA NUR FARZAN",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "M.FATIH RISKI B",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "NIZAM SYARIF",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "M. ZIKRI BAZILA",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "M. NENO HERDIANA",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "M. AFKAR PRATAMA",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "RANNY",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "HANIA SYAKIRA",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "SALSABILA MUHTADIN",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "PUTRI FENI",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "SITI ZAFINA WP",
+    "PEMBIMBING AWAL": "SANTRI BARU",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "ANDI RIZKI DAFA RAMADHAN",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ BAHAUDIN",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "263"
+  },
+  {
+    "NAMA": "SYAQILA SALSABILA SETIAWAN",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "594"
+  },
+  {
+    "NAMA": "ANDI AISYAH AYUDIA INARA",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "272"
+  },
+  {
+    "NAMA": "ELFAHMI AMMAR MILHAQ",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN"
+  },
+  {
+    "NAMA": "ARIANSYAH",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "470"
+  },
+  {
+    "NAMA": "SITI MAYSAROH",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "339"
+  },
+  {
+    "NAMA": "AKHMAD VIQRI SAPUTRA",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ SOFYAN",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "491"
+  },
+  {
+    "NAMA": "MUHAMMAD TUBAGUS INDRA",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ HAIDIR",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "169"
+  },
+  {
+    "NAMA": "MUHAMMAD FARIS RAMADHAN",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "347"
+  },
+  {
+    "NAMA": "MUHAMMAD FAJAR ALFANDI",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "463"
+  },
+  {
+    "NAMA": "GUSTI ALI M AR RAYYAN",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "372"
+  },
+  {
+    "NAMA": "SYAILLA NUR RAMADHANI",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "467"
+  },
+  {
+    "NAMA": "ALLYSA HASYA AFIQAH",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "269"
+  },
+  {
+    "NAMA": "LINGGA DANISH AMINUDIN PURWANTO",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "457"
+  },
+  {
+    "NAMA": "ZAKIA ANIQ MUFLIHAH",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "376"
+  },
+  {
+    "NAMA": "MUHAMMAD LUTFAN ABID",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "293"
+  },
+  {
+    "NAMA": "ACHMAD SIDIQ ASSAMI",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+    "STATUS": "JILID V",
+    "NOINFAQ": "315"
+  },
+  {
+    "NAMA": "ANDRA HARIYADI",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+    "STATUS": "JILID V",
+    "NOINFAQ": "471"
+  },
+  {
+    "NAMA": "MUHAMMAD KHAFID ALKHALIF",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V"
+  },
+  {
+    "NAMA": "ANANDITHA ASSYABIYA ISLAMI",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+    "STATUS": "JILID V",
+    "NOINFAQ": "344"
+  },
+  {
+    "NAMA": "MUHAMMAD LUTH NAUSHADAZKA",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "456"
+  },
+  {
+    "NAMA": "MUHAMMAD AMIN KUTBI",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "377"
+  },
+  {
+    "NAMA": "M. ROYYAN KHIAR ABQORY",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "554"
+  },
+  {
+    "NAMA": "MUHAMMAD ZAUFAN ALL BAKRIE",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "375"
+  },
+  {
+    "NAMA": "M.AZKA APRILIO ADINATA PRASETYA",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "335"
+  },
+  {
+    "NAMA": "DHAFITHA ZAYDA ALWI",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "243"
+  },
+  {
+    "NAMA": "MUHAMMAD ROYYANDI",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "277"
+  },
+  {
+    "NAMA": "SITI ALYA HUMAIRO",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "331"
+  },
+  {
+    "NAMA": "MUHAMMAD AKBAR SAFARUDIN",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "180"
+  },
+  {
+    "NAMA": "GERRAD NAUVALAZKA",
+    "PEMBIMBING AWAL": "JUNI WARDANI",
+    "PEMBIMBING BARU": "USTADZ BAHAUDIN",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "262"
+  },
+  {
+    "NAMA": "PUTRI NUR ASSIFA.",
+    "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
+    "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+    "STATUS": "JILID V"
+  },
+  {
+    "NAMA": "AMIRA SYIFA AZ ZAHRA",
+    "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
+    "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+    "STATUS": "JILID V",
+    "NOINFAQ": "490"
+  },
+  {
+    "NAMA": "MUHAMMAD ZIKRIE.  ",
+    "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "JAUDAH.",
+    "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
+    "PEMBIMBING BARU": "USTADZ BAHAUDIN",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "KHAIRA LUBNA ALTHAFUNNISA",
+    "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "324"
+  },
+  {
+    "NAMA": "MUHAMMAD FIKRI.  ",
+    "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "MUHAMMAD DZAKI AFFANDI.",
+    "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "NADINE MIKAYLA SANDRIA.  ",
+    "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "INDRA MAULANA",
+    "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
+    "PEMBIMBING BARU": "USTADZ BAHAUDIN",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "330"
+  },
+  {
+    "NAMA": "MUHAMMAD AL FATIH.  ",
+    "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "FAIZ HAZMI ANWARI",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "327"
+  },
+  {
+    "NAMA": "AHMAD AZRIL RAZZAN RAHMATULLAH",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "176"
+  },
+  {
+    "NAMA": "AZKIA FILZIA PUTRI",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "239"
+  },
+  {
+    "NAMA": "MAULIDA FEBRIANI PUTRI",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "286"
+  },
+  {
+    "NAMA": "BARKATUL AULYA",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "232"
+  },
+  {
+    "NAMA": "AHMAD GALIH PRIHANDOWO",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN"
+  },
+  {
+    "NAMA": "NUR ATHIFAH",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "247"
+  },
+  {
+    "NAMA": "ALIFA FATHIYYA HAMZAH",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "278"
+  },
+  {
+    "NAMA": "DHAFIN ARYA ROSADI",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "480"
+  },
+  {
+    "NAMA": "NUR 'AINA",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "345"
+  },
+  {
+    "NAMA": "NUR ALIYA TABINA",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "378"
+  },
+  {
+    "NAMA": "M. DAFFA ARYA GHOSSAN",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "RAIHAN FERDIAN",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "535"
+  },
+  {
+    "NAMA": "AGHNINA CARIESYA SIBARANI",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "275"
+  },
+  {
+    "NAMA": "RUWAIDA FATIMAH RAHMADANI",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "311"
+  },
+  {
+    "NAMA": "AZIZAH NUR APRILIANI",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V"
+  },
+  {
+    "NAMA": "HIDAYATUL AZKIA",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "534"
+  },
+  {
+    "NAMA": "ZAFRAN YAPIQ",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "314"
+  },
+  {
+    "NAMA": "JIHAN MAULIDA AZKIA",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "369"
+  },
+  {
+    "NAMA": "ZIKRA AMALIA",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ BAHAUDIN",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "257"
+  },
+  {
+    "NAMA": "KA'AB AHMAD BUSTANI NUR",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "328"
+  },
+  {
+    "NAMA": "DARIN ADELLIA AZ-ZAHRA",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ BAHAUDIN",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "242"
+  },
+  {
+    "NAMA": "FAQIH GHANI KHAIRI",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "240"
+  },
+  {
+    "NAMA": "GUSTI ALIFIA KIRANA",
+    "PEMBIMBING AWAL": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "332"
+  },
+  {
+    "NAMA": "M. DAFFA NURRAMDANI",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "154"
+  },
+  {
+    "NAMA": "GHAAZIYA LUBNAYYA",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "248"
+  },
+  {
+    "NAMA": "MUHAMMAD MUHAJIR ANSHORY",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ HUSSAINI",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "336"
+  },
+  {
+    "NAMA": "RAIHAN NURFAIZ",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ HUSSAINI",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "200"
+  },
+  {
+    "NAMA": "M. NOR RAHMAN",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ BAHAUDIN",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "261"
+  },
+  {
+    "NAMA": "M.HUSEIN ALFANI",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ SOFYAN",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "227"
+  },
+  {
+    "NAMA": "SAID FAUZAN ROSIDI",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ SOFYAN",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "195"
+  },
+  {
+    "NAMA": "SELVIA KHAIRUN ASPIA",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID QURAN",
+    "NOINFAQ": "255"
+  },
+  {
+    "NAMA": "SAN ALI AHMAD",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "492"
+  },
+  {
+    "NAMA": "ALYA IMANI",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "238"
+  },
+  {
+    "NAMA": "MUHAMMAD RASYID FAUZI",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "NABILA AFIQOH",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "329"
+  },
+  {
+    "NAMA": "ZULFA HUMAIRA",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "317"
+  },
+  {
+    "NAMA": "MUHAMMAD FAHMI RAMADHAN",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "177"
+  },
+  {
+    "NAMA": "MUHAMMAD RAFKA FAIZAR",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "204"
+  },
+  {
+    "NAMA": "⁠FATIH YASIR MUBAROK",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "FATIMAH AL KHAIROH",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "474"
+  },
+  {
+    "NAMA": "NUR EFMA WAHIDHA",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "478"
+  },
+  {
+    "NAMA": "FALYA ALIFA INDRAYANA",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "210"
+  },
+  {
+    "NAMA": "KAYLA NURIYA RAHMAN",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "MUHAMMAD AFDILLAH",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "172"
+  },
+  {
+    "NAMA": "AISYAH AFIFA A.",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "INDRA LESMANA",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "287"
+  },
+  {
+    "NAMA": "SIRHAN FIKRI ROSIDI",
+    "PEMBIMBING AWAL": "USTADZ TAHMID",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "256"
+  },
+  {
+    "NAMA": "MUHAMMAD ROHIID AL ANIS",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "296"
+  },
+  {
+    "NAMA": "⁠MUHAMMAD ABISAR",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "⁠IQBAL MURISKI",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "KAYLA ATIIQAH SARI",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "063"
+  },
+  {
+    "NAMA": "MUHAMMAD HUD AR RAYYAN",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "367"
+  },
+  {
+    "NAMA": "KYLA AZZAHRA RIVA'I",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "⁠AISYAH RAIHANAH",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "M. ZAINI ALFAT",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "550"
+  },
+  {
+    "NAMA": "KHALISA PUTRI",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "325"
+  },
+  {
+    "NAMA": "WIRDA HALIMATUS SA'DIAH",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "M. IQRAM SYARIF",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "549"
+  },
+  {
+    "NAMA": "SYAFIRA ALFATHUNNISA",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "374"
+  },
+  {
+    "NAMA": "ALTHAF BASYA MISYARAJA",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "267"
+  },
+  {
+    "NAMA": "MUHAMMAD IRSYAN GAZALI",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "212"
+  },
+  {
+    "NAMA": "NADHIFA AYU FAIQAH",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "299"
+  },
+  {
+    "NAMA": "NADA NURANI ALIANSYAH",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "509"
+  },
+  {
+    "NAMA": "AISYAH AQILAH",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+    "STATUS": "JILID V",
+    "NOINFAQ": "271"
+  },
+  {
+    "NAMA": "ALIFA AZ-ZAHRA",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+    "STATUS": "JILID V"
+  },
+  {
+    "NAMA": "AHMAD NAZAMUDDIN",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "276"
+  },
+  {
+    "NAMA": "ALESHA KAYLA NADHIFA",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+    "STATUS": "JILID V",
+    "NOINFAQ": "326"
+  },
+  {
+    "NAMA": "AHMAD ZAIEN WAFA",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "266"
+  },
+  {
+    "NAMA": "AYSHA RAMADANI",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "174"
+  },
+  {
+    "NAMA": "MUHAMMAD RAIHAN HAFIZH",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "165"
+  },
+  {
+    "NAMA": "ALFARIZKY MELAN PRATAMA",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "281"
+  },
+  {
+    "NAMA": "ZAINAL ILMI",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "334"
+  },
+  {
+    "NAMA": "MUHAMMAD HAIKAL BAGUS",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "FAJRIANSYAH",
+    "PEMBIMBING AWAL": "USTADZAH SANAH",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "233"
+  },
+  {
+    "NAMA": "WIRDA NUR HASANAH",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "NUR AISYAH HUMAIRA",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID I",
+    "NOINFAQ": "576"
+  },
+  {
+    "NAMA": "M. MAHASIN NOVAL",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "AHMAD SYAUQI HABIBI",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "MUHAMMAD MIRZA ALIANDRA",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "589"
+  },
+  {
+    "NAMA": "M. KAHFI ARRAHMAN",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "MAULANA MALIK IBRAHIM",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "573"
+  },
+  {
+    "NAMA": "MUHAMMAD ADELIO BRAMASTA",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "FAQIH NAZRIL KHALIF",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II",
+    "NOINFAQ": "584"
+  },
+  {
+    "NAMA": "ABDU RAHDIKA NAHRY",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II",
+    "NOINFAQ": "571"
+  },
+  {
+    "NAMA": "AHMAD AL FATIH NUR ADABI",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "MUHAMMAD UMAR ZAFLAN",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "SYAHILA AZMI",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "NUR RAZIBVIA HANDAYANI",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "M. RASYID RAIHAN",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II",
+    "NOINFAQ": "590"
+  },
+  {
+    "NAMA": "KHAIRUL SAPUTRA",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II",
+    "NOINFAQ": "572"
+  },
+  {
+    "NAMA": "M. SULTHAN MALIK",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III",
+    "NOINFAQ": "591"
+  },
+  {
+    "NAMA": "ARUNA GHAISAN",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "GT. DAFA",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III",
+    "NOINFAQ": "585"
+  },
+  {
+    "NAMA": "QONITA HANIFA ALMAHIRA",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III",
+    "NOINFAQ": "593"
+  },
+  {
+    "NAMA": "ALSYAH NUR ALMIRA",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III",
+    "NOINFAQ": "582"
+  },
+  {
+    "NAMA": "M. ZAYD RYS ALGHIFARI",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID III",
+    "NOINFAQ": "592"
+  },
+  {
+    "NAMA": "ALIFAH RAHMANTI PUTRI",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID III",
+    "NOINFAQ": "581"
+  },
+  {
+    "NAMA": "M. AL FATIH",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "IZZFAHIM ANAQI",
+    "PEMBIMBING AWAL": "USTADZAH ASTRID",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "GUSTI KHALID RAHMAN SADI'",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "570"
+  },
+  {
+    "NAMA": "KUMALA AFIFA NAHDA RAFANDA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "352"
+  },
+  {
+    "NAMA": "NUR AULIA SAFITRI",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "505"
+  },
+  {
+    "NAMA": "RIZKY NUR AQILLA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "309"
+  },
+  {
+    "NAMA": "AYSHA NABILA PRANTAU",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II",
+    "NOINFAQ": "357"
+  },
+  {
+    "NAMA": "NAYSILLA NUR MAYDINI",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II",
+    "NOINFAQ": "501"
+  },
+  {
+    "NAMA": "ALMIRA ZHAPIRA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "KHUMAIRA PUTRI ASY'ARI      ",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "ALISHA NAILA MIZA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "M.HAFIZH FATURRAHMAN",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "RAYA NOVITASARI",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "AKIFAH NAYLA NURHIJRAH",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II",
+    "NOINFAQ": "362"
+  },
+  {
+    "NAMA": "MUHAMMAD RAYHAN",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III",
+    "NOINFAQ": "295"
+  },
+  {
+    "NAMA": "SARAH AZMIRA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III",
+    "NOINFAQ": "312"
+  },
+  {
+    "NAMA": "MUHAMMAD AZKA RANENDRA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III",
+    "NOINFAQ": "503"
+  },
+  {
+    "NAMA": "FATIA AULIA ANNISA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III",
+    "NOINFAQ": "363"
+  },
+  {
+    "NAMA": "NATANIA AISYAH NUHA ZAHIRA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III",
+    "NOINFAQ": "300"
+  },
+  {
+    "NAMA": "AMALIA PUTRI",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III",
+    "NOINFAQ": "355"
+  },
+  {
+    "NAMA": "SITI FADILLAH",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III",
+    "NOINFAQ": "504"
+  },
+  {
+    "NAMA": "FAUZA NUR RIZKY",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID III",
+    "NOINFAQ": "356"
+  },
+  {
+    "NAMA": "BILQIS KHAIRUNNISA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "MUHAMMAD NAUFAL FAEYZA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III",
+    "NOINFAQ": "454"
+  },
+  {
+    "NAMA": "MUHAMMAD ALZHAFRAN FARDILA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "MUHAMMAD ALFAT KHAIRY",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "ABDILLAH ALGHIFARI IBERAHIM",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "349"
+  },
+  {
+    "NAMA": "M. AQSAN MUSYAFA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "496"
+  },
+  {
+    "NAMA": "MUTIA NUR AZZAHRA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "298"
+  },
+  {
+    "NAMA": "MUHAMMAD AZHAR ALRISAM",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "359"
+  },
+  {
+    "NAMA": "MUHAMMAD AIDIL SYAFE'I",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "RAESHA YUMNA ADZKIA",
+    "PEMBIMBING AWAL": "USTADZAH DIAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "303"
+  },
+  {
+    "NAMA": "M. ZAKY RAMADHAN",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "FATHIN AULIA",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I",
+    "NOINFAQ": "564"
+  },
+  {
+    "NAMA": "M. LUTHFI SAPUTRA",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "ALIFIA NAVISHA",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I",
+    "NOINFAQ": "559"
+  },
+  {
+    "NAMA": "SYARIFAH SHIDQIYA",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "M. ARKHAN R.",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "ALI RAYYAN RIZKY",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I",
+    "NOINFAQ": "539"
+  },
+  {
+    "NAMA": "AFFABIAN MUSYAFA AHMAD",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "AFIQAH NAILA",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "M. ARFAN",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I",
+    "NOINFAQ": "568"
+  },
+  {
+    "NAMA": "M. RIFDHIL ARHAMY",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "561"
+  },
+  {
+    "NAMA": "NUR MIFTAHUL JANNAH",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "566"
+  },
+  {
+    "NAMA": "M. MAHDI YUSUF",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II",
+    "NOINFAQ": "562"
+  },
+  {
+    "NAMA": "M. ABYAN ARJUNA PASURA",
+    "PEMBIMBING AWAL": "USTADZAH DINDA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "ABDULLAH ARAFAT ATTA",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I",
+    "NOINFAQ": "551"
+  },
+  {
+    "NAMA": "RISKA NUR BAINAH",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I",
+    "NOINFAQ": "537"
+  },
+  {
+    "NAMA": "MUHAMMAD ALFA RIZQI  ",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "⁠ARKAAN HARITH HAFI",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "ZAINA ALIFAH",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID I"
+  },
+  {
+    "NAMA": "MUHAMMAD ALTHAF HAFIZY",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "520"
+  },
+  {
+    "NAMA": "FAHRIL RIZKY PRATAMA",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "545"
+  },
+  {
+    "NAMA": "REYNA AURELIA",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II",
+    "NOINFAQ": "543"
+  },
+  {
+    "NAMA": "MUHAMMAD ADEB AL GAZALI",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II",
+    "NOINFAQ": "546"
+  },
+  {
+    "NAMA": "NAFISA SHARIN NASYWA",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II",
+    "NOINFAQ": "542"
+  },
+  {
+    "NAMA": "HAFIZAH NUR AULIA",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "MUHAMMAD ARKHA AL FAIRUZT",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "MUHAMMAD ARIF FADIL",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II",
+    "NOINFAQ": "544"
+  },
+  {
+    "NAMA": "⁠MUHAMMAD TSAQIB HERSYA",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "TRIYANA SAFITRI",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "RINDANG RIZKI ANANDA",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III",
+    "NOINFAQ": "361"
+  },
+  {
+    "NAMA": "M. ALI ZABER",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III",
+    "NOINFAQ": "290"
+  },
+  {
+    "NAMA": "⁠RENDRA MAHARDIKA",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "RAISA DINAR",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "AYANA MUKHBITA MARYAM",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III",
+    "NOINFAQ": "342"
+  },
+  {
+    "NAMA": "RAYYA STARLA ADZKADINA",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III",
+    "NOINFAQ": "511"
+  },
+  {
+    "NAMA": "MUHAMMAD SAKHA AT THAHIR RAMADHAN",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "464"
+  },
+  {
+    "NAMA": "HAVA HARAIDAN SAFIRA",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "370"
+  },
+  {
+    "NAMA": "AHMAD ZAINI DAHLAN",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "365"
+  },
+  {
+    "NAMA": "RUSNI ADAM",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "310"
+  },
+  {
+    "NAMA": "RAIHANA AINUN MARDIAH",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "306"
+  },
+  {
+    "NAMA": "M.HAUFANHAZZA ABQORY",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "M. AZKA PUTRA",
+    "PEMBIMBING AWAL": "USTADZAH EVI",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "FEBRIYANI",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "353"
+  },
+  {
+    "NAMA": "M. ALMAN. B",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH DINDA",
+    "STATUS": "JILID II",
+    "NOINFAQ": "354"
+  },
+  {
+    "NAMA": "MUHAMMAD ARSHAD AL FATIH ASTADIWANGSA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II",
+    "NOINFAQ": "292"
+  },
+  {
+    "NAMA": "RAFFA MULYATAMA SARAGIH",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II",
+    "NOINFAQ": "304"
+  },
+  {
+    "NAMA": "ANDI ARSYILA HUMAIRA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II",
+    "NOINFAQ": "524"
+  },
+  {
+    "NAMA": "ALMAIRA NURFAUZIAH",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH EVI",
+    "STATUS": "JILID II",
+    "NOINFAQ": "512"
+  },
+  {
+    "NAMA": "RULITA AZZAHRA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH DIAH",
+    "STATUS": "JILID II"
+  },
+  {
+    "NAMA": "RAISYA NUR AQIFA NAYLA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III",
+    "NOINFAQ": "514"
+  },
+  {
+    "NAMA": "NAILA AZKADINA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "NUR AMELIA NAZIHA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III",
+    "NOINFAQ": "499"
+  },
+  {
+    "NAMA": "FAYZA ANNISA FITRIA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "AHMAD RAFFASYA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "NUR AFIFAH",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID III"
+  },
+  {
+    "NAMA": "M. FADILLAH RAMLAN",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID III",
+    "NOINFAQ": "364"
+  },
+  {
+    "NAMA": "MUHAMMAD YUSUF",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID III",
+    "NOINFAQ": "497"
+  },
+  {
+    "NAMA": "KIOSI ALTAF",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "273"
+  },
+  {
+    "NAMA": "ZHAFIRA RASYIFA SALWA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "211"
+  },
+  {
+    "NAMA": "SASKIA ANASTASYA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "477"
+  },
+  {
+    "NAMA": "MUHAMMAD ZAIDAN RAHMAN",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "167"
+  },
+  {
+    "NAMA": "PUTRI NABILA AZZAHRA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+    "STATUS": "JILID V",
+    "NOINFAQ": "206"
+  },
+  {
+    "NAMA": "FAUZIAH",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "209"
+  },
+  {
+    "NAMA": "SITI AISYAH",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "170"
+  },
+  {
+    "NAMA": "MUHAMMAD YUSUF RACHMAN",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "205"
+  },
+  {
+    "NAMA": "HAFIDZAH AZZAHRA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ THOHIR",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "179"
+  },
+  {
+    "NAMA": "AHMAD AL FARIZQI",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "NAZIA ARSYIFA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "333"
+  },
+  {
+    "NAMA": "ELSA RAIDA RAHMAWATI",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "244"
+  },
+  {
+    "NAMA": "⁠KEYRA ANDITA BALQIS",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI"
+  },
+  {
+    "NAMA": "ARSY PUTRA FIRMANSYAH",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "231"
+  },
+  {
+    "NAMA": "NADHIRA IMADINA ADIBA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "379"
+  },
+  {
+    "NAMA": "AISHA ARSYIFA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID VI",
+    "NOINFAQ": "268"
+  },
+  {
+    "NAMA": "MUHAMMAD AL FATIH RAMADHAN",
+    "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "569"
+  },
+  {
+    "NAMA": "ADELIA ZAHRATUSSHOFA",
+    "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "288"
+  },
+  {
+    "NAMA": "M. REZA EFANSYAH",
+    "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV"
+  },
+  {
+    "NAMA": "MUHAMMAD HABIBIE",
+    "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
+    "PEMBIMBING BARU": "USTADZAH SANAH",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "207"
+  },
+  {
+    "NAMA": "ANISA AZAHRA",
+    "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
+    "PEMBIMBING BARU": "JUNI WARDANI",
+    "STATUS": "JILID IV",
+    "NOINFAQ": "285"
+  },
+  {
+    "NAMA": "ALMEERA NURUL RASYADA",
+    "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
+    "PEMBIMBING BARU": "USTADZAH NISA",
+    "STATUS": "JILID V",
+    "NOINFAQ": "282"
+  },
+  {
+    "NAMA": "AHMAD KEMAL REIS LIZUIRABIH",
+    "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
+    "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+    "STATUS": "JILID V"
+  },
+  {
+    "NAMA": "M.AZKA RIDLONI.                  ",
+    "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
+    "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
+    "STATUS": "JILID V"
+  },
+  {
+    "NAMA": "AKHMAD HABIBIE",
+    "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V",
+    "NOINFAQ": "468"
+  },
+  {
+    "NAMA": "MUHAMMAD NABIL ASY ARI",
+    "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V"
+  },
+  {
+    "NAMA": "HAFI AHMAD SUBAKTI",
+    "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V"
+  }
+]
 
 //hamburger menu
 // Fungsi untuk mengubah tampilan menu pada perangkat mobile
