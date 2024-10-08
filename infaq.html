@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Table by Pembimbing Baru</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container mx-auto px-4 py-6 flex items-center">
+            <img src="img/logo.jpg" alt="Logo Rumah Tahfidz Saijaan" class="logo w-12 h-auto mr-1 max-w-xs" />
+            <h1 class="text-2xl md:text-3xl font-bold flex-grow text-center md:text-left">Rumah Tahfidz Saijaan</h1>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="index.html" class="font-semibold hover:underline">Beranda</a>
+                <a href="awal.html" class="font-semibold hover:underline">Pembimbing Awal</a>
+                <a href="baru.html" class="font-semibold hover:underline">Pembimbing Baru</a>
+                <a href="infaq.html" class="font-semibold hover:underline">Cari No. Infaq</a>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <nav class="flex flex-col items-center space-y-2 mt-4">
+                <a href="index.html" class="font-semibold hover:underline">Beranda</a>
+                <a href="awal.html" class="font-semibold hover:underline">Pembimbing Awal</a>
+                <a href="baru.html" class="font-semibold hover:underline">Pembimbing Baru</a>
+                <a href="infaq.html" class="font-semibold hover:underline">Cari No. Infaq</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-2xl font-semibold mb-6 text-center"><strong>CARI NOMOR INFAQ SANTRI</strong></h1>
+        <div class="flex justify-center mb-8">
+            <input type="text" id="search-input" class="form-control w-1/2" placeholder="Cari nama santri...">
+        </div>
+        
+        <table id="santri-table" class="table table-striped hidden">
+            <thead>
+                <tr>
+                    <th>Nomor Infaq</th>
+                    <th>Nama Santri</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Data siswa akan ditambahkan di sini -->
+            </tbody>
+        </table>  
+    </div></main>
+
+    <footer>
+        <div class="container mx-auto px-4 py-6">
+            <p class="text-center">&copy; 2024 Rumah Tahfidz Saijaan. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script2.js"></script>
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const tableBody = document.getElementById('table-body');
+        const santriTable = document.getElementById('santri-table');
+
+        function displayData(santri) {
+            tableBody.innerHTML = '';
+
+            santri.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.NOINFAQ}</td>
+                    <td>${item.NAMA}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            if (santri.length > 0) {
+                santriTable.classList.remove('hidden');
+            } else {
+                santriTable.classList.add('hidden');
+            }
+        }
+
+        function filterData() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredData = data.filter(santri =>
+                santri.NAMA.toLowerCase().includes(searchTerm)
+            );
+
+            if (searchTerm === '') {
+                santriTable.classList.add('hidden');
+            } else {
+                displayData(filteredData);
+            }
+        }
+
+        searchInput.addEventListener('input', filterData);
+
+        // Menambahkan event listener untuk toggle menu mobile
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            console.log('Menu toggle clicked!'); // Untuk debugging
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        //hamburger menu
+// Fungsi untuk mengubah tampilan menu pada perangkat mobile
+document.getElementById('menu-toggle').onclick = function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+}
+    </script>
+
+</body>
+</html>
