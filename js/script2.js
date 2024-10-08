@@ -13,7 +13,7 @@ const data = [
         "NAMA": "M. ALFALIH",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (088807066644)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "FAUZAN",
