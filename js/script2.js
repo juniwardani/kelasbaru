@@ -1069,9 +1069,9 @@ const data = [
     "NOINFAQ": "583"
   },
   {
-    "NAMA": "GT. DAFA",
+    "NAMA": "GT. DAFA RIZKI ADITIA",
     "PEMBIMBING AWAL": "USTADZAH ASTRID",
-    "PEMBIMBING BARU": "USTADZ SYARIF",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
     "STATUS": "JILID III",
     "NOINFAQ": "585"
   },
@@ -1221,6 +1221,12 @@ const data = [
     "PEMBIMBING BARU": "JUNI WARDANI",
     "STATUS": "JILID III",
     "NOINFAQ": "503"
+  },
+    {
+    "NAMA": "ZASKIA NATASYA",
+    "PEMBIMBING AWAL": "USTADZAH NISA",
+    "PEMBIMBING BARU": "USTADZ TAHMID",
+    "STATUS": "JILID V"
   },
   {
     "NAMA": "FATIA AULIA ANNISA",
