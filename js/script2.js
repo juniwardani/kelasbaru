@@ -19,127 +19,127 @@ const data = [
         "NAMA": "FAUZAN",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (0811507215)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "M. KHALID AZKA",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (08125101244)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "MUHAMMAL NATHAN",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (081255599595)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "RAISYA",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (085249109252)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "M. RADEYA AL FARAS",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (082331111124)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "AISYAH HUMAIRA",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (085251454310)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "KIRANA ALIFA HIBATLLAH",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (085345145942)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "ALIFA MAULIDA",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (0887435460451)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "NUR SAFANIYAH",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (085753439876)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "M. BILLY FIRDAUS",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (085753439876)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "RAQILA NUR FARZAN",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (082350970301)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "M.FATIH RISKI B",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZ THOHIR",
-        "STATUS": "JILID I (082153912107)"
+        "STATUS": "JILID I"
     }, 
 {
         "NAMA": "NIZAM SYARIF",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II(082148576595)"
+        "STATUS": "JILID II"
     }, 
 {
         "NAMA": "M. ZIKRI BAZILA",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZAH DIAH",
-        "STATUS": "JILID II(082148576595)"
+        "STATUS": "JILID II"
     }, 
 {
         "NAMA": "M. NENO HERDIANA",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZAH EVI",
-        "STATUS": "JILID II(081545428261)"
+        "STATUS": "JILID II"
     }, 
 {
         "NAMA": "M. AFKAR PRATAMA",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "USTADZAH DINDA",
-        "STATUS": "JILID II(08125183637)"
+        "STATUS": "JILID II"
     }, 
 {
         "NAMA": "RANNY",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III (085387619136)"
+        "STATUS": "JILID III"
     }, 
 {
         "NAMA": "HANIA SYAKIRA",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID III (082251917177)"
+        "STATUS": "JILID III"
     }, 
 {
         "NAMA": "SALSABILA MUHTADIN",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV (081349182724)"
+        "STATUS": "JILID IV"
     }, 
 {
         "NAMA": "PUTRI FENI",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV (085219456012)"
+        "STATUS": "JILID IV"
     }, 
 {
         "NAMA": "SITI ZAFINA WP",
         "PEMBIMBING AWAL": "SANTRI BARU",
         "PEMBIMBING BARU": "JUNI WARDANI",
-        "STATUS": "JILID IV (081347288162)"
+        "STATUS": "JILID IV"
     }, 
 
 
@@ -1124,7 +1124,7 @@ const data = [
     {
         "NAMA": "MUHAMMAD NAUFAL FAEYZA",
         "PEMBIMBING AWAL": "USTADZAH DIAH",
-        "PEMBIMBING BARU": "USTADZ JUNI",
+        "PEMBIMBING BARU": "JUNI WARDANI",
         "STATUS": "JILID III"
     },
     {
