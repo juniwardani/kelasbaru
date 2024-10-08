@@ -351,10 +351,11 @@ const data = [
     "NOINFAQ": "262"
   },
   {
-    "NAMA": "PUTRI NUR ASSIFA.",
+    "NAMA": "PUTRI NUR ASSIFA",
     "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
     "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-    "STATUS": "JILID V"
+    "STATUS": "JILID V",
+    "NOINFAQ": "203"
   },
   {
     "NAMA": "AMIRA SYIFA AZ ZAHRA",
@@ -364,16 +365,18 @@ const data = [
     "NOINFAQ": "490"
   },
   {
-    "NAMA": "MUHAMMAD ZIKRIE.  ",
+    "NAMA": "MUHAMMAD ZIKRIE",
     "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
     "PEMBIMBING BARU": "USTADZ THOHIR",
-    "STATUS": "JILID VI"
+    "STATUS": "JILID VI",
+        "NOINFAQ": "164"
   },
   {
-    "NAMA": "JAUDAH.",
+    "NAMA": "JAUDAH",
     "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
     "PEMBIMBING BARU": "USTADZ BAHAUDIN",
-    "STATUS": "JILID VI"
+    "STATUS": "JILID VI",
+    "NOINFAQ": "341"
   },
   {
     "NAMA": "KHAIRA LUBNA ALTHAFUNNISA",
@@ -383,22 +386,25 @@ const data = [
     "NOINFAQ": "324"
   },
   {
-    "NAMA": "MUHAMMAD FIKRI.  ",
+    "NAMA": "MUHAMMAD FIKRI",
     "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
     "PEMBIMBING BARU": "USTADZAH SANAH",
-    "STATUS": "JILID VI"
+    "STATUS": "JILID VI",
+    "NOINFAQ": "371"
   },
   {
-    "NAMA": "MUHAMMAD DZAKI AFFANDI.",
+    "NAMA": "MUHAMMAD DZAKI AFFANDI",
     "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
     "PEMBIMBING BARU": "USTADZAH SANAH",
-    "STATUS": "JILID VI"
+    "STATUS": "JILID VI",
+    "NOINFAQ": "171"
   },
   {
-    "NAMA": "NADINE MIKAYLA SANDRIA.  ",
+    "NAMA": "NADINE MIKAYLA SANDRIA",
     "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
     "PEMBIMBING BARU": "USTADZAH NISA",
-    "STATUS": "JILID VI"
+    "STATUS": "JILID VI",
+    "NOINFAQ": "250"
   },
   {
     "NAMA": "INDRA MAULANA",
@@ -408,7 +414,7 @@ const data = [
     "NOINFAQ": "330"
   },
   {
-    "NAMA": "MUHAMMAD AL FATIH.  ",
+    "NAMA": "MUHAMMAD AL FATIH",
     "PEMBIMBING AWAL": "USTADZ BAHAUDIN",
     "PEMBIMBING BARU": "USTADZAH NISA",
     "STATUS": "JILID VI"
@@ -653,7 +659,8 @@ const data = [
     "NAMA": "MUHAMMAD RASYID FAUZI",
     "PEMBIMBING AWAL": "USTADZ TAHMID",
     "PEMBIMBING BARU": "USTADZAH SANAH",
-    "STATUS": "JILID VI"
+    "STATUS": "JILID VI",
+        "NOINFAQ": "489"
   },
   {
     "NAMA": "NABILA AFIQOH",
@@ -790,7 +797,8 @@ const data = [
     "NAMA": "⁠AISYAH RAIHANAH",
     "PEMBIMBING AWAL": "USTADZAH SANAH",
     "PEMBIMBING BARU": "USTADZAH SANAH",
-    "STATUS": "JILID IV"
+    "STATUS": "JILID IV",
+        "NOINFAQ": "279"
   },
   {
     "NAMA": "M. ZAINI ALFAT",
@@ -999,10 +1007,11 @@ const data = [
     "NOINFAQ": "571"
   },
   {
-    "NAMA": "AHMAD AL FATIH NUR ADABI",
+    "NAMA": "AHMAD AL-FATIH NUR ADABY",
     "PEMBIMBING AWAL": "USTADZAH ASTRID",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID II"
+    "STATUS": "JILID II",
+    "NOINFAQ": "516"
   },
   {
     "NAMA": "MUHAMMAD UMAR ZAFLAN",
@@ -1088,16 +1097,18 @@ const data = [
     "NOINFAQ": "581"
   },
   {
-    "NAMA": "M. AL FATIH",
+    "NAMA": "MUH. AL FATIH",
     "PEMBIMBING AWAL": "USTADZAH ASTRID",
     "PEMBIMBING BARU": "USTADZ TAHMID",
-    "STATUS": "JILID III"
+    "STATUS": "JILID III",
+    "NOINFAQ": "587"
   },
   {
     "NAMA": "IZZFAHIM ANAQI",
     "PEMBIMBING AWAL": "USTADZAH ASTRID",
     "PEMBIMBING BARU": "USTADZ TAHMID",
-    "STATUS": "JILID III"
+    "STATUS": "JILID III",
+    "NOINFAQ": "586"
   },
   {
     "NAMA": "GUSTI KHALID RAHMAN SADI'",
@@ -1142,16 +1153,18 @@ const data = [
     "NOINFAQ": "501"
   },
   {
-    "NAMA": "ALMIRA ZHAPIRA",
+    "NAMA": "ALMIRA ZHAFIRA",
     "PEMBIMBING AWAL": "USTADZAH DIAH",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID II"
+    "STATUS": "JILID II",
+    "NOINFAQ": "531"
   },
   {
     "NAMA": "KHUMAIRA PUTRI ASY'ARI      ",
     "PEMBIMBING AWAL": "USTADZAH DIAH",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID II"
+    "STATUS": "JILID II",
+    "NOINFAQ": "519"
   },
   {
     "NAMA": "ALISHA NAILA MIZA",
@@ -1161,16 +1174,18 @@ const data = [
     "NOINFAQ": "362"
   },
   {
-    "NAMA": "M.HAFIZH FATURRAHMAN",
+    "NAMA": "M. HAFIZH FATURRAHMAN",
     "PEMBIMBING AWAL": "USTADZAH DIAH",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID II"
+    "STATUS": "JILID II",
+    "NOINFAQ": "360"
   },
   {
-    "NAMA": "RAYA NOVITASARI",
+    "NAMA": "RAYA NOVITA SARI",
     "PEMBIMBING AWAL": "USTADZAH DIAH",
     "PEMBIMBING BARU": "USTADZAH DIAH",
-    "STATUS": "JILID II"
+    "STATUS": "JILID II",
+    "NOINFAQ": "358"
   },
   {
     "NAMA": "AKIFAH NAYLA NURHIJRAH",
@@ -1295,7 +1310,8 @@ const data = [
     "NAMA": "MUHAMMAD AIDIL SYAFE'I",
     "PEMBIMBING AWAL": "USTADZAH DIAH",
     "PEMBIMBING BARU": "USTADZAH SANAH",
-    "STATUS": "JILID IV"
+    "STATUS": "JILID IV",
+    "NOINFAQ": "552"
   },
   {
     "NAMA": "RAESHA YUMNA ADZKIA",
@@ -1305,10 +1321,11 @@ const data = [
     "NOINFAQ": "303"
   },
   {
-    "NAMA": "M. ZAKY RAMADHAN",
+    "NAMA": "MUHAMMAD ZAKY RAMADHAN",
     "PEMBIMBING AWAL": "USTADZAH DINDA",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID I"
+    "STATUS": "JILID I",
+    "NOINFAQ": "498"
   },
   {
     "NAMA": "FATHIN AULIA",
@@ -1318,10 +1335,11 @@ const data = [
     "NOINFAQ": "564"
   },
   {
-    "NAMA": "M. LUTHFI SAPUTRA",
+    "NAMA": "MUHAMMAD LUTFI SAPUTRA",
     "PEMBIMBING AWAL": "USTADZAH DINDA",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID I"
+    "STATUS": "JILID I",
+    "NOINFAQ": "521"
   },
   {
     "NAMA": "ALIFIA NAVISHA",
@@ -1331,10 +1349,11 @@ const data = [
     "NOINFAQ": "559"
   },
   {
-    "NAMA": "SYARIFAH SHIDQIYA",
+    "NAMA": "SYARIFAH SHIDQIA",
     "PEMBIMBING AWAL": "USTADZAH DINDA",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID I"
+    "STATUS": "JILID I",
+    "NOINFAQ": "560"
   },
   {
     "NAMA": "M. ARKHAN R.",
@@ -1353,7 +1372,8 @@ const data = [
     "NAMA": "AFFABIAN MUSYAFA AHMAD",
     "PEMBIMBING AWAL": "USTADZAH DINDA",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID I"
+    "STATUS": "JILID I",
+    "NOINFAQ": "563"
   },
   {
     "NAMA": "AFIQAH NAILA",
@@ -1390,10 +1410,11 @@ const data = [
     "NOINFAQ": "562"
   },
   {
-    "NAMA": "M. ABYAN ARJUNA PASURA",
+    "NAMA": "M. ABYAN ARJUNA PASURA ",
     "PEMBIMBING AWAL": "USTADZAH DINDA",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID II"
+    "STATUS": "JILID II",
+        "NOINFAQ": "523"
   },
   {
     "NAMA": "ABDULLAH ARAFAT ATTA",
@@ -1410,22 +1431,25 @@ const data = [
     "NOINFAQ": "537"
   },
   {
-    "NAMA": "MUHAMMAD ALFA RIZQI  ",
+    "NAMA": "MUHAMMAD ALFARIZQI  ",
     "PEMBIMBING AWAL": "USTADZAH EVI",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID I"
+    "STATUS": "JILID I",
+    "NOINFAQ": "541"
   },
   {
     "NAMA": "⁠ARKAAN HARITH HAFI",
     "PEMBIMBING AWAL": "USTADZAH EVI",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID I"
+    "STATUS": "JILID I",
+        "NOINFAQ": "538"
   },
   {
     "NAMA": "ZAINA ALIFAH",
     "PEMBIMBING AWAL": "USTADZAH EVI",
     "PEMBIMBING BARU": "USTADZAH EVI",
-    "STATUS": "JILID I"
+    "STATUS": "JILID I",
+         "NOINFAQ": "540"
   },
   {
     "NAMA": "MUHAMMAD ALTHAF HAFIZY",
@@ -1518,10 +1542,11 @@ const data = [
         "NOINFAQ": "307"
   },
   {
-    "NAMA": "RAISA DINAR",
+    "NAMA": "NAYRA RAISA DINAR",
     "PEMBIMBING AWAL": "USTADZAH EVI",
     "PEMBIMBING BARU": "USTADZ SYARIF",
-    "STATUS": "JILID III"
+    "STATUS": "JILID III",
+          "NOINFAQ": "302"
   },
   {
     "NAMA": "AYANA MUKHBITA MARYAM",
@@ -1573,10 +1598,12 @@ const data = [
     "NOINFAQ": "306"
   },
   {
-    "NAMA": "M.HAUFANHAZZA ABQORY",
+    "NAMA": "M. HAUFAN HAZZA ABQORY",
     "PEMBIMBING AWAL": "USTADZAH EVI",
     "PEMBIMBING BARU": "USTADZAH SANAH",
-    "STATUS": "JILID IV"
+    "STATUS": "JILID IV",
+    "NOINFAQ": "536"
+
   },
   {
     "NAMA": "M. AZKA PUTRA",
@@ -1661,10 +1688,11 @@ const data = [
     "STATUS": "JILID III"
   },
   {
-    "NAMA": "AHMAD RAFFASYA",
+    "NAMA": "AHMAD RAFFASYA ALFARIZI",
     "PEMBIMBING AWAL": "USTADZAH NISA",
     "PEMBIMBING BARU": "USTADZ TAHMID",
-    "STATUS": "JILID III"
+    "STATUS": "JILID III",
+    "NOINFAQ": "500"
   },
   {
     "NAMA": "NUR AFIFAH",
@@ -1847,10 +1875,11 @@ const data = [
     "STATUS": "JILID V"
   },
   {
-    "NAMA": "M.AZKA RIDLONI.                  ",
+    "NAMA": "M.AZKA RIDLONI                ",
     "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
     "PEMBIMBING BARU": "USTADZAH SHALATIYAH",
-    "STATUS": "JILID V"
+    "STATUS": "JILID V",
+        "NOINFAQ": "461"
   },
   {
     "NAMA": "AKHMAD HABIBIE",
@@ -1863,13 +1892,15 @@ const data = [
     "NAMA": "MUHAMMAD NABIL ASY ARI",
     "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
     "PEMBIMBING BARU": "USTADZ TAHMID",
-    "STATUS": "JILID V"
+    "STATUS": "JILID V",
+    "NOINFAQ": "494"
   },
   {
     "NAMA": "HAFI AHMAD SUBAKTI",
     "PEMBIMBING AWAL": "USTADZAH SHALATIYAH",
     "PEMBIMBING BARU": "USTADZ TAHMID",
-    "STATUS": "JILID V"
+    "STATUS": "JILID V",
+        "NOINFAQ": "469"
   }
 ]
 
