@@ -825,6 +825,49 @@ tr:hover {
     flex-basis: 100%;
   }
 }
+
+/* Perbaikan untuk tampilan tabel di layar kecil */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  th, td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8px;
+  }
+
+  .sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: #fff;
+  }
+
+  .sticky-col:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 10px;
+    background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0));
+  }
+
+  /* Atur lebar kolom */
+  th:nth-child(1), td:nth-child(1) { width: 40px; }
+  th:nth-child(2), td:nth-child(2) { width: 120px; }
+  th:nth-child(n+3), td:nth-child(n+3) { width: 60px; }
+}
 </style>
 </head>
 <body>
@@ -836,12 +879,12 @@ tr:hover {
     <div class="filter-row">
       <div class="filter-column">
         <select id="pembimbingFilter" class="form-select awesome-select">
-          <option value="">Pilih Pembimbing Baru</option>
+          <option value="">Pilih Pembimbing</option>
         </select>
       </div>
       <div class="filter-column">
         <select id="statusFilter" class="form-select awesome-select" disabled>
-          <option value="">Pilih Status</option>
+          <option value="">Pilih Kelas</option>
         </select>
       </div>
     </div>
@@ -852,7 +895,7 @@ tr:hover {
       <li><a href="#" onclick="showSection('absensiHarian')">Absensi Harian</a></li>
       <li><a href="#" onclick="showSection('rekapAbsensi')">Rekap Absensi</a></li>
       <li><a href="#" onclick="showSection('monitoringOrangTua')">Monitoring Orang Tua</a></li>
-      <li><a href="#" onclick="showSection('catatanGuru')">Catatan Guru</a></li>
+      <li><a href="#" onclick="showSection('catatanGuru')">Catatan Pembimbing</a></li>
       <li><a href="#" onclick="showSection('editKehadiran')">Edit Kehadiran</a></li>
     </ul>
   </nav>
@@ -866,8 +909,8 @@ tr:hover {
       <table id="absensiTable">
         <thead>
           <tr>
-            <th>No.</th>
-            <th>Nama</th>
+            <th class="sticky-col">No.</th>
+            <th class="sticky-col">Nama</th>
             <th>Hadir</th>
             <th>Sakit</th>
             <th>Izin</th>
@@ -924,10 +967,10 @@ tr:hover {
     </section>
 
     <section id="catatanGuru" class="hidden">
-      <h2>Catatan Guru</h2>
+      <h2>Catatan Pembimbing</h2>
       <div class="form-group">
-        <label for="studentSearch">Cari Siswa:</label>
-        <input type="text" id="studentSearch" placeholder="Ketik nama siswa">
+        <label for="studentSearch">Cari Santri:</label>
+        <input type="text" id="studentSearch" placeholder="Ketik nama santri">
         <ul id="studentList" class="autocomplete-list"></ul>
       </div>
       <div class="form-group">
@@ -982,7 +1025,7 @@ tr:hover {
 
       pembimbingFilter.addEventListener('change', function() {
         statusFilter.disabled = !this.value;
-        statusFilter.innerHTML = '<option value="">Pilih Status</option>';
+        statusFilter.innerHTML = '<option value="">Pilih Kelas</option>';
         if (this.value) {
           const filteredData = data.filter(item => item['PEMBIMBING BARU'] === this.value);
           const uniqueStatuses = [...new Set(filteredData.map(item => item.STATUS))];
