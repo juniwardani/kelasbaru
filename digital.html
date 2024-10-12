@@ -1,1010 +1,635 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
-
-<style>
-/* General Styles */
-body {
-    font-family: 'Amiri', serif; /* Font islami */
-    background-color: #f8f3e6; /* Warna latar belakang krem lembut */
-    color: #3c3c3c;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-h1, h2 {
-    text-align: center;
-}
-
-.container {
-    padding: 20px;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.hidden {
-    display: none;
-}
-
-.table-responsive {
-    overflow-x: auto;
-    position: relative;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-/* Filter Dropdowns */
-.filter-container {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-.col-md-6 {
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-@media (min-width: 768px) {
-    .col-md-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    
-    .mb-md-0 {
-        margin-bottom: 0 !important;
-    }
-}
-
-.awesome-select {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid #1c4e80;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    color: #3c3c3c;
-    transition: all 0.3s ease;
-}
-
-.awesome-select:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(28, 78, 128, 0.3);
-}
-
-/* Buttons */
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
-    margin: 10px 0;
-}
-
-/* Form Groups */
-.form-group {
-    margin-bottom: 20px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    margin: 5px 0;
-}
-/* Sidebar Navigation */
-nav {
-    background-color: #800000; /* Warna merah maroon */
-    padding: 20px;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 5px 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #ffffff; /* Mengubah warna teks menjadi putih untuk kontras yang lebih baik */
-    white-space: nowrap;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .filter-container {
-        flex-direction: column;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    .attendance-info {
-        flex-direction: column;
-    }
-    
-    .attendance-item {
-        width: 100%;
-        margin: 5px 0;
-    }
-}
-
-@media (max-width: 576px) {
-    table, thead, tbody, th, td, tr {
-        display: block;
-    }
-
-    thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-
-    tr {
-        margin-bottom: 10px;
-    }
-
-    td {
-        border: none;
-        position: relative;
-        padding-left: 50%;
-        text-align: right;
-    }
-
-    td:before {
-        content: attr(data-label);
-        position: absolute;
-        left: 6px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        text-align: left;
-        font-weight: bold;
-    }
-}
-/* Section Styling */
-#monitoringOrangTua {
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-}
-
-#monitoringOrangTua h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-/* Input Field and Button */
-#monitoringOrangTua input[type="text"] {
-  padding: 10px;
-  width: 80%;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  box-sizing: border-box;
-}
-
-#monitoringOrangTua button {
-  padding: 8px;
-  font-size: 14px;
-  color: #fff;
-  background: #007bff;
-  border: 0;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#monitoringOrangTua button:hover {
-  background-color: #0056b3;
-}
-
-/* Student Info & Message */
-#studentInfo {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #e9ecef;
-  border-radius: 4px;
-  font-size: 16px;
-  color: #333;
-}
-
-#attendanceMessage {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-}
-
-#attendanceMessage h3 {
-  font-size: 18px;
-  color: #555;
-}
-
-#attendanceMessage p {
-  font-size: 16px;
-  color: #666;
-}
-
-/* Parent Note */
-#parentNote {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #fff5e6;
-  border: 1px solid #ffcc99;
-  border-radius: 4px;
-  font-size: 16px;
-  color: #663300;
-}
-
-/* Absensi Harian */
-#absensiHarian {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#absensiHarian h2 {
-    color: #007BFF;
-    margin-bottom: 20px;
-}
-
-#absensiHarian #currentDate {
-    font-weight: bold;
-    color: #333;
-}
-
-#absensiTable {
-    margin-top: 20px;
-}
-
-#absensiTable th {
-    background-color: #007BFF;
-    color: white;
-}
-
-#absensiTable td {
-    vertical-align: middle;
-}
-
-/* Rekap Absensi */
-#rekapAbsensi {
-  background-color: #f0f8ff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#rekapAbsensi h2 {
-  color: #0056b3;
-  margin-bottom: 20px;
-}
-
-#monthSelect {
-  margin-bottom: 20px;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.table-responsive {
-  overflow-x: auto;
-  max-width: 100%;
-}
-
-#rekapTable {
-  border-collapse: separate;
-  border-spacing: 0;
-  width: auto;
-  min-width: 100%;
-}
-
-#rekapTable th, #rekapTable td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  white-space: nowrap;
-}
-
-#rekapTable th {
-  background-color: #0056b3;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.sunday-header, .sunday {
-  background-color: #6d0c1b;
-}
-
-.sticky-col {
-  position: sticky;
-  left: 0;
-  background-color: #fff;
-  z-index: 20;
-}
-
-#rekapTable th.sticky-col,
-#rekapTable td.sticky-col {
-  border-right: 2px solid #ddd;
-}
-
-#rekapTable th.sticky-col {
-  z-index: 30;
-}
-
-/* Warna untuk status kehadiran */
-.hadir { background-color: #90EE90; } /* Hijau muda */
-.sakit { background-color: #ADD8E6; } /* Biru muda */
-.izin { background-color: #FFFFE0; } /* Kuning muda */
-.alpha { background-color: #FFB6C1; } /* Merah muda */
-
-/* Catatan Guru */
-#catatanGuru {
-    background-color: #fff3e0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#catatanGuru h2 {
-    color: #FF9800;
-    margin-bottom: 20px;
-}
-
-.autocomplete-list {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 0 0 5px 5px;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.autocomplete-list li {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.autocomplete-list li:hover {
-    background-color: #f1f1f1;
-}
-
-/* Edit Kehadiran */
-#editKehadiran {
-    background-color: #e3f2fd;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#editKehadiran h2 {
-    color: #2196F3;
-    margin-bottom: 20px;
-}
-
-#editDate {
-    margin-bottom: 20px;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-#editTable {
-    margin-top: 20px;
-}
-
-#editTable th {
-    background-color: #2196F3;
-    color: white;
-}
-
-/* Tombol */
-button {
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-    .attendance-info {
-        flex-direction: column;
-    }
-    
-    .attendance-item {
-        width: 100%;
-        margin: 5px 0;
-    }
-}
-
-/* Navigasi Kustom */
-.custom-nav {
-  background-color: #800000 !important; /* Merah maroon dengan !important */
-  padding: 15px 0;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.custom-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.custom-nav ul li {
-  margin: 5px 10px;
-}
-
-.custom-nav ul li a {
-  text-decoration: none;
-  color: #ffffff !important; /* Putih dengan !important */
-  font-weight: bold;
-  padding: 8px 15px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.custom-nav ul li a:hover {
-  background-color: #ffffff;
-  color: #800000 !important; /* Merah maroon saat hover dengan !important */
-}
-
-@media (max-width: 768px) {
-  .custom-nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .custom-nav ul li {
-    margin: 5px 0;
-  }
-}
-
-/* Gaya umum */
-body {
-  font-family: 'Amiri', serif; /* Font islami */
-  background-color: #f8f3e6; /* Warna latar belakang krem lembut */
-  color: #3c3c3c;
-}
-
-/* Header */
-header {
-  background-color: #930b0b; /* Warna biru tua */
-  padding: 20px 0;
-  text-align: center;
-}
-
-header h1 {
-  color: #fff;
-  font-size: 2.5em;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  margin: 0;
-}
-
-/* Filter container */
-.filter-container {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-.col-md-6 {
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-@media (min-width: 768px) {
-  .col-md-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"><style>
+  body {
+      font-family: 'Amiri', serif;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
   }
   
-  .mb-md-0 {
-    margin-bottom: 0 !important;
+  header, footer {
+      background-color: maroon;
+      color: white;
+      text-align: center;
+      padding: 1rem;
   }
-}
-
-.awesome-select {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 2px solid #1c4e80;
-  border-radius: 5px;
-  background-color: #f0f0f0;
-  color: #3c3c3c;
-  transition: all 0.3s ease;
-}
-
-.awesome-select:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(28, 78, 128, 0.3);
-}
-
-/* Tombol */
-button {
-  background-color: #1c4e80;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #153a5f;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* Tabel */
-table {
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-th {
-  background-color: #1c4e80;
-  color: #fff;
-  padding: 15px;
-}
-
-td {
-  padding: 12px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-tr:last-child td {
-  border-bottom: none;
-}
-
-/* Efek hover pada baris tabel */
-tr:hover {
-  background-color: #f5f5f5;
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-  .main-title {
-    font-size: 1.8em;
-    padding: 10px 20px;
+  
+  .filter-container {
+      padding: 1rem;
   }
-
-  .awesome-select, button {
-    width: 100%;
-    margin-bottom: 10px;
+  
+  section {
+      padding: 1rem;
+      display: none;
   }
-}
-
-.filter-container {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
-}
-
-.filter-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.filter-column {
-  flex: 1;
-}
-
-.awesome-select {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 2px solid #1c4e80;
-  border-radius: 5px;
-  background-color: #f0f0f0;
-  color: #3c3c3c;
-  transition: all 0.3s ease;
-}
-
-.awesome-select:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(28, 78, 128, 0.3);
-}
-
-@media (max-width: 768px) {
-  .filter-row {
-    flex-direction: column;
-  }
-}
-
-/* Styling untuk Monitoring Orang Tua */
-#monitoringOrangTua {
-  background-color: #f8f9fa;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  margin-top: 40px;
-}
-
-#monitoringOrangTua h2 {
-  color: #2c3e50;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-bottom: 3px solid #3498db;
-  padding-bottom: 15px;
-}
-
-#noinfaqInput {
-  width: 100%;
-  padding: 15px;
-  font-size: 1.1rem;
-  border: 2px solid #3498db;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
-}
-
-#noinfaqInput:focus {
-  outline: none;
-  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
-}
-
-#monitoringOrangTua button {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: block;
-  margin: 0 auto;
-  width: auto;
-}
-
-#monitoringOrangTua button:hover {
-  background-color: #2980b9;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(41, 128, 185, 0.4);
-}
-
-#studentInfo, #attendanceMessage, #parentNote {
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}
-
-#studentInfo h3, #attendanceMessage h3 {
-  color: #2c3e50;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  border-left: 5px solid #3498db;
-  padding-left: 15px;
-}
-
-.attendance-info {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.attendance-item {
-  flex-basis: 22%;
-  text-align: center;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.attendance-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.attendance-item .count {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #3498db;
-}
-
-.attendance-item .label {
-  font-size: 1.1rem;
-  color: #7f8c8d;
-  margin-top: 5px;
-}
-
-#messageContent {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #34495e;
-}
-
-#parentNote {
-  background-color: #ecf0f1;
-}
-
-#parentNote h3 {
-  color: #e74c3c;
-  border-left: 5px solid #e74c3c;
-}
-
-.note-card {
-  background-color: white;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 15px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.note-date {
-  font-size: 0.9rem;
-  color: #7f8c8d;
-  margin-bottom: 5px;
-}
-
-@media (max-width: 768px) {
-  .attendance-item {
-    flex-basis: 48%;
-    margin-bottom: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .attendance-item {
-    flex-basis: 100%;
-  }
-}
-
-/* Perbaikan untuk tampilan tabel di layar kecil */
-@media (max-width: 768px) {
+  
   .table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    position: relative;
+      overflow-x: auto;
+      position: relative;
   }
-
+  
   table {
-    width: 100%;
-    table-layout: fixed;
+      width: 100%;
+      border-collapse: collapse;
   }
-
+  
   th, td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 8px;
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
   }
-
+  
+  th {
+      background-color: #f2f2f2;
+  }
+  
+  #absensiTable .nama {
+      font-size: 4vw;
+  }
+  
+  
+  button {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 0.75rem;
+  }
+  
+  select, input[type="text"], input[type="date"], textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+  }
+  
+  @media (min-width: 768px) {
+      body {
+          font-size: 16px;
+      }
+  
+      #absensiTable .nama {
+          font-size: 1vw;
+      }
+  
+      button {
+          width: auto;
+      }
+  }
+  
+  @media (max-width: 767px) {
+      table {
+          font-size: 12px;
+      }
+  
+      #absensiTable .nama {
+          font-size: 3vw;
+      }
+  
+      h1 {
+          font-size: 1.5rem;
+      }
+  
+      h2 {
+          font-size: 1.2rem;
+      }
+  
+      button, select, input[type="text"], input[type="date"], textarea {
+          font-size: 0.9rem;
+      }
+  }
+  
+  /* Gaya untuk navigasi */
+  .custom-nav {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .nav-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Rata tengah secara horizontal */
+    flex-wrap: nowrap; /* Mencegah wrapping pada item menu */
+    width: 100%; /* Memastikan menu mengambil lebar penuh */
+  }
+  
+  .nav-menu li {
+    flex: 0 0 auto; /* Mencegah item menu menyusut */
+    margin: 0 5px;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background-color: #e9ecef;
+    display: inline-block;
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: center;
+  }
+  
+  .nav-menu a:hover, .nav-menu a:focus {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Gaya responsif untuk layar kecil */
+  @media (max-width: 767px) {
+    body {
+      font-size: 14px;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    h2 {
+      font-size: 1.2rem;
+    }
+    
+    .filter-container {
+      flex-direction: column;
+    }
+    
+    .filter-column {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    table {
+      font-size: 12px;
+    }
+    
+    #absensiTable .nama {
+      font-size: 3vw;
+    }
+    
+    button, select, input[type="text"], input[type="date"], textarea {
+      font-size: 14px;
+      padding: 8px;
+    }
+    
+    .custom-nav {
+      padding: 5px 0;
+    }
+    
+    .nav-menu {
+      justify-content: flex-start; /* Mengubah ke rata kiri pada layar kecil */
+    }
+    
+    .nav-menu li {
+      margin: 0 2px; /* Mengurangi margin pada layar kecil */
+    }
+    
+    .nav-menu a {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+  }
+  
+  /* Gaya untuk hari Minggu pada tabel rekap */
+  .sunday-header {
+    background-color: #963232; /* Warna latar belakang merah muda untuk header */
+  }
+  
+  .sunday {
+    background-color: #9b3838; /* Warna latar belakang merah muda untuk sel */
+  }
+  
+  /* Gaya untuk sel kehadiran */
+  .hadir {
+    background-color: #088608; /* Hijau muda */
+  }
+  .izin {
+    background-color: #e7ef07; /* Biru muda */
+  }
+  .sakit {
+    background-color: #90062a; /* Kuning muda */
+  }
+  .alpha {
+    background-color: #121285; /* Ungu muda */
+  }
+  
+  /* Tambahkan gaya berikut untuk membuat kolom nama sticky */
   .sticky-col {
     position: sticky;
     left: 0;
-    z-index: 2;
-    background-color: #fff;
+    background-color: #f8f9fa;
+    z-index: 1;
   }
-
-  .sticky-col:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 10px;
-    background: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0));
+  
+  .table-responsive {
+    overflow-x: auto;
+    position: relative;
   }
-
-  /* Atur lebar kolom */
-  th:nth-child(1), td:nth-child(1) { width: 40px; }
-  th:nth-child(2), td:nth-child(2) { width: 120px; }
-  th:nth-child(n+3), td:nth-child(n+3) { width: 60px; }
-}
-</style>
-</head>
-<body>
-  <header>
-    <h1>Rumah Tahfidz Saijaan</h1>
-  </header>
   
-  <div class="filter-container mb-3">
-    <div class="filter-row">
-      <div class="filter-column">
-        <select id="pembimbingFilter" class="form-select awesome-select">
-          <option value="">Pilih Pembimbing</option>
-        </select>
-      </div>
-      <div class="filter-column">
-        <select id="statusFilter" class="form-select awesome-select" disabled>
-          <option value="">Pilih Kelas</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <nav class="custom-nav" style="display: none;">
-    <ul>
-      <li><a href="#" onclick="showSection('absensiHarian')">Absensi Harian</a></li>
-      <li><a href="#" onclick="showSection('rekapAbsensi')">Rekap Absensi</a></li>
-      <li><a href="#" onclick="showSection('monitoringOrangTua')">Monitoring Orang Tua</a></li>
-      <li><a href="#" onclick="showSection('catatanGuru')">Catatan Pembimbing</a></li>
-      <li><a href="#" onclick="showSection('editKehadiran')">Edit Kehadiran</a></li>
-    </ul>
-  </nav>
-
+  #rekapTable {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
   
-  <div class="container">
-    <section id="absensiHarian">
-      <h2>Absensi Harian</h2>
-      <p><span id="currentDate"></span></p>
-      <div class="table-responsive">
-      <table id="absensiTable">
-        <thead>
-          <tr>
-            <th class="sticky-col">No.</th>
-            <th class="sticky-col">Nama</th>
-            <th>Hadir</th>
-            <th>Sakit</th>
-            <th>Izin</th>
-            <th>Alpha</th>
-          </tr>
-        </thead>
-        <tbody id="absensiBody"></tbody>
-      </table>
-      </div>
-      <button onclick="simpanAbsensi()">Simpan Absensi</button>
-    </section>
-
-    <section id="rekapAbsensi" class="hidden">
-      <h2>Rekap Absensi</h2>
-      <select id="monthSelect" onchange="updateRekapAbsensi()">
-        <option value="0">Januari</option>
-        <option value="1">Februari</option>
-        <option value="2">Maret</option>
-        <option value="3">April</option>
-        <option value="4">Mei</option>
-        <option value="5">Juni</option>
-        <option value="6">Juli</option>
-        <option value="7">Agustus</option>
-        <option value="8">September</option>
-        <option value="9">Oktober</option>
-        <option value="10">November</option>
-        <option value="11">Desember</option>
-      </select>
-      <div class="table-responsive">
-        <table id="rekapTable">
-          <thead id="rekapHead"></thead>
-          <tbody id="rekapBody"></tbody>
-        </table>
-      </div>
-      <button id="downloadExcelBtn" onclick="downloadExcel()">Download Excel</button>
-    </section>
-
-    <section id="monitoringOrangTua">
-      <h2>Monitoring Orang Tua</h2>
-      <div>
-        <div>
-          <div>
-            <input type="text" id="noinfaqInput" placeholder="Masukkan No. Infaq">
-            <button onclick="searchStudent()" style="width: auto; padding: 8px 40px; display: block; margin: 0 auto;">Cari</button>
-          </div>
+  #rekapTable th,
+  #rekapTable td {
+    border: 1px solid #ddd;
+  }
+  
+  #rekapTable th.sticky-col,
+  #rekapTable td.sticky-col {
+    border-right: 2px solid #ddd;
+  }
+  
+  /* Gaya umum untuk semua section */
+  section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* Gaya untuk judul section */
+  section h2 {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Gaya untuk form dan input */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="date"],
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Gaya untuk tombol */
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Gaya untuk section Monitoring Orang Tua */
+  #monitoringOrangTua {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  #monitoringOrangTua h2 {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #monitoringOrangTua input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #monitoringOrangTua button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+  }
+  
+  #monitoringOrangTua button:hover {
+    background-color: #0056b3;
+  }
+  
+  #studentInfo, #attendanceMessage, #parentNote {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  #studentInfo h3, #attendanceMessage h3 {
+    color: #007bff;
+    margin-top: 0;
+  }
+  
+  .attendance-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .attendance-item {
+    flex-basis: 48%;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .attendance-item .count {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .attendance-item .label {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .attendance-item .dates {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+  }
+  
+  #messageContent {
+    background-color: #e9ecef;
+    border-left: 4px solid #007bff;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Responsif untuk layar kecil */
+  @media (max-width: 767px) {
+    .attendance-item {
+      flex-basis: 100%;
+    }
+    
+    #monitoringOrangTua button {
+      width: 100%;
+    }
+  }
+  
+  /* Gaya untuk section Catatan Guru */
+  #catatanGuru .note-card {
+    background-color: white;
+    border-left: 4px solid #007bff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  #catatanGuru .note-date {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 5px;
+  }
+  
+  /* Gaya untuk section Edit Kehadiran */
+  #editKehadiran table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  #editKehadiran th, #editKehadiran td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #editKehadiran th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Responsif untuk layar kecil */
+  @media (max-width: 767px) {
+    section {
+      padding: 15px;
+    }
+    
+    #monitoringOrangTua .attendance-item {
+      flex-basis: 100%;
+    }
+    
+    #editKehadiran table {
+      font-size: 14px;
+    }
+  }
+  
+  /* Gaya untuk alert */
+  .alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 300px;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+  
+  .alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+  
+  .alert.show {
+    opacity: 1;
+  }
+  
+  .alert-close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  
+  .alert-close:hover {
+    opacity: 1;
+  }
+  </style></head><body>
+    <header>
+      <h1>Rumah Tahfidz Saijaan</h1>
+    </header>
+    
+    <!-- Navigasi -->
+    <nav class="custom-nav">
+      <ul class="nav-menu">
+        <li><a href="#absensiHarian" onclick="showSection('absensiHarian')">Absensi</a></li>
+        <li><a href="#rekapAbsensi" onclick="showSection('rekapAbsensi')">Rekap</a></li>
+        <li><a href="#monitoringOrangTua" onclick="showSection('monitoringOrangTua')">Monitoring</a></li>
+        <li><a href="#catatanGuru" onclick="showSection('catatanGuru')">Catatan</a></li>
+        <li><a href="#editKehadiran" onclick="showSection('editKehadiran')">Edit</a></li>
+      </ul>
+    </nav>
+    
+    <div class="filter-container mb-3">
+      <div class="filter-row">
+        <div class="filter-column">
+          <select id="pembimbingFilter" class="form-select awesome-select">
+            <option value="">Pilih Pembimbing</option>
+          </select>
+        </div>
+        <div class="filter-column">
+          <select id="statusFilter" class="form-select awesome-select" disabled>
+            <option value="">Pilih Kelas</option>
+          </select>
         </div>
       </div>
-      <div id="studentInfo"></div>
-      <div id="attendanceMessage">
-        <h3>Pemberitahuan Kehadiran</h3>
-        <p id="messageContent"></p>
-      </div>
-      <div id="parentNote"></div>
-    </section>
-
-    <section id="catatanGuru" class="hidden">
-      <h2>Catatan Pembimbing</h2>
-      <div class="form-group">
-        <label for="studentSearch">Cari Santri:</label>
-        <input type="text" id="studentSearch" placeholder="Ketik nama santri">
-        <ul id="studentList" class="autocomplete-list"></ul>
-      </div>
-      <div class="form-group">
-        <label for="noteInput">Catatan:</label>
-        <textarea id="noteInput" rows="4" cols="50"></textarea>
-      </div>
-      <button onclick="saveNote()">Simpan Catatan</button>
-      <div id="noteList"></div>
-    </section>
-
-    <section id="editKehadiran" class="hidden">
-      <h2>Edit Kehadiran</h2>
-      <div class="form-group">
-        <label for="editDate">Pilih Tanggal:</label>
-        <input type="date" id="editDate">
-      </div>
-      <button onclick="loadAttendanceForEdit()">Muat Data</button>
-      <table id="editTable" class="hidden">
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>Nama</th>
-            <th>Hadir</th>
-            <th>Sakit</th>
-            <th>Izin</th>
-            <th>Alpha</th>
-          </tr>
-        </thead>
-        <tbody id="editBody"></tbody>
-      </table>
-      <button onclick="saveEditedAttendance()" class="hidden" id="saveEditBtn">Simpan Perubahan</button>
-      <button onclick="downloadAttendanceData()" class="hidden" id="downloadDataBtn">Unduh Data Kehadiran</button>
-    </section>
-  </div>
+    </div>
+      
+    <div>
+      <section id="absensiHarian">
+        <h2>Absensi Harian</h2>
+        <p><span id="currentDate"></span></p>
+        <div class="table-responsive">
+          <table id="absensiTable" class="table table-bordered">
+            <thead>
+              <tr>
+                <th style="position: sticky; left: 0; background-color: #f8f9fa; z-index: 1;">No.</th>
+                <th style="position: sticky; left: 40px; background-color: #f8f9fa; z-index: 1;">Nama</th>
+                <th>Hadir</th>
+                <th>Sakit</th>
+                <th>Izin</th>
+                <th>Alpha</th>
+              </tr>
+            </thead>
+            <tbody id="absensiBody"></tbody>
+          </table>
+        </div>
+        <button onclick="simpanAbsensi()" class="btn btn-primary mt-3">Simpan Absensi</button>
+      </section>
+    </div>
+  
+      <section id="rekapAbsensi" class="hidden">
+        <h2>Rekap Absensi</h2>
+        <select id="monthSelect" onchange="updateRekapAbsensi()">
+          <option value="0">Januari</option>
+          <option value="1">Februari</option>
+          <option value="2">Maret</option>
+          <option value="3">April</option>
+          <option value="4">Mei</option>
+          <option value="5">Juni</option>
+          <option value="6">Juli</option>
+          <option value="7">Agustus</option>
+          <option value="8">September</option>
+          <option value="9">Oktober</option>
+          <option value="10">November</option>
+          <option value="11">Desember</option>
+        </select>
+        <div class="table-responsive">
+          <table id="rekapTable">
+            <thead id="rekapHead"></thead>
+            <tbody id="rekapBody"></tbody>
+          </table>
+        </div>
+        <button id="downloadExcelBtn" onclick="downloadExcel()">Download Excel</button>
+      </section>
+  
+      <section id="monitoringOrangTua">
+        <h2>Monitoring Orang Tua</h2>
+        <div>
+          <div>
+            <div>
+              <input type="text" id="noinfaqInput" placeholder="Masukkan No. Infaq">
+              <button onclick="searchStudent()" style="width: 100%; padding: 8px 40px; display: block; margin: 1rem 0;">Cari</button>
+            </div>
+          </div>
+        </div>
+        <div id="studentInfo"></div>
+        <div id="attendanceMessage">
+          <h3>Pemberitahuan Kehadiran</h3>
+          <p id="messageContent"></p>
+        </div>
+        <div id="parentNote"></div>
+      </section>
+  
+      <section id="catatanGuru" class="hidden">
+        <h2>Catatan Pembimbing</h2>
+        <div class="form-group">
+          <label for="studentSearch">Cari Santri:</label>
+          <input type="text" id="studentSearch" placeholder="Ketik nama santri">
+          <ul id="studentList" class="autocomplete-list"></ul>
+        </div>
+        <div class="form-group">
+          <label for="noteInput">Catatan:</label>
+          <textarea id="noteInput" rows="4"></textarea>
+        </div>
+        <button onclick="saveNote()">Simpan Catatan</button>
+        <div id="noteList"></div>
+      </section>
+  
+      <section id="editKehadiran" class="hidden">
+        <h2>Edit Kehadiran</h2>
+        <div class="form-group">
+          <label for="editDate">Pilih Tanggal:</label>
+          <input type="date" id="editDate">
+        </div>
+        <button onclick="loadAttendanceForEdit()">Muat Data</button>
+        <div class="table-responsive">
+          <table id="editTable" class="hidden">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Nama</th>
+                <th>Hadir</th>
+                <th>Sakit</th>
+                <th>Izin</th>
+                <th>Alpha</th>
+              </tr>
+            </thead>
+            <tbody id="editBody"></tbody>
+          </table>
+        </div>
+        <button onclick="saveEditedAttendance()" class="hidden" id="saveEditBtn">Simpan Perubahan</button>
+        <button onclick="downloadAttendanceData()" class="hidden" id="downloadDataBtn">Unduh Data Kehadiran</button>
+      </section>
+    </div>
 <script src="js/script2.js"></script>
   <script>
 
@@ -1036,11 +661,11 @@ tr:hover {
             statusFilter.appendChild(option);
           });
         }
+        showSection('absensiHarian');
       });
 
       statusFilter.addEventListener('change', function() {
         if (this.value) {
-          document.querySelector('nav').style.display = 'block';
           showSection('absensiHarian');
         }
       });
@@ -1048,9 +673,12 @@ tr:hover {
 
     function showSection(sectionId) {
       document.querySelectorAll('section').forEach(section => {
-        section.classList.add('hidden');
+        if (section.id === sectionId) {
+          section.style.display = 'block';
+        } else {
+          section.style.display = 'none';
+        }
       });
-      document.getElementById(sectionId).classList.remove('hidden');
       if (sectionId === 'absensiHarian') {
         initializeAbsensiHarian();
       } else if (sectionId === 'rekapAbsensi') {
@@ -1061,6 +689,7 @@ tr:hover {
     }
 
     function initializeAbsensiHarian() {
+      console.log('Initializing Absensi Harian');
       const currentDate = new Date();
       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
       const formattedDate = currentDate.toLocaleDateString('id-ID', options);
@@ -1071,6 +700,8 @@ tr:hover {
       const pembimbing = document.getElementById('pembimbingFilter').value;
       const status = document.getElementById('statusFilter').value;
       const filteredData = data.filter(item => item['PEMBIMBING BARU'] === pembimbing && item.STATUS === status);
+      
+      console.log('Filtered data:', filteredData);
       
       filteredData.forEach((student, index) => {
         const row = document.createElement('tr');
@@ -1114,13 +745,13 @@ tr:hover {
       
       db.collection('dailyAttendance').doc(currentDate).set(absensiData)
         .then(() => {
-          alert('Absensi berhasil disimpan!');
+          showAlert('Absensi berhasil disimpan!', 'success');
           dailyAttendance[currentDate] = absensiData; // Perbarui data lokal
           updateRekapAbsensi(); // Perbarui tampilan
         })
         .catch((error) => {
           console.error("Error writing document: ", error);
-          alert('Terjadi kesalahan saat menyimpan absensi.');
+          showAlert('Terjadi kesalahan saat menyimpan absensi.', 'error');
         });
     }
 
@@ -1358,7 +989,7 @@ tr:hover {
       const studentName = document.getElementById('studentSearch').value;
       const student = data.find(s => s.NAMA === studentName);
       if (!student) {
-        alert('Silakan pilih siswa terlebih dahulu.');
+        showAlert('Silakan pilih siswa terlebih dahulu.', 'error');
         return;
       }
 
@@ -1377,11 +1008,11 @@ tr:hover {
           studentNotes[student.NOINFAQ].push(noteData);
           document.getElementById('noteInput').value = '';
           updateNoteList(student.NOINFAQ);
-          alert('Catatan berhasil disimpan!');
+          showAlert('Catatan berhasil disimpan!', 'success');
         })
         .catch((error) => {
           console.error("Error saving note: ", error);
-          alert('Terjadi kesalahan saat menyimpan catatan.');
+          showAlert('Terjadi kesalahan saat menyimpan catatan.', 'error');
         });
     }
 
@@ -1455,13 +1086,13 @@ tr:hover {
       
       db.collection('dailyAttendance').doc(editDate).set(editedData)
         .then(() => {
-          alert('Perubahan absensi berhasil disimpan!');
+          showAlert('Perubahan absensi berhasil disimpan!', 'success');
           dailyAttendance[editDate] = editedData; // Perbarui data lokal
           updateRekapAbsensi(); // Perbarui tampilan
         })
         .catch((error) => {
           console.error("Error updating document: ", error);
-          alert('Terjadi kesalahan saat menyimpan perubahan absensi.');
+          showAlert('Terjadi kesalahan saat menyimpan perubahan absensi.', 'error');
         });
     }
 
@@ -1489,19 +1120,20 @@ tr:hover {
         })
         .catch((error) => {
           console.error("Error downloading attendance data: ", error);
-          alert("Terjadi kesalahan saat mengunduh data kehadiran.");
+          showAlert("Terjadi kesalahan saat mengunduh data kehadiran.", 'error');
         });
     }
 
     // Fungsi untuk memuat data kehadiran dari Firestore
     function loadAttendanceData() {
+      console.log('Loading attendance data');
       db.collection('dailyAttendance').get()
         .then((querySnapshot) => {
           dailyAttendance = {};
           querySnapshot.forEach((doc) => {
             dailyAttendance[doc.id] = doc.data();
           });
-          console.log('Data kehadiran berhasil dimuat');
+          console.log('Attendance data loaded successfully');
           updateRekapAbsensi(); // Memperbarui tampilan setelah data dimuat
         })
         .catch((error) => {
@@ -1510,11 +1142,52 @@ tr:hover {
     }
 
     // Panggil fungsi loadAttendanceData saat halaman dimuat
-    document.addEventListener('DOMContentLoaded', loadAttendanceData);
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeFilters();
+      loadAttendanceData();
+    });
 
-    // Initialize the page
-    initializeFilters();
-    showSection('absensiHarian');
+    // Fungsi untuk mengatur bulan default
+    function setDefaultMonth() {
+      const currentMonth = new Date().getMonth();
+      document.getElementById('monthSelect').value = currentMonth;
+      updateRekapAbsensi();
+    }
+
+    // Panggil fungsi setDefaultMonth saat halaman dimuat
+    window.onload = function() {
+      setDefaultMonth();
+      // ... kode lainnya yang perlu dijalankan saat halaman dimuat ...
+    };
+
+    function showAlert(message, type = 'success') {
+      const alertDiv = document.createElement('div');
+      alertDiv.className = `alert alert-${type}`;
+      alertDiv.innerHTML = `
+        ${message}
+        <span class="alert-close">&times;</span>
+      `;
+      document.body.appendChild(alertDiv);
+
+      setTimeout(() => {
+        alertDiv.classList.add('show');
+      }, 10);
+
+      const closeButton = alertDiv.querySelector('.alert-close');
+      closeButton.addEventListener('click', () => {
+        alertDiv.classList.remove('show');
+        setTimeout(() => {
+          alertDiv.remove();
+        }, 300);
+      });
+
+      setTimeout(() => {
+        alertDiv.classList.remove('show');
+        setTimeout(() => {
+          alertDiv.remove();
+        }, 300);
+      }, 5000);
+    }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1535,20 +1208,7 @@ tr:hover {
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
   </script>
-
-  <script>
-    // Fungsi untuk mengatur bulan default
-    function setDefaultMonth() {
-      const currentMonth = new Date().getMonth();
-      document.getElementById('monthSelect').value = currentMonth;
-      updateRekapAbsensi();
-    }
-
-    // Panggil fungsi setDefaultMonth saat halaman dimuat
-    window.onload = function() {
-      setDefaultMonth();
-      // ... kode lainnya yang perlu dijalankan saat halaman dimuat ...
-    };
-  </script>
-</body>
-</html>
+  <footer>
+    <p>&copy; 2023 Rumah Tahfidz Saijaan. All rights reserved.</p>
+  </footer>
+</body></html>
