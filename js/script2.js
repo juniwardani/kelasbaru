@@ -1918,7 +1918,7 @@ const data = [
     "STATUS": "JILID II"
   },
   {
-    "NAMA": "RANNY",
+    "NAMA": "VANNY NOOR AZ ZAHRA",
     "PEMBIMBING AWAL": "SANTRI BARU",
     "PEMBIMBING BARU": "JUNI WARDANI",
     "STATUS": "JILID III"
