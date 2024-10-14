@@ -1,1214 +1,793 @@
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"><style>
+<html><head><title>Sistem Absensi Digital</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
   body {
-      font-family: 'Amiri', serif;
-      margin: 0;
-      padding: 0;
-      font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
   }
-  
-  header, footer {
-      background-color: maroon;
-      color: white;
-      text-align: center;
-      padding: 1rem;
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
   }
-  
-  .filter-container {
-      padding: 1rem;
+  header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
   }
-  
-  section {
-      padding: 1rem;
-      display: none;
+  h1 {
+    margin: 0;
+    font-size: 2em;
   }
-  
-  .table-responsive {
-      overflow-x: auto;
-      position: relative;
+  .date-display {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: bold;
   }
-  
   table {
-      width: 100%;
-      border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
-  
   th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
   }
-  
   th {
-      background-color: #f2f2f2;
+    background-color: #800000;
+    color: white;
   }
-  
-  #absensiTable .nama {
-      font-size: 4vw;
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
   }
-  
-  
-  button {
-      margin-top: 1rem;
-      width: 100%;
-      padding: 0.75rem;
+  .status-select, .filter-select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
   }
-  
-  select, input[type="text"], input[type="date"], textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
   }
-  
-  @media (min-width: 768px) {
-      body {
-          font-size: 16px;
-      }
-  
-      #absensiTable .nama {
-          font-size: 1vw;
-      }
-  
-      button {
-          width: auto;
-      }
+  .btn:active {
+    transform: translateY(2px);
   }
-  
-  @media (max-width: 767px) {
-      table {
-          font-size: 12px;
-      }
-  
-      #absensiTable .nama {
-          font-size: 3vw;
-      }
-  
-      h1 {
-          font-size: 1.5rem;
-      }
-  
-      h2 {
-          font-size: 1.2rem;
-      }
-  
-      button, select, input[type="text"], input[type="date"], textarea {
-          font-size: 0.9rem;
-      }
+  .submit-btn {
+    background-color: #27ae60;
+    color: white;
+    margin-right: 10px;
   }
-  
-  /* Gaya untuk navigasi */
-  .custom-nav {
-    background-color: #f8f9fa;
+  .submit-btn:hover {
+    background-color: #2ecc71;
+  }
+  .recap-btn {
+    background-color: #3498db;
+    color: white;
+  }
+  .recap-btn:hover {
+    background-color: #2980b9;
+  }
+  .download-btn {
+    background-color: #3498db;
+    color: white;
+  }
+  .download-btn:hover {
+    background-color: #2980b9;
+  }
+  .button-group {
+    text-align: center;
+    margin-top: 20px;
+  }
+  nav {
+    background-color: #34495e;
     padding: 10px 0;
-    overflow-x: auto;
-    white-space: nowrap;
   }
-  
-  .nav-menu {
+  nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center; /* Rata tengah secara horizontal */
-    flex-wrap: nowrap; /* Mencegah wrapping pada item menu */
-    width: 100%; /* Memastikan menu mengambil lebar penuh */
-  }
-  
-  .nav-menu li {
-    flex: 0 0 auto; /* Mencegah item menu menyusut */
-    margin: 0 5px;
-  }
-  
-  .nav-menu a {
-    text-decoration: none;
-    color: #333;
-    padding: 8px 12px;
-    border-radius: 20px;
-    background-color: #e9ecef;
-    display: inline-block;
-    font-size: 14px;
-    white-space: nowrap;
     text-align: center;
   }
-  
-  .nav-menu a:hover, .nav-menu a:focus {
-    background-color: #007bff;
+  nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+  }
+  section {
+    display: none;
+  }
+  section.active {
+    display: block;
+  }
+  .edit-btn {
+    background-color: #f39c12;
     color: white;
   }
-  
-  /* Gaya responsif untuk layar kecil */
-  @media (max-width: 767px) {
-    body {
-      font-size: 14px;
-    }
-    
-    h1 {
-      font-size: 1.5rem;
-    }
-    
-    h2 {
-      font-size: 1.2rem;
-    }
-    
-    .filter-container {
-      flex-direction: column;
-    }
-    
-    .filter-column {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-    
-    table {
-      font-size: 12px;
-    }
-    
-    #absensiTable .nama {
-      font-size: 3vw;
-    }
-    
-    button, select, input[type="text"], input[type="date"], textarea {
-      font-size: 14px;
-      padding: 8px;
-    }
-    
-    .custom-nav {
-      padding: 5px 0;
-    }
-    
-    .nav-menu {
-      justify-content: flex-start; /* Mengubah ke rata kiri pada layar kecil */
-    }
-    
-    .nav-menu li {
-      margin: 0 2px; /* Mengurangi margin pada layar kecil */
-    }
-    
-    .nav-menu a {
-      padding: 6px 10px;
-      font-size: 12px;
-    }
+  .edit-btn:hover {
+    background-color: #e67e22;
   }
-  
-  /* Gaya untuk hari Minggu pada tabel rekap */
-  .sunday-header {
-    background-color: #963232; /* Warna latar belakang merah muda untuk header */
+  .filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
   }
-  
-  .sunday {
-    background-color: #9b3838; /* Warna latar belakang merah muda untuk sel */
+  .filter-select {
+    width: 48%;
   }
-  
-  /* Gaya untuk sel kehadiran */
-  .hadir {
-    background-color: #088608; /* Hijau muda */
+  #rekap-absen h2 {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    margin: 0 0 20px 0;
+    text-align: center;
   }
-  .izin {
-    background-color: #e7ef07; /* Biru muda */
+  .rekap-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
   }
-  .sakit {
-    background-color: #90062a; /* Kuning muda */
+  #monthSelector {
+    padding: 8px;
+    font-size: 16px;
   }
-  .alpha {
-    background-color: #121285; /* Ungu muda */
-  }
-  
-  /* Tambahkan gaya berikut untuk membuat kolom nama sticky */
-  .sticky-col {
-    position: sticky;
-    left: 0;
-    background-color: #f8f9fa;
-    z-index: 1;
-  }
-  
-  .table-responsive {
+  .table-container {
     overflow-x: auto;
+    max-height: 70vh;
     position: relative;
   }
-  
   #rekapTable {
     border-collapse: separate;
     border-spacing: 0;
   }
-  
-  #rekapTable th,
-  #rekapTable td {
-    border: 1px solid #ddd;
-  }
-  
-  #rekapTable th.sticky-col,
-  #rekapTable td.sticky-col {
-    border-right: 2px solid #ddd;
-  }
-  
-  /* Gaya umum untuk semua section */
-  section {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-  }
-  
-  /* Gaya untuk judul section */
-  section h2 {
-    color: #333;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-  }
-  
-  /* Gaya untuk form dan input */
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="date"],
-  .form-group textarea,
-  .form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  /* Gaya untuk tombol */
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Gaya untuk section Monitoring Orang Tua */
-  #monitoringOrangTua {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  #monitoringOrangTua h2 {
-    color: #333;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-  }
-  
-  #monitoringOrangTua input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  #monitoringOrangTua button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 16px;
-  }
-  
-  #monitoringOrangTua button:hover {
-    background-color: #0056b3;
-  }
-  
-  #studentInfo, #attendanceMessage, #parentNote {
-    background-color: white;
-    border-radius: 8px;
-    padding: 15px;
-    margin-top: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  }
-  
-  #studentInfo h3, #attendanceMessage h3 {
-    color: #007bff;
-    margin-top: 0;
-  }
-  
-  .attendance-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 15px;
-  }
-  
-  .attendance-item {
-    flex-basis: 48%;
-    text-align: center;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .attendance-item .count {
-    font-size: 24px;
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  .attendance-item .label {
-    font-size: 14px;
-    color: #666;
-  }
-  
-  .attendance-item .dates {
-    font-size: 12px;
-    color: #888;
-    margin-top: 5px;
-  }
-  
-  #messageContent {
-    background-color: #e9ecef;
-    border-left: 4px solid #007bff;
-    padding: 10px;
-    margin-top: 10px;
-  }
-  
-  /* Responsif untuk layar kecil */
-  @media (max-width: 767px) {
-    .attendance-item {
-      flex-basis: 100%;
-    }
-    
-    #monitoringOrangTua button {
-      width: 100%;
-    }
-  }
-  
-  /* Gaya untuk section Catatan Guru */
-  #catatanGuru .note-card {
-    background-color: white;
-    border-left: 4px solid #007bff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 0 5px 5px 0;
-  }
-  
-  #catatanGuru .note-date {
-    font-size: 12px;
-    color: #777;
-    margin-bottom: 5px;
-  }
-  
-  /* Gaya untuk section Edit Kehadiran */
-  #editKehadiran table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-  }
-  
-  #editKehadiran th, #editKehadiran td {
+  #rekapTable th, #rekapTable td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
+    min-width: 40px;
   }
-  
-  #editKehadiran th {
-    background-color: #f2f2f2;
+  #rekapTable th {
+    background-color: #800000;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
-  
-  /* Responsif untuk layar kecil */
-  @media (max-width: 767px) {
-    section {
-      padding: 15px;
-    }
-    
-    #monitoringOrangTua .attendance-item {
-      flex-basis: 100%;
-    }
-    
-    #editKehadiran table {
-      font-size: 14px;
-    }
+  #rekapTable .name-column {
+    position: sticky;
+    left: 0;
+    background-color: #2c3e50;
+    z-index: 5;
+    color: white;
+    text-align: center;
   }
-  
-  /* Gaya untuk alert */
-  .alert {
+  #rekapTable th.name-column {
+    z-index: 15;
+  }
+
+
+
+  #input-absen h2 {
+    background-color: #2c3e50;
+    color: white;
     padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    max-width: 300px;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    margin: 0 0 20px 0;
+    text-align: center;
   }
-  
+
+
+  #edit-kehadiran h2 {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
+
+  #editDateSelector {
+    padding: 8px;
+    font-size: 16px;
+  }
+  .status-cell {
+  width: 40px; /* Ubah ukuran sesuai kebutuhan */
+  height: 40px; /* Ubah ukuran sesuai kebutuhan */
+  display: inline-block;
+  /* Hapus border-radius untuk menghilangkan efek bulat */
+  color: white;
+  text-align: center;
+  line-height: 40px; /* Sesuaikan dengan tinggi agar teks berada di tengah */
+  font-weight: bold;
+}
+
+  .status-cell.hadir { background-color: #2ecc71; }
+  .status-cell.izin { background-color: #f1c40f; }
+  .status-cell.sakit { background-color: #3498db; }
+  .status-cell.alpha { background-color: #e74c3c; }
+  .sunday { background-color: #ffcccc; }
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+  }
+  .color-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  @media (max-width: 768px) {
+    .rekap-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .rekap-controls > * {
+      margin-bottom: 10px;
+    }
+  }
   .alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #dff0d8;
+  color: #3c763d;
+  font-weight: bold;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+<script>
+  // Fungsi untuk mendapatkan tanggal Indonesia saat ini
+  function getCurrentIndonesiaDate() {
+    const jakartaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Jakarta"});
+    return new Date(jakartaTime);
   }
-  
-  .alert-error {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
+
+  // Fungsi untuk memformat tanggal menjadi YYYY-MM-DD
+  function formatDateYYYYMMDD(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
   }
-  
-  .alert.show {
-    opacity: 1;
+
+  // Fungsi untuk memformat tanggal Indonesia
+  function formatDateIndonesia(date) {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('id-ID', options);
   }
-  
-  .alert-close {
-    float: right;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 18px;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    opacity: 0.5;
-    cursor: pointer;
+
+  // Ubah fungsi ini
+  function updateCurrentDate() {
+    const currentDate = getCurrentIndonesiaDate();
+    document.querySelectorAll('.date-display').forEach(el => {
+      el.textContent = formatDateIndonesia(currentDate);
+    });
   }
-  
-  .alert-close:hover {
-    opacity: 1;
-  }
-  </style></head><body>
-    <header>
-      <h1>Rumah Tahfidz Saijaan</h1>
-    </header>
+
+  // Ubah fungsi ini
+  function submitAttendance() {
+    const filteredStudents = getFilteredStudents();
+    const currentDate = getCurrentIndonesiaDate();
+    const date = formatDateYYYYMMDD(currentDate);
     
-    <!-- Navigasi -->
-    <nav class="custom-nav">
-      <ul class="nav-menu">
-        <li><a href="#absensiHarian" onclick="showSection('absensiHarian')">Absensi</a></li>
-        <li><a href="#rekapAbsensi" onclick="showSection('rekapAbsensi')">Rekap</a></li>
-        <li><a href="#monitoringOrangTua" onclick="showSection('monitoringOrangTua')">Monitoring</a></li>
-        <li><a href="#catatanGuru" onclick="showSection('catatanGuru')">Catatan</a></li>
-        <li><a href="#editKehadiran" onclick="showSection('editKehadiran')">Edit</a></li>
-      </ul>
-    </nav>
+    console.log("Menyimpan absensi untuk tanggal:", date);
     
-    <div class="filter-container mb-3">
-      <div class="filter-row">
-        <div class="filter-column">
-          <select id="pembimbingFilter" class="form-select awesome-select">
-            <option value="">Pilih Pembimbing</option>
+    let successCount = 0;
+    
+    filteredStudents.forEach(student => {
+      const statusElement = document.getElementById(`status-${student.id}`);
+      if (statusElement && student.id && statusElement.value !== "") {
+        const attendanceRecord = {
+          date: date,
+          nama: student.NAMA,
+          status: statusElement.value
+        };
+        
+        const localStorageKey = `attendance_${date}_${student.id}`;
+        localStorage.setItem(localStorageKey, JSON.stringify(attendanceRecord));
+        successCount++;
+      }
+    });
+
+    alert(`Absensi berhasil disimpan untuk ${successCount} siswa pada tanggal ${formatDateIndonesia(currentDate)}!`);
+    
+    updateRekapTable(getFilteredStudents());
+    showSection('rekap-absen');
+  }
+
+  // Ubah fungsi ini
+  function updateRekapTable(filteredStudents) {
+    const rekapList = document.getElementById('rekapList');
+    rekapList.innerHTML = '';
+    const month = parseInt(document.getElementById('monthSelector').value);
+    const year = getCurrentIndonesiaDate().getFullYear();
+    const daysInMonth = new Date(year, month, 0).getDate();
+
+    const headerRow = document.getElementById('rekapHeader');
+    headerRow.innerHTML = '<th class="name-column">No.</th><th class="name-column">Nama Siswa</th>';
+    for (let i = 1; i <= daysInMonth; i++) {
+      const th = document.createElement('th');
+      const date = new Date(year, month - 1, i);
+      th.textContent = i;
+      if (date.getDay() === 0) { // Sunday
+        th.classList.add('sunday');
+      }
+      headerRow.appendChild(th);
+    }
+
+    filteredStudents.forEach((student, index) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `<td class="name-column">${index + 1}</td><td class="name-column">${student.NAMA}</td>`;
+
+      for (let i = 1; i <= daysInMonth; i++) {
+        const td = document.createElement('td');
+        const date = new Date(year, month - 1, i);
+        const dateString = formatDateYYYYMMDD(date);
+        
+        if (date.getDay() === 0) { // Minggu
+          td.classList.add('sunday');
+        }
+        
+        if (student.id) {
+          const cacheKey = `attendance_${dateString}_${student.id}`;
+          const attendance = JSON.parse(localStorage.getItem(cacheKey));
+          if (attendance) {
+            updateCell(td, attendance);
+          } else {
+            td.innerHTML = '-';
+          }
+        } else {
+          td.innerHTML = '-';
+        }
+        
+        row.appendChild(td);
+      }
+
+      rekapList.appendChild(row);
+    });
+
+    populateEditKehadiran(filteredStudents);
+  }
+
+  // Panggil fungsi untuk memperbarui tanggal
+  updateCurrentDate();
+
+  // Tambahkan variabel untuk menyimpan cache
+  let attendanceCache = {};
+
+  function updateCell(td, attendance) {
+    const statusText = {
+      'hadir': 'H',
+      'izin': 'I',
+      'sakit': 'S',
+      'alpha': 'A'
+    }[attendance.status];
+    td.innerHTML = `<span class="status-cell ${attendance.status}">${statusText}</span>`;
+  }
+
+  function saveEditedAttendance() {
+    const selectedDate = document.getElementById('editDateSelector').value;
+    const filteredStudents = getFilteredStudents();
+
+    if (!selectedDate) {
+      alert('Silakan pilih tanggal terlebih dahulu.');
+      return;
+    }
+
+    let successCount = 0;
+
+    filteredStudents.forEach(student => {
+      const statusElement = document.getElementById(`edit-status-${student.id}`);
+      if (statusElement && statusElement.value !== "") {
+        const attendanceRecord = {
+          date: selectedDate,
+          nama: student.NAMA,
+          status: statusElement.value
+        };
+        
+        const localStorageKey = `attendance_${selectedDate}_${student.id}`;
+        localStorage.setItem(localStorageKey, JSON.stringify(attendanceRecord));
+        successCount++;
+      } else {
+        // Hapus data jika status kosong
+        const localStorageKey = `attendance_${selectedDate}_${student.id}`;
+        localStorage.removeItem(localStorageKey);
+      }
+    });
+
+    alert(`Perubahan absensi berhasil disimpan untuk ${successCount} siswa!`);
+    updateRekapTable(filteredStudents);
+    showSection('rekap-absen');
+  }
+
+  function populateEditKehadiran(filteredStudents) {
+    const editList = document.getElementById('editList');
+    editList.innerHTML = '';
+    const selectedDate = document.getElementById('editDateSelector').value;
+
+    filteredStudents.forEach((student, index) => {
+      const localStorageKey = `attendance_${selectedDate}_${student.id}`;
+      const attendance = JSON.parse(localStorage.getItem(localStorageKey));
+      
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${student.NAMA}</td>
+        <td>
+          <select class="status-select" id="edit-status-${student.id}">
+            <option value="">Pilih status</option>
+            <option value="hadir" ${attendance && attendance.status === 'hadir' ? 'selected' : ''}>Hadir</option>
+            <option value="izin" ${attendance && attendance.status === 'izin' ? 'selected' : ''}>Izin</option>
+            <option value="sakit" ${attendance && attendance.status === 'sakit' ? 'selected' : ''}>Sakit</option>
+            <option value="alpha" ${attendance && attendance.status === 'alpha' ? 'selected' : ''}>Alpha</option>
           </select>
-        </div>
-        <div class="filter-column">
-          <select id="statusFilter" class="form-select awesome-select" disabled>
-            <option value="">Pilih Kelas</option>
-          </select>
-        </div>
+        </td>
+      `;
+      editList.appendChild(row);
+    });
+  }
+
+  // Ganti fungsi ini
+  function validateEditDate() {
+    const selectedDate = document.getElementById('editDateSelector').value;
+    const today = formatDateYYYYMMDD(getCurrentIndonesiaDate());
+    
+    if (selectedDate > today) {
+      alert('Tidak dapat mengedit absensi untuk tanggal di masa depan.');
+      document.getElementById('editDateSelector').value = today;
+    }
+  }
+
+  // Tambahkan ini di akhir script atau di dalam event listener DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', (event) => {
+    filterStudents();
+    loadLastViewedSection();
+    
+    // Set nilai default untuk editDateSelector
+    document.getElementById('editDateSelector').value = formatDateYYYYMMDD(getCurrentIndonesiaDate());
+  });
+</script>
+</head>
+<body>
+  <header>
+    <h1>Sistem Absensi Digital</h1>
+  </header>
+  
+  <div class="container">
+    <div class="filter-container">
+      <select class="filter-select" id="pembimbingFilter" onchange="updateStatusFilter(); filterStudents()">
+        <option value="">Pilih Pembimbing</option>
+        <!-- Pembimbing options will be dynamically added here -->
+      </select>
+      <select class="filter-select" id="kelasFilter" onchange="filterStudents()">
+        <option value="">Pilih Kelas</option>
+        <!-- Kelas options will be dynamically added here -->
+      </select>
+    </div>
+  </div>
+  
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showSection('input-absen')">Input Absen</a></li>
+      <li><a href="#" onclick="showSection('rekap-absen')">Rekap Absen</a></li>
+      <li><a href="#" onclick="showSection('edit-kehadiran')">Edit Kehadiran</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section id="input-absen" class="active">
+      <h2>Absensi Harian</h2>
+      <div class="date-display" id="currentDate"></div>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Nama Siswa</th>
+            <th>Kehadiran</th>
+          </tr>
+        </thead>
+        <tbody id="studentList">
+          <!-- Student rows will be dynamically added here -->
+        </tbody>
+      </table>
+      
+      <div class="button-group">
+        <button class="btn submit-btn" onclick="submitAttendance()">Simpan Absensi</button>
       </div>
-    </div>
+    </section>
+
+    <section id="rekap-absen">
+      <h2>Rekap Absensi Siswa</h2>
       
-    <div>
-      <section id="absensiHarian">
-        <h2>Absensi Harian</h2>
-        <p><span id="currentDate"></span></p>
-        <div class="table-responsive">
-          <table id="absensiTable" class="table table-bordered">
-            <thead>
-              <tr>
-                <th style="position: sticky; left: 0; background-color: #f8f9fa; z-index: 1;">No.</th>
-                <th style="position: sticky; left: 40px; background-color: #f8f9fa; z-index: 1;">Nama</th>
-                <th>Hadir</th>
-                <th>Sakit</th>
-                <th>Izin</th>
-                <th>Alpha</th>
-              </tr>
-            </thead>
-            <tbody id="absensiBody"></tbody>
-          </table>
-        </div>
-        <button onclick="simpanAbsensi()" class="btn btn-primary mt-3">Simpan Absensi</button>
-      </section>
-    </div>
-  
-      <section id="rekapAbsensi" class="hidden">
-        <h2>Rekap Absensi</h2>
-        <select id="monthSelect" onchange="updateRekapAbsensi()">
-          <option value="0">Januari</option>
-          <option value="1">Februari</option>
-          <option value="2">Maret</option>
-          <option value="3">April</option>
-          <option value="4">Mei</option>
-          <option value="5">Juni</option>
-          <option value="6">Juli</option>
-          <option value="7">Agustus</option>
-          <option value="8">September</option>
-          <option value="9">Oktober</option>
-          <option value="10">November</option>
-          <option value="11">Desember</option>
+      <div class="rekap-controls">
+        <select id="monthSelector">
+          <option value="1">Januari</option>
+          <option value="2">Februari</option>
+          <option value="3">Maret</option>
+          <option value="4">April</option>
+          <option value="5">Mei</option>
+          <option value="6">Juni</option>
+          <option value="7">Juli</option>
+          <option value="8">Agustus</option>
+          <option value="9">September</option>
+          <option value="10">Oktober</option>
+          <option value="11">November</option>
+          <option value="12">Desember</option>
         </select>
-        <div class="table-responsive">
-          <table id="rekapTable">
-            <thead id="rekapHead"></thead>
-            <tbody id="rekapBody"></tbody>
-          </table>
-        </div>
-        <button id="downloadExcelBtn" onclick="downloadExcel()">Download Excel</button>
-      </section>
-  
-      <section id="monitoringOrangTua">
-        <h2>Monitoring Orang Tua</h2>
-        <div>
-          <div>
-            <div>
-              <input type="text" id="noinfaqInput" placeholder="Masukkan No. Infaq">
-              <button onclick="searchStudent()" style="width: 100%; padding: 8px 40px; display: block; margin: 1rem 0;">Cari</button>
-            </div>
-          </div>
-        </div>
-        <div id="studentInfo"></div>
-        <div id="attendanceMessage">
-          <h3>Pemberitahuan Kehadiran</h3>
-          <p id="messageContent"></p>
-        </div>
-        <div id="parentNote"></div>
-      </section>
-  
-      <section id="catatanGuru" class="hidden">
-        <h2>Catatan Pembimbing</h2>
-        <div class="form-group">
-          <label for="studentSearch">Cari Santri:</label>
-          <input type="text" id="studentSearch" placeholder="Ketik nama santri">
-          <ul id="studentList" class="autocomplete-list"></ul>
-        </div>
-        <div class="form-group">
-          <label for="noteInput">Catatan:</label>
-          <textarea id="noteInput" rows="4"></textarea>
-        </div>
-        <button onclick="saveNote()">Simpan Catatan</button>
-        <div id="noteList"></div>
-      </section>
-  
-      <section id="editKehadiran" class="hidden">
-        <h2>Edit Kehadiran</h2>
-        <div class="form-group">
-          <label for="editDate">Pilih Tanggal:</label>
-          <input type="date" id="editDate">
-        </div>
-        <button onclick="loadAttendanceForEdit()">Muat Data</button>
-        <div class="table-responsive">
-          <table id="editTable" class="hidden">
-            <thead>
-              <tr>
-                <th>No.</th>
-                <th>Nama</th>
-                <th>Hadir</th>
-                <th>Sakit</th>
-                <th>Izin</th>
-                <th>Alpha</th>
-              </tr>
-            </thead>
-            <tbody id="editBody"></tbody>
-          </table>
-        </div>
-        <button onclick="saveEditedAttendance()" class="hidden" id="saveEditBtn">Simpan Perubahan</button>
-        <button onclick="downloadAttendanceData()" class="hidden" id="downloadDataBtn">Unduh Data Kehadiran</button>
-      </section>
-    </div>
-<script src="js/script2.js"></script>
-  <script>
+        <button id="downloadExcel" class="btn download-btn">Download Excel</button>
+      </div>
 
-    let dailyAttendance = {};
-    let studentNotes = {};
-
-    function initializeFilters() {
-      const pembimbingFilter = document.getElementById('pembimbingFilter');
-      const statusFilter = document.getElementById('statusFilter');
-      const uniquePembimbings = [...new Set(data.map(item => item['PEMBIMBING BARU']))];
+      <div class="table-container">
+        <table id="rekapTable">
+          <thead>
+            <tr id="rekapHeader">
+              <th class="name-column">No.</th>
+              <th class="name-column">Nama Siswa</th>
+              <!-- Days will be dynamically added here -->
+            </tr>
+          </thead>
+          <tbody id="rekapList">
+            <!-- Recap rows will be dynamically added here -->
+          </tbody>
+        </table>
+      </div>
       
-      uniquePembimbings.forEach(pembimbing => {
-        const option = document.createElement('option');
-        option.value = pembimbing;
-        option.textContent = pembimbing;
-        pembimbingFilter.appendChild(option);
-      });
+      <div class="legend">
+        <span class="legend-item"><span class="color-dot hadir"></span> Hadir</span>
+        <span class="legend-item"><span class="color-dot izin"></span> Izin</span>
+        <span class="legend-item"><span class="color-dot sakit"></span> Sakit</span>
+        <span class="legend-item"><span class="color-dot alpha"></span> Alpha</span>
+      </div>
+    </section>
 
-      pembimbingFilter.addEventListener('change', function() {
-        statusFilter.disabled = !this.value;
-        statusFilter.innerHTML = '<option value="">Pilih Kelas</option>';
-        if (this.value) {
-          const filteredData = data.filter(item => item['PEMBIMBING BARU'] === this.value);
-          const uniqueStatuses = [...new Set(filteredData.map(item => item.STATUS))];
-          uniqueStatuses.forEach(status => {
-            const option = document.createElement('option');
-            option.value = status;
-            option.textContent = status;
-            statusFilter.appendChild(option);
-          });
-        }
-        showSection('absensiHarian');
-      });
+    <section id="edit-kehadiran">
+      <h2>Edit Kehadiran</h2>
+      <input type="date" id="editDateSelector" onchange="populateEditKehadiran(getFilteredStudents())" />
+      
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Nama Siswa</th>
+            <th>Kehadiran</th>
+          </tr>
+        </thead>
+        <tbody id="editList">
+          <!-- Edit rows will be dynamically added here -->
+        </tbody>
+      </table>
+      
+      <div class="button-group">
+        <button class="btn submit-btn" onclick="saveEditedAttendance()">Simpan Perubahan</button>
+        <button class="btn recap-btn" onclick="showSection('rekap-absen')">Kembali ke Rekap</button>
+      </div>
+    </section>
+  </div>
+<script src="js/script2.js"></script>  
 
-      statusFilter.addEventListener('change', function() {
-        if (this.value) {
-          showSection('absensiHarian');
-        }
+  <script>
+    const currentDate = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.querySelectorAll('.date-display').forEach(el => {
+      el.textContent = currentDate.toLocaleDateString('id-ID', options);
+    });
+
+
+    const dataWithId = data.map((student, index) => ({ ...student, id: index + 1 }));
+
+    console.log(dataWithId);
+
+    let attendanceData = [];
+
+    const pembimbingToStatus = {};
+    data.forEach(student => {
+      if (!pembimbingToStatus[student["PEMBIMBING BARU"]]) {
+        pembimbingToStatus[student["PEMBIMBING BARU"]] = new Set();
+      }
+      pembimbingToStatus[student["PEMBIMBING BARU"]].add(student.STATUS);
+    });
+
+    const pembimbingFilter = document.getElementById('pembimbingFilter');
+    const uniquePembimbing = [...new Set(data.map(student => student["PEMBIMBING BARU"]))];
+    uniquePembimbing.forEach(pembimbing => {
+      const option = document.createElement('option');
+      option.value = pembimbing;
+      option.textContent = pembimbing;
+      pembimbingFilter.appendChild(option);
+    });
+
+    function updateStatusFilter() {
+      const pembimbingValue = document.getElementById('pembimbingFilter').value;
+      const statusFilter = document.getElementById('kelasFilter');
+      statusFilter.innerHTML = '<option value="">Pilih Status</option>';
+
+      if (pembimbingValue) {
+        const statusOptions = pembimbingToStatus[pembimbingValue];
+        statusOptions.forEach(status => {
+          const option = document.createElement('option');
+          option.value = status;
+          option.textContent = status;
+          statusFilter.appendChild(option);
+        });
+      }
+    }
+
+    function filterStudents() {
+      const filteredStudents = getFilteredStudents();
+      populateStudentList(filteredStudents);
+      updateRekapTable(filteredStudents);
+      populateEditKehadiran(filteredStudents);
+    }
+
+    function populateStudentList(filteredStudents) {
+      const studentList = document.getElementById('studentList');
+      studentList.innerHTML = '';
+      filteredStudents.forEach((student, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${student.NAMA}</td>
+          <td>
+            <select class="status-select" id="status-${student.id}">
+              <option value="">Pilih status</option>
+              <option value="hadir">Hadir</option>
+              <option value="izin">Izin</option>
+              <option value="sakit">Sakit</option>
+              <option value="alpha">Alpha</option>
+            </select>
+          </td>
+        `;
+        studentList.appendChild(row);
       });
+    }
+
+    function formatDate(date) {
+      return date.toISOString().split('T')[0];
     }
 
     function showSection(sectionId) {
       document.querySelectorAll('section').forEach(section => {
-        if (section.id === sectionId) {
-          section.style.display = 'block';
-        } else {
-          section.style.display = 'none';
-        }
+        section.classList.remove('active');
       });
-      if (sectionId === 'absensiHarian') {
-        initializeAbsensiHarian();
-      } else if (sectionId === 'rekapAbsensi') {
-        updateRekapAbsensi();
-      } else if (sectionId === 'catatanGuru') {
-        initializeCatatanGuru();
-      }
-    }
+      document.getElementById(sectionId).classList.add('active');
 
-    function initializeAbsensiHarian() {
-      console.log('Initializing Absensi Harian');
-      const currentDate = new Date();
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      const formattedDate = currentDate.toLocaleDateString('id-ID', options);
-      document.getElementById('currentDate').textContent = formattedDate;
-      const absensiBody = document.getElementById('absensiBody');
-      absensiBody.innerHTML = '';
-      
-      const pembimbing = document.getElementById('pembimbingFilter').value;
-      const status = document.getElementById('statusFilter').value;
-      const filteredData = data.filter(item => item['PEMBIMBING BARU'] === pembimbing && item.STATUS === status);
-      
-      console.log('Filtered data:', filteredData);
-      
-      filteredData.forEach((student, index) => {
-        const row = document.createElement('tr');
-        const isSunday = new Date().getDay() === 0;
-        const savedAttendance = localStorage.getItem(`attendance_${student.NOINFAQ}_${currentDate}`);
-        row.innerHTML = `
-          <td>${index + 1}</td>
-          <td>${student.NAMA}</td>
-          <td><input type="radio" name="attendance_${student.NOINFAQ}" value="hadir" ${savedAttendance === 'hadir' ? 'checked' : ''} ${isSunday ? 'disabled' : ''}></td>
-          <td><input type="radio" name="attendance_${student.NOINFAQ}" value="sakit" ${savedAttendance === 'sakit' ? 'checked' : ''} ${isSunday ? 'disabled' : ''}></td>
-          <td><input type="radio" name="attendance_${student.NOINFAQ}" value="izin" ${savedAttendance === 'izin' ? 'checked' : ''} ${isSunday ? 'disabled' : ''}></td>
-          <td><input type="radio" name="attendance_${student.NOINFAQ}" value="alpha" ${savedAttendance === 'alpha' ? 'checked' : ''} ${isSunday ? 'disabled' : ''}></td>
-        `;
-        if (student.STATUS === 'TAHFIDZ') {
-          row.classList.add('status-tahfidz');
-        }
-        if (isSunday) {
-          row.classList.add('disabled');
-        }
-        absensiBody.appendChild(row);
+      const filteredStudents = getFilteredStudents();
 
-        // Tambahkan event listener untuk menyimpan status kehadiran ke localStorage
-        const radioButtons = row.querySelectorAll('input[type="radio"]');
-        radioButtons.forEach(radio => {
-          radio.addEventListener('change', function() {
-            localStorage.setItem(`attendance_${student.NOINFAQ}_${currentDate}`, this.value);
-          });
-        });
-      });
-    }
-
-    function simpanAbsensi() {
-      const currentDate = new Date().toISOString().split('T')[0];
-      const absensiData = {};
-      data.forEach(student => {
-        const attendance = document.querySelector(`input[name="attendance_${student.NOINFAQ}"]:checked`);
-        if (attendance) {
-          absensiData[student.NOINFAQ] = attendance.value;
-        }
-      });
-      
-      db.collection('dailyAttendance').doc(currentDate).set(absensiData)
-        .then(() => {
-          showAlert('Absensi berhasil disimpan!', 'success');
-          dailyAttendance[currentDate] = absensiData; // Perbarui data lokal
-          updateRekapAbsensi(); // Perbarui tampilan
-        })
-        .catch((error) => {
-          console.error("Error writing document: ", error);
-          showAlert('Terjadi kesalahan saat menyimpan absensi.', 'error');
-        });
-    }
-
-    function updateRekapAbsensi() {
-      const month = document.getElementById('monthSelect').value;
-      const year = new Date().getFullYear();
-      const daysInMonth = new Date(year, parseInt(month) + 1, 0).getDate();
-      
-      const rekapHead = document.getElementById('rekapHead');
-      const rekapBody = document.getElementById('rekapBody');
-
-      const pembimbing = document.getElementById('pembimbingFilter').value;
-      const status = document.getElementById('statusFilter').value;
-      const filteredData = data.filter(item => item['PEMBIMBING BARU'] === pembimbing && item.STATUS === status);
-
-      let headerRow = '<tr><th class="sticky-col">No</th><th class="sticky-col">Nama</th>';
-      for (let i = 1; i <= daysInMonth; i++) {
-        const date = new Date(year, parseInt(month), i);
-        const isSunday = date.getDay() === 0;
-        headerRow += `<th class="${isSunday ? 'sunday-header' : ''}">${i}</th>`;
-      }
-      headerRow += '</tr>';
-      rekapHead.innerHTML = headerRow;
-      
-      rekapBody.innerHTML = '';
-      filteredData.forEach((student, index) => {
-        let row = `<tr><td class="sticky-col">${index + 1}</td><td class="sticky-col">${student.NAMA}</td>`;
-        for (let i = 1; i <= daysInMonth; i++) {
-          const date = `${year}-${(parseInt(month) + 1).toString().padStart(2, '0')}-${i.toString().padStart(2, '0')}`;
-          const isSunday = new Date(date).getDay() === 0;
-          const attendanceStatus = dailyAttendance[date] && dailyAttendance[date][student.NOINFAQ] ? dailyAttendance[date][student.NOINFAQ] : '';
-          row += `<td class="${isSunday ? 'sunday' : ''} ${attendanceStatus}">${isSunday ? '-' : (attendanceStatus.charAt(0).toUpperCase() || '-')}</td>`;
-        }
-        row += '</tr>';
-        rekapBody.innerHTML += row;
-      });
-
-      // Menyimpan rekap absensi ke Firestore
-      const rekapData = {
-        month: parseInt(month) + 1,
-        year: year,
-        pembimbing: pembimbing,
-        status: status,
-        data: filteredData.map(student => {
-          let attendanceData = {};
-          for (let i = 1; i <= daysInMonth; i++) {
-            const date = `${year}-${(parseInt(month) + 1).toString().padStart(2, '0')}-${i.toString().padStart(2, '0')}`;
-            attendanceData[i] = dailyAttendance[date] && dailyAttendance[date][student.NOINFAQ] ? dailyAttendance[date][student.NOINFAQ] : '';
-          }
-          return {
-            noinfaq: student.NOINFAQ,
-            nama: student.NAMA,
-            attendance: attendanceData
-          };
-        })
-      };
-
-      db.collection('rekapAbsensi').doc(`${year}-${parseInt(month) + 1}-${pembimbing}-${status}`)
-        .set(rekapData)
-        .then(() => {
-          console.log('Rekap absensi berhasil disimpan ke Firestore');
-        })
-        .catch((error) => {
-          console.error('Error menyimpan rekap absensi:', error);
-        });
-    }
-
-    function downloadExcel() {
-      const month = document.getElementById('monthSelect').value;
-      const year = new Date().getFullYear();
-      const pembimbing = document.getElementById('pembimbingFilter').value;
-      const status = document.getElementById('statusFilter').value;
-
-      // Membuat workbook dan worksheet
-      const wb = XLSX.utils.book_new();
-      const ws = XLSX.utils.table_to_sheet(document.getElementById('rekapTable'));
-
-      // Mengatur nama file
-      const fileName = `Rekap_Absensi_${pembimbing}_${status}_${year}_${parseInt(month) + 1}.xlsx`;
-
-      // Menambahkan worksheet ke workbook
-      XLSX.utils.book_append_sheet(wb, ws, "Rekap Absensi");
-
-      // Mengunduh file Excel
-      XLSX.writeFile(wb, fileName);
-    }
-
-    function searchStudent() {
-      const noinfaq = document.getElementById('noinfaqInput').value;
-      const student = data.find(s => s.NOINFAQ === noinfaq);
-      const studentInfo = document.getElementById('studentInfo');
-      const parentNote = document.getElementById('parentNote');
-      const attendanceMessage = document.getElementById('attendanceMessage');
-      const messageContent = document.getElementById('messageContent');
-      
-      if (student) {
-        const currentDate = new Date();
-        const currentMonth = currentDate.getMonth();
-        const currentYear = currentDate.getFullYear();
-        
-        let attendanceSummary = { hadir: 0, sakit: 0, izin: 0, alpha: 0 };
-        let attendanceDates = { sakit: [], izin: [], alpha: [] };
-        
-        Object.entries(dailyAttendance).forEach(([date, day]) => {
-          const attendanceDate = new Date(date);
-          if (attendanceDate.getMonth() === currentMonth && attendanceDate.getFullYear() === currentYear) {
-            if (day[noinfaq]) {
-              attendanceSummary[day[noinfaq]]++;
-              if (['sakit', 'izin', 'alpha'].includes(day[noinfaq])) {
-                attendanceDates[day[noinfaq]].push(attendanceDate);
-              }
-            }
-          }
-        });
-        
-        let attendanceHtml = '';
-        ['hadir', 'sakit', 'izin', 'alpha'].forEach(status => {
-          attendanceHtml += `
-            <div class="attendance-item">
-              <div class="count">${attendanceSummary[status]}</div>
-              <div class="label">${status.charAt(0).toUpperCase() + status.slice(1)}</div>
-              ${status !== 'hadir' ? `<div class="dates">Tanggal: ${attendanceDates[status].map(d => d.toLocaleDateString('id-ID')).join(', ')}</div>` : ''}
-            </div>
-          `;
-        });
-        
-        studentInfo.innerHTML = `
-          <div class="card">
-            <h3>${student.NAMA}</h3>
-            <p><strong>No. Infaq:</strong> ${student.NOINFAQ}</p>
-            <p><strong>Pembimbing:</strong> ${student["PEMBIMBING BARU"]}</p>
-            <p><strong>Kelas:</strong> ${student.STATUS}</p>
-            <h4>Ringkasan Kehadiran Bulan Ini:</h4>
-            <div class="attendance-info">
-              ${attendanceHtml}
-            </div>
-          </div>
-        `;
-        
-        // Membuat pesan otomatis
-        let message = '';
-        ['sakit', 'izin', 'alpha'].forEach(status => {
-          if (attendanceDates[status].length > 0) {
-            message += `Ananda tidak hadir karena ${status} pada tanggal: ${attendanceDates[status].map(d => d.toLocaleDateString('id-ID')).join(', ')}.\n`;
-          }
-        });
-        
-        if (message) {
-          messageContent.innerHTML = `
-            <p>Yth. Orang Tua/Wali dari ${student.NAMA},</p>
-            <p>Kami ingin memberitahukan bahwa:</p>
-            <p>${message}</p>
-            <p>Total kehadiran bulan ini:</p>
-            <ul>
-              <li>Hadir: ${attendanceSummary.hadir} hari</li>
-              <li>Sakit: ${attendanceSummary.sakit} hari</li>
-              <li>Izin: ${attendanceSummary.izin} hari</li>
-              <li>Alpha: ${attendanceSummary.alpha} hari</li>
-            </ul>
-            <p>Hormat kami,<br>Rumah Tahfidz Saijaan</p>
-          `;
-          attendanceMessage.classList.remove('hidden');
-        } else {
-          attendanceMessage.classList.add('hidden');
-        }
-        
-        const notes = studentNotes[noinfaq] || [];
-        parentNote.innerHTML = `
-          <div class="card">
-            <h3>Catatan Guru:</h3>
-            ${notes.length > 0 ? notes.map(note => `
-              <div class="note-card">
-                <div class="note-date">${new Date(note.date).toLocaleString('id-ID')}</div>
-                <div>${note.note}</div>
-              </div>
-            `).join('') : '<p>Belum ada catatan.</p>'}
-          </div>
-        `;
-
-        // Menyimpan data monitoring ke Firestore
-        const monitoringData = {
-          noinfaq: student.NOINFAQ,
-          nama: student.NAMA,
-          pembimbing: student["PEMBIMBING BARU"],
-          kelas: student.STATUS,
-          attendanceSummary: attendanceSummary,
-          attendanceDates: attendanceDates,
-          lastChecked: new Date().toISOString()
-        };
-
-        db.collection('monitoringOrangTua').doc(student.NOINFAQ)
-          .set(monitoringData)
-          .then(() => {
-            console.log('Data monitoring berhasil disimpan ke Firestore');
-          })
-          .catch((error) => {
-            console.error('Error menyimpan data monitoring:', error);
-          });
-      } else {
-        studentInfo.innerHTML = '<div class="card"><p>Siswa tidak ditemukan.</p></div>';
-        parentNote.innerHTML = '';
-        attendanceMessage.classList.add('hidden');
-      }
-    }
-
-    function initializeCatatanGuru() {
-      const studentSearch = document.getElementById('studentSearch');
-      const studentList = document.getElementById('studentList');
-
-      studentSearch.addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        const filteredStudents = data.filter(student => 
-          student.NAMA.toLowerCase().includes(searchTerm)
-        );
-
-        studentList.innerHTML = '';
-        studentList.style.display = filteredStudents.length > 0 ? 'block' : 'none';
-
-        filteredStudents.forEach(student => {
-          const li = document.createElement('li');
-          li.textContent = student.NAMA;
-          li.onclick = function() {
-            studentSearch.value = student.NAMA;
-            studentList.style.display = 'none';
-            updateNoteList(student.NOINFAQ);
-          };
-          studentList.appendChild(li);
-        });
-      });
-
-      updateNoteList();
-    }
-
-    function saveNote() {
-      const studentName = document.getElementById('studentSearch').value;
-      const student = data.find(s => s.NAMA === studentName);
-      if (!student) {
-        showAlert('Silakan pilih siswa terlebih dahulu.', 'error');
-        return;
+      if (sectionId === 'edit-kehadiran') {
+        document.getElementById('editDateSelector').value = formatDate(new Date());
+        populateEditKehadiran(filteredStudents);
+      } else if (sectionId === 'rekap-absen') {
+        const currentMonth = new Date().getMonth() + 1;
+        document.getElementById('monthSelector').value = currentMonth;
+        updateRekapTable(filteredStudents);
+      } else if (sectionId === 'input-absen') {
+        populateStudentList(filteredStudents);
       }
 
-      const note = document.getElementById('noteInput').value;
-      const noteData = {
-        date: new Date().toISOString(),
-        note: note
-      };
-
-      // Simpan catatan ke Firebase
-      db.collection('studentNotes').doc(student.NOINFAQ).collection('notes').add(noteData)
-        .then(() => {
-          if (!studentNotes[student.NOINFAQ]) {
-            studentNotes[student.NOINFAQ] = [];
-          }
-          studentNotes[student.NOINFAQ].push(noteData);
-          document.getElementById('noteInput').value = '';
-          updateNoteList(student.NOINFAQ);
-          showAlert('Catatan berhasil disimpan!', 'success');
-        })
-        .catch((error) => {
-          console.error("Error saving note: ", error);
-          showAlert('Terjadi kesalahan saat menyimpan catatan.', 'error');
-        });
+      // Simpan status tampilan terakhir
+      saveLastViewedSection(sectionId);
     }
 
-    function updateNoteList(noinfaq) {
-      const noteList = document.getElementById('noteList');
-      if (!noinfaq) {
-        noteList.innerHTML = '<p>Pilih siswa untuk melihat catatan.</p>';
-        return;
+    function getFilteredStudents() {
+      const pembimbingValue = document.getElementById('pembimbingFilter').value;
+      const statusValue = document.getElementById('kelasFilter').value;
+
+      let filteredStudents = dataWithId; // Gunakan dataWithId alih-alih data
+
+      if (pembimbingValue) {
+        filteredStudents = filteredStudents.filter(student => student["PEMBIMBING BARU"] === pembimbingValue);
       }
 
-      // Ambil catatan dari Firebase
-      db.collection('studentNotes').doc(noinfaq).collection('notes')
-        .orderBy('date', 'desc')
-        .limit(5)
-        .get()
-        .then((querySnapshot) => {
-          noteList.innerHTML = '<h4>Catatan Terbaru:</h4>';
-          querySnapshot.forEach((doc) => {
-            const note = doc.data();
-            noteList.innerHTML += `<p>${new Date(note.date).toLocaleString()}: ${note.note}</p>`;
-          });
-        })
-        .catch((error) => {
-          console.error("Error getting notes: ", error);
-          noteList.innerHTML = '<p>Terjadi kesalahan saat mengambil catatan.</p>';
-        });
+      if (statusValue) {
+        filteredStudents = filteredStudents.filter(student => student.STATUS === statusValue);
+      }
+
+      return filteredStudents;
     }
 
-    function loadAttendanceForEdit() {
-      const editDate = document.getElementById('editDate').value;
-      const editBody = document.getElementById('editBody');
-      editBody.innerHTML = '';
-      
-      const pembimbing = document.getElementById('pembimbingFilter').value;
-      const status = document.getElementById('statusFilter').value;
-      const filteredData = data.filter(item => item['PEMBIMBING BARU'] === pembimbing && item.STATUS === status);
-      
-      filteredData.forEach((student, index) => {
-        const row = document.createElement('tr');
-        const attendance = dailyAttendance[editDate] ? dailyAttendance[editDate][student.NOINFAQ] : '';
-        const isSunday = new Date(editDate).getDay() === 0;
-        row.innerHTML = `
-          <td>${index + 1}</td>
-          <td>${student.NAMA}</td>
-          <td><input type="radio" name="edit_attendance_${student.NOINFAQ}" value="hadir" ${attendance === 'hadir' ? 'checked' : ''} ${isSunday ? 'disabled' : ''}></td>
-          <td><input type="radio" name="edit_attendance_${student.NOINFAQ}" value="sakit" ${attendance === 'sakit' ? 'checked' : ''} ${isSunday ? 'disabled' : ''}></td>
-          <td><input type="radio" name="edit_attendance_${student.NOINFAQ}" value="izin" ${attendance === 'izin' ? 'checked' : ''} ${isSunday ? 'disabled' : ''}></td>
-          <td><input type="radio" name="edit_attendance_${student.NOINFAQ}" value="alpha" ${attendance === 'alpha' ? 'checked' : ''} ${isSunday ? 'disabled' : ''}></td>
-        `;
-        if (isSunday) {
-          row.classList.add('disabled');
-        }
-        editBody.appendChild(row);
-      });
-      
-      document.getElementById('editTable').classList.remove('hidden');
-      document.getElementById('saveEditBtn').classList.remove('hidden');
-      document.getElementById('downloadDataBtn').classList.remove('hidden');
-    }
-
-    function saveEditedAttendance() {
-      const editDate = document.getElementById('editDate').value;
-      const editedData = {};
-      
-      data.forEach(student => {
-        const attendance = document.querySelector(`input[name="edit_attendance_${student.NOINFAQ}"]:checked`);
-        if (attendance) {
-          editedData[student.NOINFAQ] = attendance.value;
-        }
-      });
-      
-      db.collection('dailyAttendance').doc(editDate).set(editedData)
-        .then(() => {
-          showAlert('Perubahan absensi berhasil disimpan!', 'success');
-          dailyAttendance[editDate] = editedData; // Perbarui data lokal
-          updateRekapAbsensi(); // Perbarui tampilan
-        })
-        .catch((error) => {
-          console.error("Error updating document: ", error);
-          showAlert('Terjadi kesalahan saat menyimpan perubahan absensi.', 'error');
-        });
-    }
-
-    function downloadAttendanceData() {
-      db.collection('dailyAttendance').get()
-        .then((querySnapshot) => {
-          const attendanceData = {};
-          querySnapshot.forEach((doc) => {
-            attendanceData[doc.id] = doc.data();
-          });
-          
-          const wb = XLSX.utils.book_new();
-          const wsData = Object.entries(attendanceData).flatMap(([date, attendance]) => 
-            Object.entries(attendance).map(([noinfaq, status]) => ({
-              Tanggal: date,
-              'No. Infaq': noinfaq,
-              Nama: data.find(s => s.NOINFAQ === noinfaq)?.NAMA || '',
-              Status: status
-            }))
-          );
-          const ws = XLSX.utils.json_to_sheet(wsData);
-
-          XLSX.utils.book_append_sheet(wb, ws, "Data Kehadiran");
-          XLSX.writeFile(wb, "Data_Kehadiran.xlsx");
-        })
-        .catch((error) => {
-          console.error("Error downloading attendance data: ", error);
-          showAlert("Terjadi kesalahan saat mengunduh data kehadiran.", 'error');
-        });
-    }
-
-    // Fungsi untuk memuat data kehadiran dari Firestore
-    function loadAttendanceData() {
-      console.log('Loading attendance data');
-      db.collection('dailyAttendance').get()
-        .then((querySnapshot) => {
-          dailyAttendance = {};
-          querySnapshot.forEach((doc) => {
-            dailyAttendance[doc.id] = doc.data();
-          });
-          console.log('Attendance data loaded successfully');
-          updateRekapAbsensi(); // Memperbarui tampilan setelah data dimuat
-        })
-        .catch((error) => {
-          console.error("Error loading attendance data: ", error);
-        });
-    }
-
-    // Panggil fungsi loadAttendanceData saat halaman dimuat
-    document.addEventListener('DOMContentLoaded', function() {
-      initializeFilters();
-      loadAttendanceData();
+    document.getElementById('monthSelector').addEventListener('change', function() {
+      const filteredStudents = getFilteredStudents();
+      updateRekapTable(filteredStudents);
     });
 
-    // Fungsi untuk mengatur bulan default
-    function setDefaultMonth() {
-      const currentMonth = new Date().getMonth();
-      document.getElementById('monthSelect').value = currentMonth;
-      updateRekapAbsensi();
+    document.getElementById('downloadExcel').addEventListener('click', function() {
+      const wb = XLSX.utils.table_to_book(document.getElementById('rekapTable'));
+      XLSX.writeFile(wb, 'rekap_absensi.xlsx');
+    });
+
+    const currentMonth = new Date().getMonth() + 1;
+    document.getElementById('monthSelector').value = currentMonth;
+
+    document.getElementById('pembimbingFilter').addEventListener('change', function() {
+      updateStatusFilter();
+      filterStudents();
+    });
+    document.getElementById('kelasFilter').addEventListener('change', filterStudents);
+
+    updateStatusFilter();
+    filterStudents();
+    
+
+    // Tambahkan fungsi ini untuk memastikan tanggal yang dipilih valid
+    function validateEditDate() {
+      const selectedDate = document.getElementById('editDateSelector').value;
+      const today = new Date().toISOString().split('T')[0];
+      
+      if (selectedDate > today) {
+        alert('Tidak dapat mengedit absensi untuk tanggal di masa depan.');
+        document.getElementById('editDateSelector').value = today;
+      }
     }
 
-    // Panggil fungsi setDefaultMonth saat halaman dimuat
-    window.onload = function() {
-      setDefaultMonth();
-      // ... kode lainnya yang perlu dijalankan saat halaman dimuat ...
-    };
+    // Panggil fungsi ini saat mengubah tanggal
+    document.getElementById('editDateSelector').addEventListener('change', function() {
+      validateEditDate();
+      populateEditKehadiran(getFilteredStudents());
+    });
+    
 
-    function showAlert(message, type = 'success') {
-      const alertDiv = document.createElement('div');
-      alertDiv.className = `alert alert-${type}`;
-      alertDiv.innerHTML = `
-        ${message}
-        <span class="alert-close">&times;</span>
-      `;
-      document.body.appendChild(alertDiv);
-
-      setTimeout(() => {
-        alertDiv.classList.add('show');
-      }, 10);
-
-      const closeButton = alertDiv.querySelector('.alert-close');
-      closeButton.addEventListener('click', () => {
-        alertDiv.classList.remove('show');
-        setTimeout(() => {
-          alertDiv.remove();
-        }, 300);
+    function saveLastViewedSection(sectionId) {
+      const userId = 'default_user'; // Ganti dengan ID pengguna yang sebenarnya jika ada
+      
+      db.collection("userSettings").doc(userId).set({
+        lastViewedSection: sectionId
+      }, { merge: true })
+      .then(() => {
+        console.log("Bagian terakhir yang dilihat berhasil disimpan");
+      })
+      .catch((error) => {
+        console.error("Error menyimpan bagian terakhir yang dilihat: ", error);
       });
-
-      setTimeout(() => {
-        alertDiv.classList.remove('show');
-        setTimeout(() => {
-          alertDiv.remove();
-        }, 300);
-      }, 5000);
     }
+
+    function loadLastViewedSection() {
+      const userId = 'default_user'; // Ganti dengan ID pengguna yang sebenarnya jika ada
+      
+      db.collection("userSettings").doc(userId).get()
+      .then((doc) => {
+        if (doc.exists && doc.data().lastViewedSection) {
+          showSection(doc.data().lastViewedSection);
+        } else {
+          // Jika tidak ada data tersimpan, tampilkan bagian default
+          showSection('input-absen');
+        }
+      })
+      .catch((error) => {
+        console.error("Error memuat bagian terakhir yang dilihat: ", error);
+        // Jika terjadi error, tampilkan bagian default
+        showSection('input-absen');
+      });
+    }
+
+    // Tambahkan ini di akhir script Anda atau di dalam event listener DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', (event) => {
+      filterStudents();
+      loadLastViewedSection();
+    });
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script>
-    // Konfigurasi Firebase Anda
-       // Konfigurasi Firebase Anda
-       const firebaseConfig = {
-      apiKey: "AIzaSyB4xPZNU7xb8mXR85gcR9HfLmfHmZeb_zI",
-      authDomain: "inputsiswa-1af9a.firebaseapp.com",
-      projectId: "inputsiswa-1af9a",
-      storageBucket: "inputsiswa-1af9a.appspot.com",
-      messagingSenderId: "706431942569",
-      appId: "1:706431942569:web:3e36ac6a1d618617868eb8"
-    };
-    // Inisialisasi Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-  </script>
-  <footer>
-    <p>&copy; 2023 Rumah Tahfidz Saijaan. All rights reserved.</p>
-  </footer>
-</body></html>
+</body>
+</html>
