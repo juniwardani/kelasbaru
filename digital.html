@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html><head><title>Sistem Absensi Digital</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -479,16 +478,35 @@
   
   <div class="container">
     <div class="filter-container">
-      <select class="filter-select" id="pembimbingFilter" onchange="updateStatusFilter(); filterStudents()">
+      <select class="filter-select" id="pembimbingFilter" onchange="updateStatusFilter(); filterStudents(); checkFilters();">
         <option value="">Pilih Pembimbing</option>
         <!-- Pembimbing options will be dynamically added here -->
       </select>
-      <select class="filter-select" id="kelasFilter" onchange="filterStudents()">
+      <select class="filter-select" id="kelasFilter" onchange="filterStudents(); checkFilters();">
         <option value="">Pilih Kelas</option>
         <!-- Kelas options will be dynamically added here -->
       </select>
     </div>
   </div>
+  <script>
+    function checkFilters() {
+      const pembimbingFilter = document.getElementById('pembimbingFilter');
+      const kelasFilter = document.getElementById('kelasFilter');
+      const nav = document.querySelector('nav');
+      
+      if (pembimbingFilter.value !== "" && kelasFilter.value !== "") {
+        nav.style.display = 'block';
+      } else {
+        nav.style.display = 'none';
+      }
+    }
+    
+    // Sembunyikan nav saat halaman dimuat
+    document.addEventListener('DOMContentLoaded', function() {
+      const nav = document.querySelector('nav');
+      nav.style.display = 'none';
+    });
+  </script>
   
   <nav>
     <ul>
@@ -499,7 +517,7 @@
   </nav>
 
   <div class="container">
-    <section id="input-absen" class="active">
+    <section id="input-absen">
       <h2>Absensi Harian</h2>
       <div class="date-display" id="currentDate"></div>
       
@@ -784,7 +802,7 @@
       });
     }
 
-    // Tambahkan ini di akhir script Anda atau di dalam event listener DOMContentLoaded
+    // Tambahkan ini di akhir script atau di dalam event listener DOMContentLoaded
     document.addEventListener('DOMContentLoaded', (event) => {
       filterStudents();
       loadLastViewedSection();
