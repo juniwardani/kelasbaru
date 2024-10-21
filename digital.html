@@ -738,9 +738,12 @@
             if (!absensiData[dateString]) {
                 absensiData[dateString] = {};
             }
-            absensiData[dateString][nama] = status;
             
-            console.log('Updated absensiData:', absensiData);
+            // Hanya update jika status berubah
+            if (absensiData[dateString][nama] !== status) {
+                absensiData[dateString][nama] = status;
+                console.log('Updated absensiData:', absensiData);
+            }
         }
 
         function getStatusSingkatan(status) {
@@ -848,12 +851,15 @@
         async function saveEditedAttendance() {
             const selectedDate = document.getElementById('editDateSelector').value;
             const dateString = formatDate(getWITADate(selectedDate));
+            const guru = document.getElementById('GURUFilter').value;
+            const kelas = document.getElementById('kelasFilter').value;
+
             const attendanceData = Object.entries(absensiData[dateString] || {}).map(([nama, status]) => ({
                 tanggal: dateString,
                 nama: nama,
                 status: status,
-                guru: document.getElementById('GURUFilter').value,
-                kelas: document.getElementById('kelasFilter').value
+                guru: guru,
+                kelas: kelas
             }));
 
             if (attendanceData.length === 0) {
@@ -865,19 +871,63 @@
                 return;
             }
 
+            showLoading(true);
+
             try {
-                const { data, error } = await supabaseClient
+                // Ambil data yang sudah ada untuk tanggal, guru, dan kelas yang dipilih
+                const { data: existingData, error: fetchError } = await supabaseClient
                     .from('absensi')
-                    .upsert(attendanceData);
+                    .select('*')
+                    .eq('tanggal', dateString)
+                    .eq('guru', guru)
+                    .eq('kelas', kelas);
 
-                if (error) throw error;
+                if (fetchError) throw fetchError;
 
-                alert('Data absensi berhasil disimpan!');
-                console.log('Saved attendance data:', data);
+                // Pisahkan data yang perlu diupdate dan yang perlu diinsert
+                const dataToUpdate = [];
+                const dataToInsert = [];
+
+                attendanceData.forEach(newData => {
+                    const existingRecord = existingData.find(record => 
+                        record.nama === newData.nama && 
+                        record.tanggal === newData.tanggal
+                    );
+
+                    if (existingRecord) {
+                        if (existingRecord.status !== newData.status) {
+                            dataToUpdate.push({ ...existingRecord, status: newData.status });
+                        }
+                    } else {
+                        dataToInsert.push(newData);
+                    }
+                });
+
+                // Lakukan update untuk data yang berubah
+                if (dataToUpdate.length > 0) {
+                    const { error: updateError } = await supabaseClient
+                        .from('absensi')
+                        .upsert(dataToUpdate);
+
+                    if (updateError) throw updateError;
+                }
+
+                // Lakukan insert untuk data baru
+                if (dataToInsert.length > 0) {
+                    const { error: insertError } = await supabaseClient
+                        .from('absensi')
+                        .insert(dataToInsert);
+
+                    if (insertError) throw insertError;
+                }
+
+                showCenterAlert('Data absensi berhasil disimpan!');
                 updateRekapAbsen();
             } catch (error) {
                 console.error('Error saving attendance:', error);
-                alert('Terjadi kesalahan saat menyimpan data absensi.');
+                showCenterAlert('Terjadi kesalahan saat menyimpan data absensi.', 5000);
+            } finally {
+                showLoading(false);
             }
         }
 
