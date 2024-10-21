@@ -657,22 +657,23 @@
 
             santri.forEach((siswa, index) => {
                 const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${siswa.NAMA}</td>
-                    <td>
-                        ${isSunday || isHolidayDate ? 
-                            '<span>Hari Libur</span>' :
-                            `<select onchange="updateAbsensi('${siswa.NAMA}', this.value)">
-                                <option value="">Pilih status</option>
-                                <option value="HADIR">Hadir</option>
-                                <option value="SAKIT">Sakit</option>
-                                <option value="IZIN">Izin</option>
-                                <option value="ALPHA">Alpha</option>
-                            </select>`
-                        }
-                    </td>
-                `;
+                const cell1 = document.createElement('td');
+                const cell2 = document.createElement('td');
+                const cell3 = document.createElement('td');
+
+                cell1.textContent = index + 1;
+                cell2.textContent = siswa.NAMA;
+
+                if (isSunday || isHolidayDate) {
+                    cell3.textContent = 'Hari Libur';
+                } else {
+                    const select = createStatusSelect(siswa.NAMA, dateString);
+                    cell3.appendChild(select);
+                }
+
+                row.appendChild(cell1);
+                row.appendChild(cell2);
+                row.appendChild(cell3);
                 santriList.appendChild(row);
             });
         }
@@ -699,39 +700,57 @@
 
             santri.forEach((siswa, index) => {
                 const row = document.createElement('tr');
-                const status = absensiData[dateString] && absensiData[dateString][siswa.NAMA] 
-                    ? absensiData[dateString][siswa.NAMA] 
-                    : '';
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${siswa.NAMA}</td>
-                    <td>
-                        ${isSunday || isHolidayDate ? 
-                            '<span>Hari Libur</span>' :
-                            `<select onchange="updateAbsensi('${siswa.NAMA}', this.value, '${dateString}')">
-                                <option value="" ${status === '' ? 'selected' : ''}>Pilih status</option>
-                                <option value="HADIR" ${status === 'HADIR' ? 'selected' : ''}>Hadir</option>
-                                <option value="SAKIT" ${status === 'SAKIT' ? 'selected' : ''}>Sakit</option>
-                                <option value="IZIN" ${status === 'IZIN' ? 'selected' : ''}>Izin</option>
-                                <option value="ALPHA" ${status === 'ALPHA' ? 'selected' : ''}>Alpha</option>
-                            </select>`
-                        }
-                    </td>
-                `;
+                const cell1 = document.createElement('td');
+                const cell2 = document.createElement('td');
+                const cell3 = document.createElement('td');
+
+                cell1.textContent = index + 1;
+                cell2.textContent = siswa.NAMA;
+
+                if (isSunday || isHolidayDate) {
+                    cell3.textContent = 'Hari Libur';
+                } else {
+                    const select = createStatusSelect(siswa.NAMA, dateString);
+                    cell3.appendChild(select);
+                }
+
+                row.appendChild(cell1);
+                row.appendChild(cell2);
+                row.appendChild(cell3);
                 editList.appendChild(row);
             });
 
             editDateSelector.value = dateString;
         }
 
-        function updateAbsensi(nama, status, date) {
-            const dateString = date ? formatDate(getWITADate(date)) : formatDate(new Date());
+        function createStatusSelect(nama, dateString) {
+            const select = document.createElement('select');
+            const status = absensiData[dateString] && absensiData[dateString][nama] 
+                ? absensiData[dateString][nama] 
+                : '';
+
+            select.innerHTML = `
+                <option value="" ${status === '' ? 'selected' : ''}>Pilih status</option>
+                <option value="HADIR" ${status === 'HADIR' ? 'selected' : ''}>Hadir</option>
+                <option value="SAKIT" ${status === 'SAKIT' ? 'selected' : ''}>Sakit</option>
+                <option value="IZIN" ${status === 'IZIN' ? 'selected' : ''}>Izin</option>
+                <option value="ALPHA" ${status === 'ALPHA' ? 'selected' : ''}>Alpha</option>
+            `;
+            select.addEventListener('change', function() {
+                updateAbsensi(this, nama, dateString);
+            });
+            return select;
+        }
+
+        function updateAbsensi(selectElement, nama, dateString) {
+            const status = selectElement.value;
             const currentDate = getWITADate(dateString);
             const isSunday = currentDate.getDay() === 0;
             const isHolidayDate = isHoliday(currentDate);
 
             if (isSunday || isHolidayDate) {
                 alert('Tidak dapat mengubah kehadiran pada hari libur.');
+                selectElement.value = '';
                 return;
             }
             
