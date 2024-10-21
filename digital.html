@@ -650,19 +650,27 @@
             const santriList = document.getElementById('studentList');
             santriList.innerHTML = '';
 
+            const currentDate = new Date();
+            const dateString = formatDate(currentDate);
+            const isSunday = currentDate.getDay() === 0;
+            const isHolidayDate = isHoliday(currentDate);
+
             santri.forEach((siswa, index) => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${index + 1}</td>
                     <td>${siswa.NAMA}</td>
                     <td>
-                        <select onchange="updateAbsensi('${siswa.NAMA}', this.value)">
-                            <option value="">Pilih status</option>
-                            <option value="HADIR">Hadir</option>
-                            <option value="SAKIT">Sakit</option>
-                            <option value="IZIN">Izin</option>
-                            <option value="ALPHA">Alpha</option>
-                        </select>
+                        ${isSunday || isHolidayDate ? 
+                            '<span>Hari Libur</span>' :
+                            `<select onchange="updateAbsensi('${siswa.NAMA}', this.value)">
+                                <option value="">Pilih status</option>
+                                <option value="HADIR">Hadir</option>
+                                <option value="SAKIT">Sakit</option>
+                                <option value="IZIN">Izin</option>
+                                <option value="ALPHA">Alpha</option>
+                            </select>`
+                        }
                     </td>
                 `;
                 santriList.appendChild(row);
@@ -685,6 +693,9 @@
                 return;
             }
 
+            const isSunday = editDate.getDay() === 0;
+            const isHolidayDate = isHoliday(editDate);
+
             santri.forEach((siswa, index) => {
                 const row = document.createElement('tr');
                 const status = absensiData[dateString] && absensiData[dateString][siswa.NAMA] 
@@ -694,13 +705,16 @@
                     <td>${index + 1}</td>
                     <td>${siswa.NAMA}</td>
                     <td>
-                        <select onchange="updateAbsensi('${siswa.NAMA}', this.value, '${dateString}')">
-                            <option value="" ${status === '' ? 'selected' : ''}>Pilih status</option>
-                            <option value="HADIR" ${status === 'HADIR' ? 'selected' : ''}>Hadir</option>
-                            <option value="SAKIT" ${status === 'SAKIT' ? 'selected' : ''}>Sakit</option>
-                            <option value="IZIN" ${status === 'IZIN' ? 'selected' : ''}>Izin</option>
-                            <option value="ALPHA" ${status === 'ALPHA' ? 'selected' : ''}>Alpha</option>
-                        </select>
+                        ${isSunday || isHolidayDate ? 
+                            '<span>Hari Libur</span>' :
+                            `<select onchange="updateAbsensi('${siswa.NAMA}', this.value, '${dateString}')">
+                                <option value="" ${status === '' ? 'selected' : ''}>Pilih status</option>
+                                <option value="HADIR" ${status === 'HADIR' ? 'selected' : ''}>Hadir</option>
+                                <option value="SAKIT" ${status === 'SAKIT' ? 'selected' : ''}>Sakit</option>
+                                <option value="IZIN" ${status === 'IZIN' ? 'selected' : ''}>Izin</option>
+                                <option value="ALPHA" ${status === 'ALPHA' ? 'selected' : ''}>Alpha</option>
+                            </select>`
+                        }
                     </td>
                 `;
                 editList.appendChild(row);
@@ -711,13 +725,21 @@
 
         function updateAbsensi(nama, status, date) {
             const dateString = date ? formatDate(getWITADate(date)) : formatDate(new Date());
+            const currentDate = getWITADate(dateString);
+            const isSunday = currentDate.getDay() === 0;
+            const isHolidayDate = isHoliday(currentDate);
+
+            if (isSunday || isHolidayDate) {
+                alert('Tidak dapat mengubah kehadiran pada hari libur.');
+                return;
+            }
             
             if (!absensiData[dateString]) {
                 absensiData[dateString] = {};
             }
             absensiData[dateString][nama] = status;
             
-            console.log('Updated absensiData:', absensiData); // Tambahkan log ini
+            console.log('Updated absensiData:', absensiData);
         }
 
         function getStatusSingkatan(status) {
