@@ -549,8 +549,8 @@
     </div>
 
     <script>
-        const supabaseUrl = 'https://lrkechznknwqnxckyfcg.supabase.co';
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxya2VjaHpua253cW54Y2t5ZmNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkxMjgzODEsImV4cCI6MjA0NDcwNDM4MX0.Tj8p1u3_DGQnqhPkS6AJGs5BwOSeebdvsknX2qHzwdQ';
+        const supabaseUrl = 'https://krmwxfqptemwxhckprua.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtybXd4ZnFwdGVtd3hoY2twcnVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkyNTg4MjksImV4cCI6MjA0NDgzNDgyOX0.LsxU4yDTy3nKl6QzqwuTSyDkqBdLGQUS3lR3VCyWxW0';
         let supabaseClient;
 
         let currentSantri = []; // Menyimpan data santri saat ini
@@ -683,7 +683,8 @@
 
             const currentDate = new Date();
             const maxDate = formatDate(currentDate);
-            document.getElementById('editDateSelector').max = maxDate;
+            const editDateSelector = document.getElementById('editDateSelector');
+            editDateSelector.max = maxDate;
 
             const editDate = selectedDate ? getWITADate(selectedDate) : currentDate;
             const dateString = formatDate(editDate);
@@ -720,7 +721,7 @@
                 editList.appendChild(row);
             });
 
-            document.getElementById('editDateSelector').value = dateString;
+            editDateSelector.value = dateString;
         }
 
         function updateAbsensi(nama, status, date) {
@@ -891,6 +892,11 @@
             const selectedSection = document.getElementById(sectionId);
             if (selectedSection) {
                 selectedSection.style.display = 'block';
+                
+                // Jika section yang dipilih adalah edit-kehadiran, tampilkan data hari ini
+                if (sectionId === 'edit-kehadiran') {
+                    tampilkanEditKehadiran(currentSantri);
+                }
             }
         }
 
