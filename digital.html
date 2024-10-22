@@ -570,6 +570,7 @@
         const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxya2VjaHpua253cW54Y2t5ZmNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkxMjgzODEsImV4cCI6MjA0NDcwNDM4MX0.Tj8p1u3_DGQnqhPkS6AJGs5BwOSeebdvsknX2qHzwdQ';
         let supabaseClient;
 
+
         let currentSantri = []; // Menyimpan data santri saat ini
         let absensiData = {}; // Menyimpan data absensi
 
@@ -578,8 +579,11 @@
 
         // Fungsi untuk memformat tanggal ke format YYYY-MM-DD dalam WITA
         function formatDate(date) {
-            const options = { timeZone: 'Asia/Makassar' };
-            return date.toLocaleString('sv-SE', options).split(' ')[0];
+            const d = new Date(date);
+            const year = d.getFullYear();
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
         }
 
         // Fungsi untuk mendapatkan tanggal dalam WITA
@@ -590,21 +594,21 @@
 
         async function loadAbsensiData(kelas) {
             const guru = getLoggedInGuru();
+            const currentDate = formatDate(new Date());
             try {
                 const { data, error } = await supabaseClient
                     .from('absensi')
                     .select('*')
                     .eq('guru', guru)
-                    .eq('kelas', kelas);
+                    .eq('kelas', kelas)
+                    .eq('tanggal', currentDate);
 
                 if (error) throw error;
 
                 absensiData = {};
+                absensiData[currentDate] = {};
                 data.forEach(item => {
-                    if (!absensiData[item.tanggal]) {
-                        absensiData[item.tanggal] = {};
-                    }
-                    absensiData[item.tanggal][item.nama] = item.status;
+                    absensiData[currentDate][item.nama] = item.status;
                 });
 
                 console.log('Loaded absensi data:', absensiData);
@@ -645,8 +649,8 @@
 
                 showAllSectionContent();
 
-                updateInputAbsen();
                 await loadAbsensiData(kelas);
+                updateInputAbsen();
                 updateRekapAbsen();
                 tampilkanEditKehadiran(currentSantri);
 
@@ -680,19 +684,23 @@
         function updateInputAbsen() {
             const studentList = document.getElementById('studentList');
             studentList.innerHTML = '';
+            const currentDate = formatDate(new Date());
+            
             currentSantri.forEach((siswa, index) => {
                 const escapedNama = escapeString(siswa.NAMA);
+                const currentStatus = absensiData[currentDate] && absensiData[currentDate][siswa.NAMA] ? absensiData[currentDate][siswa.NAMA] : '';
+                
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${index + 1}</td>
                     <td>${siswa.NAMA}</td>
                     <td>
-                        <select onchange="updateAbsensi(this, '${escapedNama}')">
-                            <option value="">Pilih Status</option>
-                            <option value="HADIR">HADIR</option>
-                            <option value="SAKIT">SAKIT</option>
-                            <option value="IZIN">IZIN</option>
-                            <option value="ALPHA">ALPHA</option>
+                        <select onchange="updateAbsensi(this, '${escapedNama}', '${currentDate}')">
+                            <option value="" ${currentStatus === '' ? 'selected' : ''}>Pilih Status</option>
+                            <option value="HADIR" ${currentStatus === 'HADIR' ? 'selected' : ''}>HADIR</option>
+                            <option value="SAKIT" ${currentStatus === 'SAKIT' ? 'selected' : ''}>SAKIT</option>
+                            <option value="IZIN" ${currentStatus === 'IZIN' ? 'selected' : ''}>IZIN</option>
+                            <option value="ALPHA" ${currentStatus === 'ALPHA' ? 'selected' : ''}>ALPHA</option>
                         </select>
                     </td>
                 `;
@@ -783,34 +791,65 @@
     });
 }
 
+        // Tambahkan fungsi ini untuk mendapatkan tanggal hari ini dalam format YYYY-MM-DD
+        function getTodayDate() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
         // Modifikasi fungsi tampilkanEditKehadiran
-        function tampilkanEditKehadiran(santriList, selectedDate = null) {
+        async function tampilkanEditKehadiran(santriList, selectedDate = null) {
+            const editList = document.getElementById('editList');
+            editList.innerHTML = '';
+
             if (!selectedDate) {
                 selectedDate = formatDate(new Date());
             }
 
-            const editList = document.getElementById('editList');
-            editList.innerHTML = '';
+            document.getElementById('editDateSelector').value = selectedDate;
 
-            santriList.forEach((santri, index) => {
-                const escapedNama = escapeString(santri.NAMA);
-                const status = absensiData[selectedDate] && absensiData[selectedDate][santri.NAMA] || '';
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${santri.NAMA}</td>
-                    <td>
-                        <select onchange="updateAbsensi(this, '${escapedNama}')">
-                            <option value="" ${status === '' ? 'selected' : ''}>Pilih Status</option>
-                            <option value="HADIR" ${status === 'HADIR' ? 'selected' : ''}>HADIR</option>
-                            <option value="SAKIT" ${status === 'SAKIT' ? 'selected' : ''}>SAKIT</option>
-                            <option value="IZIN" ${status === 'IZIN' ? 'selected' : ''}>IZIN</option>
-                            <option value="ALPHA" ${status === 'ALPHA' ? 'selected' : ''}>ALPHA</option>
-                        </select>
-                    </td>
-                `;
-                editList.appendChild(row);
-            });
+            const guru = getLoggedInGuru();
+            const kelas = document.getElementById('kelasFilter').value;
+
+            try {
+                const { data: absensiData, error } = await supabaseClient
+                    .from('absensi')
+                    .select('nama, status')
+                    .eq('tanggal', selectedDate)
+                    .eq('guru', guru)
+                    .eq('kelas', kelas);
+
+                if (error) throw error;
+
+                const absensiMap = new Map(absensiData.map(item => [item.nama, item.status]));
+
+                santriList.forEach((santri, index) => {
+                    const escapedNama = escapeString(santri.NAMA);
+                    const status = absensiMap.get(santri.NAMA) || '';
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${index + 1}</td>
+                        <td>${santri.NAMA}</td>
+                        <td>
+                            <select onchange="updateAbsensi(this, '${escapedNama}', '${selectedDate}')">
+                                <option value="" ${status === '' ? 'selected' : ''}>Pilih Status</option>
+                                <option value="HADIR" ${status === 'HADIR' ? 'selected' : ''}>HADIR</option>
+                                <option value="SAKIT" ${status === 'SAKIT' ? 'selected' : ''}>SAKIT</option>
+                                <option value="IZIN" ${status === 'IZIN' ? 'selected' : ''}>IZIN</option>
+                                <option value="ALPHA" ${status === 'ALPHA' ? 'selected' : ''}>ALPHA</option>
+                            </select>
+                        </td>
+                    `;
+                    editList.appendChild(row);
+                });
+
+            } catch (error) {
+                console.error('Error fetching attendance data:', error);
+                showCenterAlert('Terjadi kesalahan saat memuat data absensi.', 5000);
+            }
         }
 
         function createStatusSelect(nama, currentStatus) {
@@ -828,19 +867,24 @@
             return select;
         }
 
-        // Ubah fungsi updateAbsensi menjadi async
-        async function updateAbsensi(selectElement, escapedNama) {
+        // Modifikasi fungsi updateAbsensi
+        async function updateAbsensi(selectElement, escapedNama, selectedDate) {
             const nama = escapedNama.replace(/\\'/g, "'").replace(/\\"/g, '"').replace(/\\\\/g, '\\');
             const status = selectElement.value;
-            const currentDate = formatDate(new Date());
             const guru = getLoggedInGuru();
             const kelas = document.getElementById('kelasFilter').value;
+
+            if (status === '') {
+                showCenterAlert('Silakan pilih status kehadiran.', 3000);
+                selectElement.value = selectElement.dataset.originalValue || '';
+                return;
+            }
 
             try {
                 const { data, error } = await supabaseClient
                     .from('absensi')
                     .upsert({
-                        tanggal: currentDate,
+                        tanggal: selectedDate,
                         nama: nama,
                         status: status,
                         guru: guru,
@@ -848,45 +892,56 @@
                     }, { onConflict: 'tanggal,nama,kelas' });
 
                 if (error) throw error;
+
                 console.log('Data absensi diperbarui:', data);
+                selectElement.dataset.originalValue = status;
 
-                // Perbarui absensiData
-                if (!absensiData[currentDate]) {
-                    absensiData[currentDate] = {};
+                // Update local absensiData
+                if (!absensiData[selectedDate]) {
+                    absensiData[selectedDate] = {};
                 }
-                absensiData[currentDate][nama] = status;
+                absensiData[selectedDate][nama] = status;
 
-                // Perbarui rekap dan edit kehadiran
+                // If the updated date is today, also update the input absen view
+                const today = formatDate(new Date());
+                if (selectedDate === today) {
+                    updateInputAbsen();
+                }
+
+                // Update rekap absen
                 updateRekapAbsen();
-                tampilkanEditKehadiran(currentSantri);
+
             } catch (error) {
                 console.error('Error saat memperbarui absensi:', error);
                 showCenterAlert('Terjadi kesalahan saat memperbarui absensi. Silakan coba lagi.', 5000);
+                selectElement.value = selectElement.dataset.originalValue || '';
             }
         }
 
-        // Ubah fungsi submitAttendance menjadi async jika belum
+        // Modifikasi fungsi submitAttendance
         async function submitAttendance() {
             const guru = getLoggedInGuru();
             const kelas = document.getElementById('kelasFilter').value;
             const currentDate = formatDate(new Date());
 
-            const attendanceData = currentSantri.reduce((acc, siswa) => {
-                const status = absensiData[currentDate] && absensiData[currentDate][siswa.NAMA] || '';
-                if (status) {
-                    acc.push({
-                        tanggal: currentDate,
-                        nama: siswa.NAMA,
-                        status: status,
-                        guru: guru,
-                        kelas: kelas
-                    });
-                }
-                return acc;
-            }, []);
+            const attendanceData = currentSantri
+                .map(siswa => {
+                    const status = absensiData[currentDate] && absensiData[currentDate][siswa.NAMA] || '';
+                    if (status !== '') {
+                        return {
+                            tanggal: currentDate,
+                            nama: siswa.NAMA,
+                            status: status,
+                            guru: guru,
+                            kelas: kelas
+                        };
+                    }
+                    return null;
+                })
+                .filter(item => item !== null);
 
             if (attendanceData.length === 0) {
-                showCenterAlert('Tidak ada data absensi yang lengkap untuk disimpan.', 5000);
+                showCenterAlert('Tidak ada data absensi yang dipilih untuk disimpan.', 3000);
                 return;
             }
 
@@ -903,7 +958,7 @@
                 showCenterAlert('Data absensi berhasil disimpan!', 3000);
                 console.log('Data absensi tersimpan:', data);
 
-                // Perbarui absensiData
+                // Update local absensiData
                 attendanceData.forEach(item => {
                     if (!absensiData[item.tanggal]) {
                         absensiData[item.tanggal] = {};
@@ -911,9 +966,10 @@
                     absensiData[item.tanggal][item.nama] = item.status;
                 });
 
-                // Perbarui rekap dan edit kehadiran
+                // Update rekap and edit kehadiran views
                 updateRekapAbsen();
-                tampilkanEditKehadiran(currentSantri);
+                tampilkanEditKehadiran(currentSantri, currentDate);
+
             } catch (error) {
                 console.error('Error saat menyimpan absensi:', error);
                 showCenterAlert('Terjadi kesalahan saat menyimpan data absensi.', 5000);
@@ -1041,25 +1097,12 @@
             });
         }
 
-        // Ubah fungsi saveEditedAttendance menjadi async jika belum
+        // Modifikasi fungsi saveEditedAttendance
         async function saveEditedAttendance() {
             const selectedDate = document.getElementById('editDateSelector').value;
             const dateString = formatDate(getWITADate(selectedDate));
             const guru = getLoggedInGuru();
             const kelas = document.getElementById('kelasFilter').value;
-
-            const attendanceData = Object.entries(absensiData[dateString] || {}).map(([nama, status]) => ({
-                tanggal: dateString,
-                nama: nama,
-                status: status,
-                guru: guru,
-                kelas: kelas
-            }));
-
-            if (attendanceData.length === 0) {
-                alert('Tidak ada data absensi untuk disimpan.');
-                return;
-            }
 
             if (!confirm('Apakah Anda yakin ingin menyimpan perubahan?')) {
                 return;
@@ -1068,51 +1111,58 @@
             showLoading(true);
 
             try {
-                const { data: existingData, error: fetchError } = await supabaseClient
-                    .from('absensi')
-                    .select('*')
-                    .eq('tanggal', dateString)
-                    .eq('guru', guru)
-                    .eq('kelas', kelas);
-
-                if (fetchError) throw fetchError;
-
-                const dataToUpdate = [];
-                const dataToInsert = [];
-
-                attendanceData.forEach(newData => {
-                    const existingRecord = existingData.find(record => 
-                        record.nama === newData.nama && 
-                        record.tanggal === newData.tanggal
-                    );
-
-                    if (existingRecord) {
-                        if (existingRecord.status !== newData.status) {
-                            dataToUpdate.push({ ...existingRecord, status: newData.status });
+                const editList = document.getElementById('editList');
+                const rows = editList.getElementsByTagName('tr');
+                const attendanceData = Array.from(rows)
+                    .map(row => {
+                        const nama = row.cells[1].textContent;
+                        const status = row.cells[2].querySelector('select').value;
+                        if (status !== '') {
+                            return {
+                                tanggal: dateString,
+                                nama: nama,
+                                status: status,
+                                guru: guru,
+                                kelas: kelas
+                            };
                         }
-                    } else {
-                        dataToInsert.push(newData);
-                    }
+                        return null;
+                    })
+                    .filter(item => item !== null);
+
+                if (attendanceData.length === 0) {
+                    showCenterAlert('Tidak ada data absensi yang dipilih untuk disimpan.', 3000);
+                    showLoading(false);
+                    return;
+                }
+
+                const { data, error } = await supabaseClient
+                    .from('absensi')
+                    .upsert(attendanceData, { 
+                        onConflict: 'tanggal,nama,kelas',
+                        ignoreDuplicates: false 
+                    });
+
+                if (error) throw error;
+
+                showCenterAlert('Data absensi berhasil disimpan!', 3000);
+                console.log('Data absensi tersimpan:', data);
+
+                // Update local absensiData
+                if (!absensiData[dateString]) {
+                    absensiData[dateString] = {};
+                }
+                attendanceData.forEach(item => {
+                    absensiData[dateString][item.nama] = item.status;
                 });
 
-                if (dataToUpdate.length > 0) {
-                    const { error: updateError } = await supabaseClient
-                        .from('absensi')
-                        .upsert(dataToUpdate);
-
-                    if (updateError) throw updateError;
-                }
-
-                if (dataToInsert.length > 0) {
-                    const { error: insertError } = await supabaseClient
-                        .from('absensi')
-                        .insert(dataToInsert);
-
-                    if (insertError) throw insertError;
-                }
-
-                showCenterAlert('Data absensi berhasil disimpan!');
+                // Update rekap absen and input absen (if editing today's data)
                 updateRekapAbsen();
+                const today = formatDate(new Date());
+                if (dateString === today) {
+                    updateInputAbsen();
+                }
+
             } catch (error) {
                 console.error('Error saving attendance:', error);
                 showCenterAlert('Terjadi kesalahan saat menyimpan data absensi.', 5000);
@@ -1121,6 +1171,7 @@
             }
         }
 
+        // Modifikasi fungsi showSection
         function showSection(sectionId) {
             const guru = document.getElementById('GURUFilter').value;
             const kelas = document.getElementById('kelasFilter').value;
@@ -1144,7 +1195,7 @@
                 
                 // Jika section yang dipilih adalah edit-kehadiran, tampilkan data hari ini
                 if (sectionId === 'edit-kehadiran') {
-                    tampilkanEditKehadiran(currentSantri);
+                    tampilkanEditKehadiran(currentSantri, getTodayDate());
                 }
             }
         }
@@ -1480,13 +1531,6 @@
                 // Tambahkan event listener untuk tombol download Excel
                 document.getElementById('downloadExcel').addEventListener('click', downloadExcel);
 
-                // Hapus bagian ini
-                // Muat pilihan filter dari local storage
-                // const savedGuru = localStorage.getItem('selectedGuru');
-                // const savedKelas = localStorage.getItem('selectedKelas');
-                // if (savedGuru) document.getElementById('GURUFilter').value = savedGuru;
-                // if (savedKelas) document.getElementById('kelasFilter').value = savedKelas;
-                // if (savedGuru && savedKelas) filterSantri();
 
                 // Tambahkan ini untuk menyembunyikan form ganti password saat halaman dimuat
                 document.getElementById('changePasswordForm').style.display = 'none';
