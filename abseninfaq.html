@@ -41,6 +41,93 @@
                 max-width: 800px;
             }
         }
+        .bohay-main {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .bohay-main h2 {
+            color: #333333;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .bohay-main .dropdown-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .bohay-main label {
+            font-weight: 600;
+            color: #555555;
+        }
+
+        .bohay-main select {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            transition: border-color 0.3s;
+        }
+
+        .bohay-main select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .bohay-main button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .bohay-main button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .dropdown-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .dropdown-container div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .dropdown-container label {
+            font-weight: 600;
+            color: #555555;
+            margin-bottom: 5px;
+        }
+
+        .dropdown-container select {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            transition: border-color 0.3s;
+        }
+
+        .dropdown-container select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
     </style>
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
@@ -72,38 +159,40 @@
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8 flex-grow">
-        <h2 class="text-xl mb-4 text-center">Download Catatan Infaq dan Absen Santri</h2>
+    <main class="bohay-main container mx-auto px-4 py-8 flex-grow space-y-8">
+        <h2 class="text-xl mb-4 text-center font-semibold">Download Catatan Infaq dan Absen Santri</h2>
 
-        <div class="flex flex-col items-center space-y-4">
+        <div class="dropdown-container grid grid-cols-1 md:grid-cols-3 gap-4">
             <!-- Dropdown untuk filter pembimbing baru -->
-            <div class="flex items-center w-full max-w-xs">
-                <label for="pembimbingBaru" class="mr-2">PEMBIMBING:</label>
-                <select id="pembimbingBaru" class="border border-gray-300 rounded-md p-2 flex-grow">
+            <div class="flex flex-col items-center">
+                <label for="pembimbingBaru" class="font-medium mb-2">PEMBIMBING:</label>
+                <select id="pembimbingBaru" class="border border-gray-300 rounded-md p-2 w-full">
                     <option value="all">All</option>
                 </select>
             </div>
 
             <!-- Dropdown untuk filter status -->
-            <div class="flex items-center w-full max-w-xs">
-                <label for="status" class="mr-2">KELAS :</label>
-                <select id="status" class="border border-gray-300 rounded-md p-2 flex-grow" disabled>
+            <div class="flex flex-col items-center">
+                <label for="status" class="font-medium mb-2">KELAS :</label>
+                <select id="status" class="border border-gray-300 rounded-md p-2 w-full" disabled>
                     <option value="all">All</option>
                 </select>
             </div>
 
             <!-- Dropdown untuk memilih bulan -->
-            <div class="flex items-center w-full max-w-xs">
-                <label for="bulan" class="mr-2">BULAN :</label>
-                <select id="bulan" class="border border-gray-300 rounded-md p-2 flex-grow">
+            <div class="flex flex-col items-center">
+                <label for="bulan" class="font-medium mb-2">BULAN :</label>
+                <select id="bulan" class="border border-gray-300 rounded-md p-2 w-full">
                     <option value="Oktober">Oktober 2024</option>
                     <option value="November">November 2024</option>
                     <option value="Desember">Desember 2024</option>
                 </select>
             </div>
+        </div>
 
-            <button onclick="filterAndGenerateInfaqPDF()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">Download Catatan Infaq PDF</button>
-            <button onclick="filterAndGenerateAbsenPDF()" class="mt-4 bg-green-500 text-white px-4 py-2 rounded">Download Absen PDF</button>
+        <div class="flex justify-center mt-4 gap-4">
+            <button onclick="filterAndGenerateInfaqPDF()" class="bg-blue-500 text-white px-4 py-2 rounded shadow-md hover:bg-blue-600">Download Catatan Infaq</button>
+            <button onclick="filterAndGenerateAbsenPDF()" class="bg-green-500 text-white px-4 py-2 rounded shadow-md hover:bg-green-600">Download Absen</button>
         </div>
     </main>
 
