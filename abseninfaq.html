@@ -367,8 +367,9 @@
                 margin: { top: 40, right: 20, bottom: 10, left: 20 },
             });
 
-            // Simpan atau download PDF
-            doc.save('filtered_santri_infaq_table.pdf');
+            // Simpan PDF dengan nama yang dinamis
+            const fileName = `Infaq_${selectedPembimbing}.pdf`;
+            doc.save(fileName);
         }
 
         async function filterAndGenerateAbsenPDF() {
@@ -421,7 +422,7 @@
 
             const pageWidth = doc.internal.pageSize.getWidth();
             const title = `DAFTAR HADIR SANTRI RUMAH TAHFIDZ SAIJAAN\nBulan ${selectedBulan} 2024`;
-            const subtitle = `Pembimbing: ${selectedPembimbing}, Status: ${selectedStatus}`;
+            const subtitle = `Pembimbing: ${selectedPembimbing}, Kelas: ${selectedStatus}`;
 
             // Set font dan ukuran untuk judul
             doc.setFontSize(16);
@@ -536,8 +537,9 @@
                 margin: { top: 20, bottom: 10, left: 10, right: 10 }
             });
 
-            // Simpan PDF
-            doc.save('filtered_santri_absen_table.pdf');
+            // Simpan PDF dengan nama yang dinamis
+            const fileName = `Absen_${selectedPembimbing}_${selectedStatus}_${selectedBulan}.pdf`;
+            doc.save(fileName);
         }
 
         document.getElementById('menu-toggle').addEventListener('click', function() {
