@@ -312,6 +312,30 @@
                 }
             });
 
+            // Fungsi untuk mengatur hamburger menu
+            function setupHamburgerMenu() {
+                const menuToggle = document.getElementById('menu-toggle');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                if (menuToggle && mobileMenu) {
+                    menuToggle.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                        mobileMenu.classList.toggle('hidden');
+                    });
+
+                    document.addEventListener('click', function(event) {
+                        if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    });
+                } else {
+                    console.error('Menu toggle or mobile menu elements not found');
+                }
+            }
+
+            // Panggil fungsi setup hamburger menu
+            setupHamburgerMenu();
+
             tampilkanStatistik();
         });
     </script>
