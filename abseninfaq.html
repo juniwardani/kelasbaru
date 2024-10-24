@@ -1,384 +1,464 @@
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rumah Tahfidz Saijaan - Filter and Generate PDF</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.20/jspdf.plugin.autotable.min.js"></script><script src="js/script2.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"><link rel="stylesheet" href="css/style.css"></head>
-<body>
-
-<!-- Header -->
-<header>
-    <div class="container mx-auto px-4 py-6 flex items-center">
-        <img src="img/logo.jpg" alt="Logo Rumah Tahfidz Saijaan" class="logo w-12 h-auto mr-1 max-w-xs" />
-        <h1 class="text-2xl md:text-3xl font-bold flex-grow text-center md:text-left">Rumah Tahfidz Saijaan</h1>
-        <div class="md:hidden">
-            <button id="menu-toggle" class="text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-            </button>
-        </div>
-
-           <nav class="hidden md:flex space-x-4">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumah Tahfidz Saijaan - Filter and Generate PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.20/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #f8f8f8;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        a {
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #e2e8f0;
+        }
+        header, footer {
+            background-color: #6b0f0f;
+            color: #ffffff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+        @media screen and (min-width: 600px) {
+            body {
+                max-width: 800px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <header>
+        <div class="container mx-auto px-4 py-6 flex items-center">
+            <img src="img/logo.jpg" alt="Logo Rumah Tahfidz Saijaan" class="logo w-12 h-auto mr-1 max-w-xs" />
+            <h1 class="text-2xl md:text-3xl font-bold flex-grow text-center md:text-left">Rumah Tahfidz Saijaan</h1>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="hidden md:flex space-x-4">
                 <a href="index.html" class="font-semibold hover:underline">Beranda</a>
-                <a href="awal.html" class="font-semibold hover:underline">Pembimbing Awal</a>
-                <a href="baru.html" class="font-semibold hover:underline">Pembimbing Baru</a>
                 <a href="infaq.html" class="font-semibold hover:underline">Cari No. Infaq</a>
-               <a href="abseninfaq.html" class="font-semibold hover:underline">Generator Absen</a>
-               <a href="digital.html" class="font-semibold hover:underline">Absen Digital</a>
+                <a href="baru.html" class="font-semibold hover:underline">Kelas Aktif</a>
+                <a href="digital.html" class="font-semibold hover:underline">Absen Digital</a>
             </nav>
         </div>
         <div id="mobile-menu" class="md:hidden hidden">
             <nav class="flex flex-col items-center space-y-2 mt-4">
                 <a href="index.html" class="font-semibold hover:underline">Beranda</a>
-                <a href="awal.html" class="font-semibold hover:underline">Pembimbing Awal</a>
-                <a href="baru.html" class="font-semibold hover:underline">Pembimbing Baru</a>
                 <a href="infaq.html" class="font-semibold hover:underline">Cari No. Infaq</a>
-                <a href="abseninfaq.html" class="font-semibold hover:underline">Generator Absen</a>
+                <a href="baru.html" class="font-semibold hover:underline">Kelas Aktif</a>
                 <a href="digital.html" class="font-semibold hover:underline">Absen Digital</a>
             </nav>
-    </div>
-</header>
+        </div>
+    </header>
 
-<main class="container mx-auto px-4 py-8">
-  <h2 class="text-xl mb-4 text-center">Download Catatan Infaq dan Absen Santri</h2>
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <h2 class="text-xl mb-4 text-center">Download Catatan Infaq dan Absen Santri</h2>
 
-  <div class="flex flex-col items-center space-y-4">
-    <!-- Dropdown untuk filter pembimbing baru -->
-    <div class="flex items-center w-full max-w-xs">
-      <label for="pembimbingBaru" class="mr-2">PEMBIMBING:</label>
-      <select id="pembimbingBaru" class="border border-gray-300 rounded-md p-2 flex-grow">
-        <option value="all">All</option>
-      </select>
-    </div>
+        <div class="flex flex-col items-center space-y-4">
+            <!-- Dropdown untuk filter pembimbing baru -->
+            <div class="flex items-center w-full max-w-xs">
+                <label for="pembimbingBaru" class="mr-2">PEMBIMBING:</label>
+                <select id="pembimbingBaru" class="border border-gray-300 rounded-md p-2 flex-grow">
+                    <option value="all">All</option>
+                </select>
+            </div>
 
-    <!-- Dropdown untuk filter status -->
-    <div class="flex items-center w-full max-w-xs">
-      <label for="status" class="mr-2">KELAS :</label>
-      <select id="status" class="border border-gray-300 rounded-md p-2 flex-grow" disabled>
-        <option value="all">All</option>
-      </select>
-    </div>
+            <!-- Dropdown untuk filter status -->
+            <div class="flex items-center w-full max-w-xs">
+                <label for="status" class="mr-2">KELAS :</label>
+                <select id="status" class="border border-gray-300 rounded-md p-2 flex-grow" disabled>
+                    <option value="all">All</option>
+                </select>
+            </div>
 
-    <!-- Dropdown untuk memilih bulan -->
-    <div class="flex items-center w-full max-w-xs">
-      <label for="bulan" class="mr-2">BULAN :</label>
-      <select id="bulan" class="border border-gray-300 rounded-md p-2 flex-grow">
-        <option value="Oktober">Oktober 2024</option>
-        <option value="November">November 2024</option>
-        <option value="Desember">Desember 2024</option>
-      </select>
-    </div>
+            <!-- Dropdown untuk memilih bulan -->
+            <div class="flex items-center w-full max-w-xs">
+                <label for="bulan" class="mr-2">BULAN :</label>
+                <select id="bulan" class="border border-gray-300 rounded-md p-2 flex-grow">
+                    <option value="Oktober">Oktober 2024</option>
+                    <option value="November">November 2024</option>
+                    <option value="Desember">Desember 2024</option>
+                </select>
+            </div>
 
-    <button onclick="filterAndGenerateInfaqPDF()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">Download Catatan Infaq PDF</button>
-    <button onclick="filterAndGenerateAbsenPDF()" class="mt-4 bg-green-500 text-white px-4 py-2 rounded">Download Absen PDF</button>
-  </div>
-</main>
+            <button onclick="filterAndGenerateInfaqPDF()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">Download Catatan Infaq PDF</button>
+            <button onclick="filterAndGenerateAbsenPDF()" class="mt-4 bg-green-500 text-white px-4 py-2 rounded">Download Absen PDF</button>
+        </div>
+    </main>
 
-<!-- Footer -->
-<footer>
-    <div class="container mx-auto px-4 py-6">
-        <p>&copy; 2024 Rumah Tahfidz Saijaan. Hak Cipta Dilindungi.</p>
-    </div>
-</footer>
+    <footer class="mt-auto">
+        <div class="container mx-auto px-4 py-6">
+            <p class="text-center">&copy; 2024 Rumah Tahfidz Saijaan. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
 
-<script>
-  window.onload = function() {
-    const pembimbingDropdown = document.getElementById('pembimbingBaru');
-    const statusDropdown = document.getElementById('status');
-    
-    // Ambil semua pembimbing unik dari data JSON
-    const pembimbingSet = new Set(data.map(item => item['PEMBIMBING BARU']));
-    
-    // Tambahkan opsi ke dropdown pembimbing
-    pembimbingSet.forEach(pembimbing => {
-      const option = document.createElement('option');
-      option.value = pembimbing;
-      option.textContent = pembimbing;
-      pembimbingDropdown.appendChild(option);
-    });
+    <script>
+        const supabaseUrl = 'https://lrkechznknwqnxckyfcg.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxya2VjaHpua253cW54Y2t5ZmNnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkxMjgzODEsImV4cCI6MjA0NDcwNDM4MX0.Tj8p1u3_DGQnqhPkS6AJGs5BwOSeebdvsknX2qHzwdQ';
+        let supabaseClient;
 
-    // Ketika dropdown pembimbing dipilih, aktifkan dropdown status
-    pembimbingDropdown.addEventListener('change', function() {
-      const selectedPembimbing = pembimbingDropdown.value;
-      statusDropdown.innerHTML = '<option value="all">All</option>'; // Reset isi dropdown status
-      statusDropdown.disabled = false; // Aktifkan dropdown status
-
-      // Filter data berdasarkan pembimbing yang dipilih dan ambil status unik
-      if (selectedPembimbing !== 'all') {
-        const statusSet = new Set(
-          data.filter(item => item['PEMBIMBING BARU'] === selectedPembimbing).map(item => item['STATUS'])
-        );
-
-        // Tambahkan opsi status ke dropdown
-        statusSet.forEach(status => {
-          const option = document.createElement('option');
-          option.value = status;
-          option.textContent = status;
-          statusDropdown.appendChild(option);
-        });
-      }
-    });
-  };
-
-  function filterAndGenerateInfaqPDF() {
-    // Ambil pilihan dari dropdown
-    const selectedPembimbing = document.getElementById('pembimbingBaru').value;
-
-    // Filter data berdasarkan pilihan di dropdown
-    let filteredData;
-    if (selectedPembimbing === 'all') {
-      filteredData = data;  // Jika pilih "all", ambil semua data
-    } else {
-      filteredData = data.filter(item => item['PEMBIMBING BARU'] === selectedPembimbing);
-    }
-
-    // Buat PDF
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF({
-      orientation: 'portrait',
-      unit: 'mm',
-      format: 'a4'
-    });
-
-    const title = 'DAFTAR INFAQ RUMAH TAHFIDZ SAIJAAN\nBULAN SEPTEMBER S/D DESEMBER 2024';
-    const subtitle = `Pembimbing: ${selectedPembimbing}`;
-
-    // Mengatur posisi untuk judul dan sub judul
-    doc.setFontSize(16);
-    doc.setFont('Arial', 'bold');
-    doc.text(title.split('\n'), 105, 20, { align: 'center' }); // Judul, rata tengah
-
-    const subtitleYPosition = 33; // Posisi Y untuk sub judul, atur sesuai kebutuhan
-
-    doc.setFontSize(12);
-    doc.setFont('Arial', 'normal');
-    doc.text(subtitle, 20, subtitleYPosition); // Sub judul, rata kiri
-
-    const startY = 37; // Posisi Y untuk tabel
-    
-    // Tambahkan tabel ke PDF
-    const tableData = [];
-
-    // Menambahkan data yang difilter
-    filteredData.forEach((item, index) => {
-      tableData.push([
-        index + 1, // Nomor
-        item.NOINFAQ, // Nama
-        item.NAMA, // Nama
-        item.STATUS, // Kelas
-        '', // September
-        '', // Oktober
-        '', // November
-        '', // Desember
-      ]);
-    });
-
-    // Tambahkan 7 baris kosong
-    for (let i = 0; i < 7; i++) {
-      tableData.push([
-        filteredData.length + i + 1, // Nomor otomatis
-        '', // NOINFAQ kosong
-        '', // Nama kosong
-        '', // Kelas kosong
-        '', // September
-        '', // Oktober
-        '', // November
-        '', // Desember
-      ]);
-    }
-
-    doc.autoTable({
-      startY: startY,
-      head: [['No', 'No Infaq', 'Nama', 'Kelas', 'September', 'Oktober', 'November', 'Desember']],
-      body: tableData,
-      styles: { 
-        cellPadding: 1.7,
-        fontSize: 7,
-        halign: 'center',
-        lineColor: [0, 0, 0],
-        lineWidth: 0.2,
-        rowHeight: 2
-      },
-      headStyles: { 
-        fillColor: [255, 255, 255],
-        textColor: [0, 0, 0],
-      },
-      theme: 'grid',
-      columnStyles: {
-        0: { cellWidth: 10 },
-        1: { cellWidth: 15 },
-        2: { cellWidth: 50, halign: 'left' },
-        3: { cellWidth: 25 },
-        4: { cellWidth: 20 },
-        5: { cellWidth: 20 },
-        6: { cellWidth: 20 },
-        7: { cellWidth: 20 },
-      },
-      margin: { top: 40, right: 20, bottom: 10, left: 20 },
-    });
-
-    // Simpan atau download PDF
-    doc.save('filtered_santri_infaq_table.pdf');
-  }
-
-  function filterAndGenerateAbsenPDF() {
-    const selectedPembimbing = document.getElementById('pembimbingBaru').value;
-    const selectedStatus = document.getElementById('status').value;
-    const selectedBulan = document.getElementById('bulan').value;
-
-    // Tentukan jumlah hari dalam bulan yang dipilih
-    let daysInMonth;
-    let monthIndex;
-    switch (selectedBulan) {
-      case 'Oktober':
-        daysInMonth = 31;
-        monthIndex = 9; // Oktober = index 9 (karena Januari dimulai dari 0)
-        break;
-      case 'November':
-        daysInMonth = 30;
-        monthIndex = 10;
-        break;
-      case 'Desember':
-        daysInMonth = 31;
-        monthIndex = 11;
-        break;
-      default:
-        daysInMonth = 0;
-        break;
-    }
-
-    // Filter data berdasarkan pembimbing dan status
-    let filteredData = data;
-    if (selectedPembimbing !== 'all') {
-      filteredData = filteredData.filter(item => item['PEMBIMBING BARU'] === selectedPembimbing);
-    }
-    if (selectedStatus !== 'all') {
-      filteredData = filteredData.filter(item => item['STATUS'] === selectedStatus);
-    }
-
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF({
-      orientation: 'landscape',
-      unit: 'mm',
-      format: 'a4'
-    });
-
-    const pageWidth = doc.internal.pageSize.getWidth();
-    const title = `DAFTAR HADIR SANTRI RUMAH TAHFIDZ SAIJAAN\nBulan ${selectedBulan} 2024`;
-    const subtitle = `Pembimbing: ${selectedPembimbing}, Status: ${selectedStatus}`;
-
-    // Set font dan ukuran untuk judul
-    doc.setFontSize(16);
-    doc.setFont('Arial', 'bold');
-    const titleY = 20; // Y position for title
-    doc.text(title.split('\n'), pageWidth / 2, titleY, { align: 'center' });
-
-    // Set font dan ukuran untuk subjudul
-    doc.setFontSize(12);
-    doc.setFont('Arial', 'normal');
-    const subtitleY = titleY + 15; // Adjust this value to set distance from title to subtitle
-    doc.text(subtitle.split('\n'), pageWidth / 2, subtitleY, { align: 'center' });
-
-    const startY = subtitleY + 10; // Set startY for table, adjusting distance from subtitle
-    const tableData = [];
-
-    // Buat kolom tanggal berdasarkan bulan yang dipilih
-    const head = ['No', 'Nama'];
-    for (let i = 1; i <= daysInMonth; i++) {
-      head.push(i.toString()); // Tambahkan tanggal sebagai kolom
-    }
-
-    // Tambahkan kolom SAKIT, IZIN, ALPA
-    head.push('SAKIT', 'IZIN', 'ALPA');
-
-    // Isi tabel
-    filteredData.forEach((item, index) => {
-      const row = [index + 1, item.NAMA];
-      for (let i = 1; i <= daysInMonth; i++) {
-        row.push(''); // Tambahkan sel kosong untuk setiap tanggal
-      }
-      // Tambahkan kolom untuk SAKIT, IZIN, ALPA
-      row.push('', '', ''); // Kosong untuk SAKIT, IZIN, ALPA
-      tableData.push(row);
-    });
-
-    // Tambahkan 5 baris kosong dengan nomor otomatis
-    const additionalRows = 5;
-    for (let i = 0; i < additionalRows; i++) {
-      const row = [filteredData.length + i + 1, ''];
-      for (let j = 1; j <= daysInMonth; j++) {
-        row.push(''); // Sel kosong untuk setiap tanggal
-      }
-      row.push('', '', ''); // Kosong untuk kolom SAKIT, IZIN, ALPA
-      tableData.push(row);
-    }
-
-    // Tambahkan warna merah pada hari Minggu
-    const sundayRows = [];
-    for (let i = 1; i <= daysInMonth; i++) {
-      const date = new Date(2024, monthIndex, i);
-      if (date.getDay() === 0) { // 0 mewakili hari Minggu
-        sundayRows.push(i + 1); // Tambahkan indeks kolom yang mewakili hari Minggu
-      }
-    }
-
-    // Generate tabel dengan warna merah pada hari Minggu dan kolom baru
-    const tableMargin = 10;
-    doc.autoTable({
-        startY: startY,
-        head: [head],  // Set kolom tabel dengan tanggal
-        body: tableData,
-        styles: {
-            cellPadding: 1, // Increased padding for better spacing
-            fontSize: 7, // Slightly larger font size
-            halign: 'center',
-            maxCellHeight: 4, // Increased height for each cell
-        },
-        headStyles: {
-            fillColor: [255, 255, 255],
-            textColor: [0, 0, 0],
-            lineWidth: 0.1, // Set garis yang sama pada header
-            lineColor: [0, 0, 0],  // Warna garis header
-        },
-        bodyStyles: {
-            halign: 'center',
-            lineWidth: 0.1,  // Set garis yang sama pada body tabel
-            lineColor: [0, 0, 0],  // Warna garis body tabel
-        },
-        theme: 'grid',
-        columnStyles: {
-            0: { cellWidth: 10 }, // Lebar untuk kolom 'No'
-            1: { halign: 'left', cellWidth: 50 }, // Lebar untuk kolom 'Nama'
-            ...sundayRows.reduce((styles, index) => {
-                styles[index] = {
-                    fillColor: [255, 0, 0], // Warna merah untuk hari Minggu
-                    lineWidth: 0.1, // Set garis yang sama pada kolom hari Minggu
-                    lineColor: [0, 0, 0], // Warna garis
-                    cellPadding: 1.7, // Padding untuk sel
-                    cellWidth: 6 // Set lebar untuk kolom hari Minggu
-                };
-                return styles;
-            }, {}),
-        },
-        didParseCell: function(data) {
-            // Styling khusus untuk baris hari Minggu di body saja
-            if (data.row.section === 'body' && sundayRows.includes(data.column.index)) {
-                data.cell.styles.lineWidth = 0; // Tanpa garis atas dan bawah
-                data.cell.styles.lineColor = [255, 255, 255]; // Buat atas dan bawah tidak terlihat
+        window.onload = async function() {
+            supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+            
+            const pembimbingDropdown = document.getElementById('pembimbingBaru');
+            const statusDropdown = document.getElementById('status');
+            
+            // Ambil data pembimbing dari Supabase
+            const { data: guruData, error: guruError } = await supabaseClient
+                .from('santri')
+                .select('GURU');
+            
+            if (guruError) {
+                console.error('Error mengambil data guru:', guruError);
+                return;
             }
-        },
-        margin: { top: 20, bottom: 10, left: 10, right: 10 }
-    });
+            
+            // Dapatkan nilai unik dari GURU
+            const uniqueGuru = [...new Set(guruData.map(item => item.GURU))];
+            
+            // Tambahkan opsi ke dropdown pembimbing
+            uniqueGuru.forEach(guru => {
+                const option = document.createElement('option');
+                option.value = guru;
+                option.textContent = guru;
+                pembimbingDropdown.appendChild(option);
+            });
 
-    // Simpan PDF
-    doc.save('filtered_santri_absen_table.pdf');
-  }
+            // Ketika dropdown pembimbing dipilih, aktifkan dropdown status
+            pembimbingDropdown.addEventListener('change', async function() {
+                const selectedPembimbing = pembimbingDropdown.value;
+                statusDropdown.innerHTML = '<option value="all">All</option>'; // Reset isi dropdown status
+                statusDropdown.disabled = false; // Aktifkan dropdown status
 
-  document.getElementById('menu-toggle').addEventListener('click', function() {
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileMenu.classList.contains('hidden')) {
-    mobileMenu.classList.remove('hidden');  // Tampilkan menu jika disembunyikan
-  } else {
-    mobileMenu.classList.add('hidden');     // Sembunyikan menu jika ditampilkan
-  }
-});
+                // Filter data berdasarkan pembimbing yang dipilih dan ambil kelas unik
+                if (selectedPembimbing !== 'all') {
+                    const { data: kelasData, error: kelasError } = await supabaseClient
+                        .from('santri')
+                        .select('KELAS')
+                        .eq('GURU', selectedPembimbing);
+                    
+                    if (kelasError) {
+                        console.error('Error mengambil data kelas:', kelasError);
+                        return;
+                    }
 
-</script>
+                    // Dapatkan nilai unik dari KELAS
+                    const uniqueKelas = [...new Set(kelasData.map(item => item.KELAS))];
 
-</body></html>
+                    // Tambahkan opsi kelas ke dropdown
+                    uniqueKelas.forEach(kelas => {
+                        const option = document.createElement('option');
+                        option.value = kelas;
+                        option.textContent = kelas;
+                        statusDropdown.appendChild(option);
+                    });
+                }
+            });
+        };
+
+        async function filterAndGenerateInfaqPDF() {
+            // Ambil pilihan dari dropdown
+            const selectedPembimbing = document.getElementById('pembimbingBaru').value;
+
+            // Filter data berdasarkan pilihan di dropdown
+            let query = supabaseClient.from('santri').select('NOINFAQ, NAMA, KELAS');
+            if (selectedPembimbing !== 'all') {
+                query = query.eq('GURU', selectedPembimbing);
+            }
+            const { data: filteredData, error } = await query;
+
+            if (error) {
+                console.error('Error mengambil data:', error);
+                return;
+            }
+
+            // Buat PDF
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4'
+            });
+
+            const title = 'DAFTAR INFAQ RUMAH TAHFIDZ SAIJAAN\nBULAN SEPTEMBER S/D DESEMBER 2024';
+            const subtitle = `Pembimbing: ${selectedPembimbing}`;
+
+            // Mengatur posisi untuk judul dan sub judul
+            doc.setFontSize(16);
+            doc.setFont('Arial', 'bold');
+            doc.text(title.split('\n'), 105, 20, { align: 'center' }); // Judul, rata tengah
+
+            const subtitleYPosition = 33; // Posisi Y untuk sub judul, atur sesuai kebutuhan
+
+            doc.setFontSize(12);
+            doc.setFont('Arial', 'normal');
+            doc.text(subtitle, 20, subtitleYPosition); // Sub judul, rata kiri
+
+            const startY = 37; // Posisi Y untuk tabel
+            
+            // Tambahkan tabel ke PDF
+            const tableData = [];
+
+            // Isi tabel dengan data yang difilter
+            filteredData.forEach((item, index) => {
+                tableData.push([
+                    index + 1, // Nomor
+                    item.NOINFAQ, // No Infaq
+                    item.NAMA, // Nama
+                    item.KELAS, // Kelas
+                    '', // September
+                    '', // Oktober
+                    '', // November
+                    '', // Desember
+                ]);
+            });
+
+            // Tambahkan 7 baris kosong
+            for (let i = 0; i < 7; i++) {
+                tableData.push([
+                    filteredData.length + i + 1, // Nomor otomatis
+                    '', // NOINFAQ kosong
+                    '', // Nama kosong
+                    '', // Kelas kosong
+                    '', // September
+                    '', // Oktober
+                    '', // November
+                    '', // Desember
+                ]);
+            }
+
+            doc.autoTable({
+                startY: startY,
+                head: [['No', 'No Infaq', 'Nama', 'Kelas', 'September', 'Oktober', 'November', 'Desember']],
+                body: tableData,
+                styles: { 
+                    cellPadding: 1.7,
+                    fontSize: 7,
+                    halign: 'center',
+                    lineColor: [0, 0, 0],
+                    lineWidth: 0.2,
+                    rowHeight: 2
+                },
+                headStyles: { 
+                    fillColor: [255, 255, 255],
+                    textColor: [0, 0, 0],
+                },
+                theme: 'grid',
+                columnStyles: {
+                    0: { cellWidth: 10 },
+                    1: { cellWidth: 15 },
+                    2: { cellWidth: 50, halign: 'left' },
+                    3: { cellWidth: 25 },
+                    4: { cellWidth: 20 },
+                    5: { cellWidth: 20 },
+                    6: { cellWidth: 20 },
+                    7: { cellWidth: 20 },
+                },
+                margin: { top: 40, right: 20, bottom: 10, left: 20 },
+            });
+
+            // Simpan atau download PDF
+            doc.save('filtered_santri_infaq_table.pdf');
+        }
+
+        async function filterAndGenerateAbsenPDF() {
+            const selectedPembimbing = document.getElementById('pembimbingBaru').value;
+            const selectedStatus = document.getElementById('status').value;
+            const selectedBulan = document.getElementById('bulan').value;
+
+            // Tentukan jumlah hari dalam bulan yang dipilih
+            let daysInMonth;
+            let monthIndex;
+            switch (selectedBulan) {
+                case 'Oktober':
+                    daysInMonth = 31;
+                    monthIndex = 9; // Oktober = index 9 (karena Januari dimulai dari 0)
+                    break;
+                case 'November':
+                    daysInMonth = 30;
+                    monthIndex = 10;
+                    break;
+                case 'Desember':
+                    daysInMonth = 31;
+                    monthIndex = 11;
+                    break;
+                default:
+                    daysInMonth = 0;
+                    break;
+            }
+
+            // Filter data berdasarkan pembimbing dan status
+            let query = supabaseClient.from('santri').select('NAMA');
+            if (selectedPembimbing !== 'all') {
+                query = query.eq('GURU', selectedPembimbing);
+            }
+            if (selectedStatus !== 'all') {
+                query = query.eq('KELAS', selectedStatus);
+            }
+            const { data: filteredData, error } = await query;
+
+            if (error) {
+                console.error('Error mengambil data:', error);
+                return;
+            }
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({
+                orientation: 'landscape',
+                unit: 'mm',
+                format: 'a4'
+            });
+
+            const pageWidth = doc.internal.pageSize.getWidth();
+            const title = `DAFTAR HADIR SANTRI RUMAH TAHFIDZ SAIJAAN\nBulan ${selectedBulan} 2024`;
+            const subtitle = `Pembimbing: ${selectedPembimbing}, Status: ${selectedStatus}`;
+
+            // Set font dan ukuran untuk judul
+            doc.setFontSize(16);
+            doc.setFont('Arial', 'bold');
+            const titleY = 20; // Y position for title
+            doc.text(title.split('\n'), pageWidth / 2, titleY, { align: 'center' });
+
+            // Set font dan ukuran untuk subjudul
+            doc.setFontSize(12);
+            doc.setFont('Arial', 'normal');
+            const subtitleY = titleY + 15; // Adjust this value to set distance from title to subtitle
+            doc.text(subtitle.split('\n'), pageWidth / 2, subtitleY, { align: 'center' });
+
+            const startY = subtitleY + 10; // Set startY for table, adjusting distance from subtitle
+            const tableData = [];
+
+            // Buat kolom tanggal berdasarkan bulan yang dipilih
+            const head = ['No', 'Nama'];
+            for (let i = 1; i <= daysInMonth; i++) {
+                head.push(i.toString()); // Tambahkan tanggal sebagai kolom
+            }
+
+            // Tambahkan kolom SAKIT, IZIN, ALPA
+            head.push('SAKIT', 'IZIN', 'ALPA');
+
+            // Isi tabel
+            filteredData.forEach((item, index) => {
+                const row = [index + 1, item.NAMA];
+                for (let i = 1; i <= daysInMonth; i++) {
+                    row.push(''); // Tambahkan sel kosong untuk setiap tanggal
+                }
+                // Tambahkan kolom untuk SAKIT, IZIN, ALPA
+                row.push('', '', ''); // Kosong untuk SAKIT, IZIN, ALPA
+                tableData.push(row);
+            });
+
+            // Tambahkan 5 baris kosong dengan nomor otomatis
+            const additionalRows = 5;
+            for (let i = 0; i < additionalRows; i++) {
+                const row = [filteredData.length + i + 1, ''];
+                for (let j = 1; j <= daysInMonth; j++) {
+                    row.push(''); // Sel kosong untuk setiap tanggal
+                }
+                row.push('', '', ''); // Kosong untuk kolom SAKIT, IZIN, ALPA
+                tableData.push(row);
+            }
+
+            // Tambahkan array untuk tanggal libur nasional
+            const liburNasional = [
+                { bulan: 'Oktober', tanggal: [1] },
+                { bulan: 'November', tanggal: [11] },
+                { bulan: 'Desember', tanggal: [25] }
+            ];
+
+            // Dapatkan tanggal libur untuk bulan yang dipilih
+            const liburBulanIni = liburNasional.find(libur => libur.bulan === selectedBulan)?.tanggal || [];
+
+            // Gabungkan hari Minggu dan libur nasional
+            const hariMerah = [];
+            for (let i = 1; i <= daysInMonth; i++) {
+                const date = new Date(2024, monthIndex, i);
+                if (date.getDay() === 0 || liburBulanIni.includes(i)) {
+                    hariMerah.push(i + 1); // Tambahkan indeks kolom yang mewakili hari Minggu atau libur nasional
+                }
+            }
+
+            // Generate tabel dengan warna merah pada hari Minggu dan kolom baru
+            const tableMargin = 10;
+            doc.autoTable({
+                startY: startY,
+                head: [head],  // Set kolom tabel dengan tanggal
+                body: tableData,
+                styles: {
+                    cellPadding: 1, // Increased padding for better spacing
+                    fontSize: 7, // Slightly larger font size
+                    halign: 'center',
+                    maxCellHeight: 4, // Increased height for each cell
+                },
+                headStyles: {
+                    fillColor: [255, 255, 255],
+                    textColor: [0, 0, 0],
+                    lineWidth: 0.1, // Set garis yang sama pada header
+                    lineColor: [0, 0, 0],  // Warna garis header
+                },
+                bodyStyles: {
+                    halign: 'center',
+                    lineWidth: 0.1,  // Set garis yang sama pada body tabel
+                    lineColor: [0, 0, 0],  // Warna garis body tabel
+                },
+                theme: 'grid',
+                columnStyles: {
+                    0: { cellWidth: 10 }, // Lebar untuk kolom 'No'
+                    1: { halign: 'left', cellWidth: 50 }, // Lebar untuk kolom 'Nama'
+                    ...hariMerah.reduce((styles, index) => {
+                        styles[index] = {
+                            fillColor: [255, 0, 0], // Warna merah untuk hari Minggu dan libur nasional
+                            lineWidth: 0.1,
+                            lineColor: [0, 0, 0],
+                            cellPadding: 1.7,
+                            cellWidth: 6
+                        };
+                        return styles;
+                    }, {}),
+                },
+                didParseCell: function(data) {
+                    // Styling khusus untuk baris hari Minggu dan libur nasional di body saja
+                    if (data.row.section === 'body' && hariMerah.includes(data.column.index)) {
+                        data.cell.styles.lineWidth = 0;
+                        data.cell.styles.lineColor = [255, 255, 255];
+                    }
+                },
+                margin: { top: 20, bottom: 10, left: 10, right: 10 }
+            });
+
+            // Simpan PDF
+            doc.save('filtered_santri_absen_table.pdf');
+        }
+
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');  // Tampilkan menu jika disembunyikan
+            } else {
+                mobileMenu.classList.add('hidden');     // Sembunyikan menu jika ditampilkan
+            }
+        });
+    </script>
+</body>
+</html>
